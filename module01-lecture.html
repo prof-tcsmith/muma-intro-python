@@ -3469,7 +3469,34 @@ Understanding Variable Assignment Visually
 </div>
 </div>
 <p>Practice with variables interactively:</p>
-<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Understanding%20Variables%20in%20Python%0A%0A%23%20Creating%20variables%20to%20store%20business%20data%0Anorth_revenue%20=%2050000%0Asouth_revenue%20=%2040000%0Aeast_revenue%20=%2045000%0Awest_revenue%20=%2055000%0A%0A%23%20Using%20variables%20in%20calculations%0Atotal_revenue%20=%20north_revenue%20%2B%20south_revenue%20%2B%20east_revenue%20%2B%20west_revenue%0A%0A%23%20Printing%20the%20results%0Aprint%28%22North%20Revenue%3A%20%24%22%2C%20north_revenue%29%0Aprint%28%22Total%20Revenue%3A%20%24%22%2C%20total_revenue%29%0A%0A%23%20Variables%20can%20be%20updated%0Anorth_revenue%20=%2052000%20%20%23%20New%20value%20for%20Q2%0Aprint%28%22Updated%20North%20Revenue%3A%20%24%22%2C%20north_revenue%29%0A%0A%23%20But%20total_revenue%20does%20not%20automatically%20update!%0Aprint%28%22Total%20Revenue%20%28still%20old%29%3A%20%24%22%2C%20total_revenue%29%0A%0A%23%20We%20need%20to%20recalculate%0Atotal_revenue%20=%20north_revenue%20%2B%20south_revenue%20%2B%20east_revenue%20%2B%20west_revenue%0Aprint%28%22New%20Total%20Revenue%3A%20%24%22%2C%20total_revenue%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Understanding%20Variables%20in%20Python%0A%0A%23%20Creating%20variables%20to%20store%20business%20data%0Anorth_revenue%20%3D%2050000%0Asouth_revenue%20%3D%2040000%0Aeast_revenue%20%3D%2045000%0Awest_revenue%20%3D%2055000%0A%0A%23%20Using%20variables%20in%20calculations%0Atotal_revenue%20%3D%20north_revenue%20%2B%20south_revenue%20%2B%20east_revenue%20%2B%20west_revenue%0A%0A%23%20Printing%20the%20results%0Aprint%28%22North%20Revenue%3A%20%24%22%2C%20north_revenue%29%0Aprint%28%22Total%20Revenue%3A%20%24%22%2C%20total_revenue%29%0A%0A%23%20Variables%20can%20be%20updated%0Anorth_revenue%20%3D%2052000%20%20%23%20New%20value%20for%20Q2%0Aprint%28%22Updated%20North%20Revenue%3A%20%24%22%2C%20north_revenue%29%0A%0A%23%20But%20total_revenue%20does%20not%20automatically%20update%21%0Aprint%28%22Total%20Revenue%20%28still%20old%29%3A%20%24%22%2C%20total_revenue%29%0A%0A%23%20We%20need%20to%20recalculate%0Atotal_revenue%20%3D%20north_revenue%20%2B%20south_revenue%20%2B%20east_revenue%20%2B%20west_revenue%0Aprint%28%22New%20Total%20Revenue%3A%20%24%22%2C%20total_revenue%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+# Understanding Variables in Python
+
+# Creating variables to store business data
+north_revenue = 50000
+south_revenue = 40000
+east_revenue = 45000
+west_revenue = 55000
+
+# Using variables in calculations
+total_revenue = north_revenue + south_revenue + east_revenue + west_revenue
+
+# Printing the results
+print("North Revenue: $", north_revenue)
+print("Total Revenue: $", total_revenue)
+
+# Variables can be updated
+north_revenue = 52000  # New value for Q2
+print("Updated North Revenue: $", north_revenue)
+
+# But total_revenue does not automatically update!
+print("Total Revenue (still old): $", total_revenue)
+
+# We need to recalculate
+total_revenue = north_revenue + south_revenue + east_revenue + west_revenue
+print("New Total Revenue: $", total_revenue)
+-->
 </section>
 </section>
 <section id="understanding-the-code" class="level2">
@@ -3520,7 +3547,40 @@ Understanding Variable Assignment Visually
 <li>In the line <code>total_revenue = north_revenue + south_revenue + east_revenue + west_revenue</code>, Python first calculates the sum on the right side and then assigns the final result to the <code>total_revenue</code> variable.</li>
 </ul>
 <p>Explore arithmetic operations in business calculations:</p>
-<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Business%20Arithmetic%20Operations%0A%0A%23%20Product%20pricing%20calculations%0Aunit_price%20=%2029.99%0Aquantity%20=%2015%0A%0A%23%20Basic%20calculations%0Asubtotal%20=%20unit_price%20*%20quantity%0Aprint%28%22Subtotal%3A%20%24%22%2C%20subtotal%29%0A%0A%23%20Apply%20a%20discount%0Adiscount_percent%20=%2010%20%20%23%2010%25%20discount%0Adiscount_amount%20=%20subtotal%20*%20%28discount_percent%20/%20100%29%0Aprint%28%22Discount%20amount%3A%20%24%22%2C%20discount_amount%29%0A%0A%23%20Calculate%20final%20price%0Afinal_price%20=%20subtotal%20-%20discount_amount%0Aprint%28%22Final%20price%3A%20%24%22%2C%20final_price%29%0A%0A%23%20Calculate%20tax%0Atax_rate%20=%200.08%20%20%23%208%25%20sales%20tax%0Atax_amount%20=%20final_price%20*%20tax_rate%0Aprint%28%22Tax%3A%20%24%22%2C%20tax_amount%29%0A%0A%23%20Total%20with%20tax%0Atotal_due%20=%20final_price%20%2B%20tax_amount%0Aprint%28%22Total%20due%3A%20%24%22%2C%20total_due%29%0A%0A%23%20Division%20example%20-%20cost%20per%20unit%20after%20discount%0Acost_per_unit%20=%20total_due%20/%20quantity%0Aprint%28%22Cost%20per%20unit%3A%20%24%22%2C%20cost_per_unit%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Business%20Arithmetic%20Operations%0A%0A%23%20Product%20pricing%20calculations%0Aunit_price%20%3D%2029.99%0Aquantity%20%3D%2015%0A%0A%23%20Basic%20calculations%0Asubtotal%20%3D%20unit_price%20%2A%20quantity%0Aprint%28%22Subtotal%3A%20%24%22%2C%20subtotal%29%0A%0A%23%20Apply%20a%20discount%0Adiscount_percent%20%3D%2010%20%20%23%2010%25%20discount%0Adiscount_amount%20%3D%20subtotal%20%2A%20%28discount_percent%20/%20100%29%0Aprint%28%22Discount%20amount%3A%20%24%22%2C%20discount_amount%29%0A%0A%23%20Calculate%20final%20price%0Afinal_price%20%3D%20subtotal%20-%20discount_amount%0Aprint%28%22Final%20price%3A%20%24%22%2C%20final_price%29%0A%0A%23%20Calculate%20tax%0Atax_rate%20%3D%200.08%20%20%23%208%25%20sales%20tax%0Atax_amount%20%3D%20final_price%20%2A%20tax_rate%0Aprint%28%22Tax%3A%20%24%22%2C%20tax_amount%29%0A%0A%23%20Total%20with%20tax%0Atotal_due%20%3D%20final_price%20%2B%20tax_amount%0Aprint%28%22Total%20due%3A%20%24%22%2C%20total_due%29%0A%0A%23%20Division%20example%20-%20cost%20per%20unit%20after%20discount%0Acost_per_unit%20%3D%20total_due%20/%20quantity%0Aprint%28%22Cost%20per%20unit%3A%20%24%22%2C%20cost_per_unit%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+# Business Arithmetic Operations
+
+# Product pricing calculations
+unit_price = 29.99
+quantity = 15
+
+# Basic calculations
+subtotal = unit_price * quantity
+print("Subtotal: $", subtotal)
+
+# Apply a discount
+discount_percent = 10  # 10% discount
+discount_amount = subtotal * (discount_percent / 100)
+print("Discount amount: $", discount_amount)
+
+# Calculate final price
+final_price = subtotal - discount_amount
+print("Final price: $", final_price)
+
+# Calculate tax
+tax_rate = 0.08  # 8% sales tax
+tax_amount = final_price * tax_rate
+print("Tax: $", tax_amount)
+
+# Total with tax
+total_due = final_price + tax_amount
+print("Total due: $", total_due)
+
+# Division example - cost per unit after discount
+cost_per_unit = total_due / quantity
+print("Cost per unit: $", cost_per_unit)
+-->
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3554,8 +3614,35 @@ Understanding the Print Function
 <span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(<span class="st">&quot;Price:&quot;</span>, <span class="st">&quot;$&quot;</span>, price)    <span class="co"># Prints two strings and the value of a float variable</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a><span class="bu">print</span>(<span class="st">&quot;Total:&quot;</span>, <span class="st">&quot;$&quot;</span>, quantity <span class="op">*</span> price) <span class="co"># Prints a string and the result of a calculation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The interactive visualization below shows how different print statements work. You can step through the code line-by-line to see how the output is generated. You can also change the width of the code block to see how it affects the output (just click on the divider with your mouse and drag).:</p>
-<iframe width="900" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Demonstrating%20different%20ways%20to%20use%20print%0A%0A%23%20Basic%20print%20with%20a%20single%20string%0Aprint%28%22Business%20Report%22%29%0A%0A%23%20Print%20with%20multiple%20values%20%28strings%20and%20variables%29%0Aproduct%20%3D%20%22Laptop%22%0Aprice%20%3D%20899.99%20%23%20This%20is%20a%20float%0Aprint%28%22Product%3A%22%2C%20product%2C%20%22Price%3A%22%2C%20price%29%0A%0A%23%20Print%20with%20numbers%20and%20calculations%0Aquantity%20%3D%203%20%23%20This%20is%20an%20integer%0Atotal%20%3D%20price%20*%20quantity%0Aprint%28%22Quantity%3A%22%2C%20quantity%29%0Aprint%28%22Total%20Price%3A%22%2C%20total%29%0A%0A%23%20Print%20with%20the%20round%20function%20to%20format%20currency%0Aprint%28%22Rounded%20Total%3A%22%2C%20round%28total%2C%202%29%29%20%23%20Round%20to%202%20decimal%20places%0A%0A%23%20Print%20with%20a%20custom%20separator%20instead%20of%20a%20space%0Aprint%28%22Business%22%2C%20%22Analytics%22%2C%20%22Report%22%2C%20sep%3D%22-%22%29%0A%0A%23%20Print%20without%20adding%20a%20newline%20at%20the%20end%0Aprint%28%22Processing%20data...%22%2C%20end%3D%22%22%29%20%23%20The%20next%20print%20will%20start%20on%20the%20same%20line%0Aprint%28%22Done%21%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
+<iframe width="900" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Demonstrating%20different%20ways%20to%20use%20print%0A%0A%23%20Basic%20print%20with%20a%20single%20string%0Aprint%28%22Business%20Report%22%29%0A%0A%23%20Print%20with%20multiple%20values%20%28strings%20and%20variables%29%0Aproduct%20%3D%20%22Laptop%22%0Aprice%20%3D%20899.99%20%23%20This%20is%20a%20float%0Aprint%28%22Product%3A%22%2C%20product%2C%20%22Price%3A%22%2C%20price%29%0A%0A%23%20Print%20with%20numbers%20and%20calculations%0Aquantity%20%3D%203%20%23%20This%20is%20an%20integer%0Atotal%20%3D%20price%20%2A%20quantity%0Aprint%28%22Quantity%3A%22%2C%20quantity%29%0Aprint%28%22Total%20Price%3A%22%2C%20total%29%0A%0A%23%20Print%20with%20the%20round%20function%20to%20format%20currency%0Aprint%28%22Rounded%20Total%3A%22%2C%20round%28total%2C%202%29%29%20%23%20Round%20to%202%20decimal%20places%0A%0A%23%20Print%20with%20a%20custom%20separator%20instead%20of%20a%20space%0Aprint%28%22Business%22%2C%20%22Analytics%22%2C%20%22Report%22%2C%20sep%3D%22-%22%29%0A%0A%23%20Print%20without%20adding%20a%20newline%20at%20the%20end%0Aprint%28%22Processing%20data...%22%2C%20end%3D%22%22%29%20%23%20The%20next%20print%20will%20start%20on%20the%20same%20line%0Aprint%28%22Done%21%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
 </iframe>
+<!-- Python code for the above iframe:
+# Demonstrating different ways to use print
+
+# Basic print with a single string
+print("Business Report")
+
+# Print with multiple values (strings and variables)
+product = "Laptop"
+price = 899.99 # This is a float
+print("Product:", product, "Price:", price)
+
+# Print with numbers and calculations
+quantity = 3 # This is an integer
+total = price * quantity
+print("Quantity:", quantity)
+print("Total Price:", total)
+
+# Print with the round function to format currency
+print("Rounded Total:", round(total, 2)) # Round to 2 decimal places
+
+# Print with a custom separator instead of a space
+print("Business", "Analytics", "Report", sep="-")
+
+# Print without adding a newline at the end
+print("Processing data...", end="") # The next print will start on the same line
+print("Done!")
+-->
 <div class="callout-alert">
 <p><strong>Python Tutor Visualization Tool</strong></p>
 <p>The interactive frames labeled “Python Tutor” in this document are embedded visualizations that allow you to see code execution step-by-step. Here’s how to use them:</p>
@@ -3608,7 +3695,41 @@ Python Data Types in Business Context
 </div>
 </div>
 <p>Explore Python’s data types in business contexts:</p>
-<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Python%20Data%20Types%20for%20Business%20Applications%0A%0A%23%20Integers%20-%20whole%20numbers%20for%20counting%0Aemployee_count%20=%20250%0Aunits_sold%20=%201500%0Aprint%28%22Employee%20count%3A%22%2C%20employee_count%2C%20%22-%20Type%3A%22%2C%20type%28employee_count%29%29%0A%0A%23%20Floats%20-%20decimal%20numbers%20for%20money%20and%20measurements%0Aproduct_price%20=%2049.99%0Atax_rate%20=%200.0875%20%20%23%208.75%25%0Aprint%28%22Price%3A%20%24%22%2C%20product_price%2C%20%22-%20Type%3A%22%2C%20type%28product_price%29%29%0A%0A%23%20Strings%20-%20text%20data%0Acompany_name%20=%20%22TechCorp%20Solutions%22%0Aproduct_code%20=%20%22PROD-2025-ABC%22%0Aprint%28%22Company%3A%22%2C%20company_name%2C%20%22-%20Type%3A%22%2C%20type%28company_name%29%29%0A%0A%23%20Booleans%20-%20True/False%20values%0Ais_active_customer%20=%20True%0Ahas_discount%20=%20False%0Aprint%28%22Active%20customer%3A%22%2C%20is_active_customer%2C%20%22-%20Type%3A%22%2C%20type%28is_active_customer%29%29%0A%0A%23%20Python%20automatically%20determines%20types%0A%23%20Watch%20how%20the%20same%20variable%20can%20change%20types%0Aresult%20=%20100%20%20%20%20%20%20%20%20%23%20First%20it%20is%20an%20integer%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29%0A%0Aresult%20=%20100.5%20%20%20%20%20%20%23%20Now%20it%20is%20a%20float%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29%0A%0Aresult%20=%20%22Complete%22%20%20%23%20Now%20it%20is%20a%20string%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Python%20Data%20Types%20for%20Business%20Applications%0A%0A%23%20Integers%20-%20whole%20numbers%20for%20counting%0Aemployee_count%20%3D%20250%0Aunits_sold%20%3D%201500%0Aprint%28%22Employee%20count%3A%22%2C%20employee_count%2C%20%22-%20Type%3A%22%2C%20type%28employee_count%29%29%0A%0A%23%20Floats%20-%20decimal%20numbers%20for%20money%20and%20measurements%0Aproduct_price%20%3D%2049.99%0Atax_rate%20%3D%200.0875%20%20%23%208.75%25%0Aprint%28%22Price%3A%20%24%22%2C%20product_price%2C%20%22-%20Type%3A%22%2C%20type%28product_price%29%29%0A%0A%23%20Strings%20-%20text%20data%0Acompany_name%20%3D%20%22TechCorp%20Solutions%22%0Aproduct_code%20%3D%20%22PROD-2025-ABC%22%0Aprint%28%22Company%3A%22%2C%20company_name%2C%20%22-%20Type%3A%22%2C%20type%28company_name%29%29%0A%0A%23%20Booleans%20-%20True/False%20values%0Ais_active_customer%20%3D%20True%0Ahas_discount%20%3D%20False%0Aprint%28%22Active%20customer%3A%22%2C%20is_active_customer%2C%20%22-%20Type%3A%22%2C%20type%28is_active_customer%29%29%0A%0A%23%20Python%20automatically%20determines%20types%0A%23%20Watch%20how%20the%20same%20variable%20can%20change%20types%0Aresult%20%3D%20100%20%20%20%20%20%20%20%20%23%20First%20it%20is%20an%20integer%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29%0A%0Aresult%20%3D%20100.5%20%20%20%20%20%20%23%20Now%20it%20is%20a%20float%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29%0A%0Aresult%20%3D%20%22Complete%22%20%20%23%20Now%20it%20is%20a%20string%0Aprint%28%22Result%3A%22%2C%20result%2C%20%22Type%3A%22%2C%20type%28result%29%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+# Python Data Types for Business Applications
+
+# Integers - whole numbers for counting
+employee_count = 250
+units_sold = 1500
+print("Employee count:", employee_count, "- Type:", type(employee_count))
+
+# Floats - decimal numbers for money and measurements
+product_price = 49.99
+tax_rate = 0.0875  # 8.75%
+print("Price: $", product_price, "- Type:", type(product_price))
+
+# Strings - text data
+company_name = "TechCorp Solutions"
+product_code = "PROD-2025-ABC"
+print("Company:", company_name, "- Type:", type(company_name))
+
+# Booleans - True/False values
+is_active_customer = True
+has_discount = False
+print("Active customer:", is_active_customer, "- Type:", type(is_active_customer))
+
+# Python automatically determines types
+# Watch how the same variable can change types
+result = 100        # First it is an integer
+print("Result:", result, "Type:", type(result))
+
+result = 100.5      # Now it is a float
+print("Result:", result, "Type:", type(result))
+
+result = "Complete"  # Now it is a string
+print("Result:", result, "Type:", type(result))
+-->
 </section>
 </section>
 </section>

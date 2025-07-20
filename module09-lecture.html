@@ -3233,7 +3233,21 @@ Code Examples
 <span id="cb1-7"><a href="#cb1-7"></a><span class="co"># You might also want to check the version (optional)</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="bu">print</span>(<span class="ss">f&quot;Pandas version: </span><span class="sc">{</span>pd<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Try it yourself - Import Pandas and check its version:</p>
-<iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=#%20Import%20the%20pandas%20library%20with%20the%20standard%20alias%0Aimport%20pandas%20as%20pd%0A%0A#%20Verify%20pandas%20is%20imported%0Aprint%28%22Pandas%20imported%20successfully!%22%29%0A%0A#%20Check%20the%20pandas%20version%0Aprint%28f%22Pandas%20version%3A%20{pd.__version__}%22%29%0A%0A#%20You%20can%20also%20check%20what%20pandas%20provides%0A#%20Uncomment%20the%20line%20below%20to%20see%20available%20functions%0A#%20print%28dir%28pd%29[:10]%29%20%20#%20Shows%20first%2010%20items&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="900" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Import%20the%20pandas%20library%20with%20the%20standard%20alias%0Aimport%20pandas%20as%20pd%0A%0A%23%20Verify%20pandas%20is%20imported%0Aprint%28%22Pandas%20imported%20successfully%21%22%29%0A%0A%23%20Check%20the%20pandas%20version%0Aprint%28f%22Pandas%20version%3A%20%7Bpd.__version__%7D%22%29%0A%0A%23%20You%20can%20also%20check%20what%20pandas%20provides%0A%23%20Uncomment%20the%20line%20below%20to%20see%20available%20functions%0A%23%20print%28dir%28pd%29%5B%3A10%5D%29%20%20%23%20Shows%20first%2010%20items&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+# Import the pandas library with the standard alias
+import pandas as pd
+
+# Verify pandas is imported
+print("Pandas imported successfully!")
+
+# Check the pandas version
+print(f"Pandas version: {pd.__version__}")
+
+# You can also check what pandas provides
+# Uncomment the line below to see available functions
+# print(dir(pd)[:10])  # Shows first 10 items
+-->
 </section>
 <section id="the-pandas-series-a-labeled-1d-array" class="level1">
 <h1>2. The Pandas Series: A Labeled 1D Array</h1>
@@ -3277,7 +3291,31 @@ Code Examples
 <span id="cb2-28"><a href="#cb2-28"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Series with a Name ---&quot;</span>)</span>
 <span id="cb2-29"><a href="#cb2-29"></a><span class="bu">print</span>(series_from_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize Series creation - see how data and index are paired:</p>
-<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Create%20Series%20from%20list%20with%20default%20index%0Asales_list%20=%20[2500%2C%202800%2C%202650]%0Aseries_default%20=%20pd.Series%28sales_list%29%0Aprint%28%22Series%20with%20default%20index%3A%22%29%0Aprint%28series_default%29%0Aprint%28%22%5Cn%22%29%0A%0A#%20Create%20Series%20with%20custom%20index%0Amonths%20=%20[%22Jan%22%2C%20%22Feb%22%2C%20%22Mar%22]%0Aseries_custom%20=%20pd.Series%28sales_list%2C%20index=months%29%0Aprint%28%22Series%20with%20custom%20index%3A%22%29%0Aprint%28series_custom%29%0Aprint%28%22%5Cn%22%29%0A%0A#%20Create%20Series%20from%20dictionary%0Astock_dict%20=%20{%22Laptop%22%3A%2050%2C%20%22Mouse%22%3A%20250%2C%20%22Keyboard%22%3A%20175}%0Aseries_dict%20=%20pd.Series%28stock_dict%29%0Aseries_dict.name%20=%20%27Stock%20Quantity%27%0Aprint%28%22Series%20from%20dictionary%3A%22%29%0Aprint%28series_dict%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Create%20Series%20from%20list%20with%20default%20index%0Asales_list%20%3D%20%5B2500%2C%202800%2C%202650%5D%0Aseries_default%20%3D%20pd.Series%28sales_list%29%0Aprint%28%22Series%20with%20default%20index%3A%22%29%0Aprint%28series_default%29%0Aprint%28%22%5Cn%22%29%0A%0A%23%20Create%20Series%20with%20custom%20index%0Amonths%20%3D%20%5B%22Jan%22%2C%20%22Feb%22%2C%20%22Mar%22%5D%0Aseries_custom%20%3D%20pd.Series%28sales_list%2C%20index%3Dmonths%29%0Aprint%28%22Series%20with%20custom%20index%3A%22%29%0Aprint%28series_custom%29%0Aprint%28%22%5Cn%22%29%0A%0A%23%20Create%20Series%20from%20dictionary%0Astock_dict%20%3D%20%7B%22Laptop%22%3A%2050%2C%20%22Mouse%22%3A%20250%2C%20%22Keyboard%22%3A%20175%7D%0Aseries_dict%20%3D%20pd.Series%28stock_dict%29%0Aseries_dict.name%20%3D%20%27Stock%20Quantity%27%0Aprint%28%22Series%20from%20dictionary%3A%22%29%0Aprint%28series_dict%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Create Series from list with default index
+sales_list = [2500, 2800, 2650]
+series_default = pd.Series(sales_list)
+print("Series with default index:")
+print(series_default)
+print("\n")
+
+# Create Series with custom index
+months = ["Jan", "Feb", "Mar"]
+series_custom = pd.Series(sales_list, index=months)
+print("Series with custom index:")
+print(series_custom)
+print("\n")
+
+# Create Series from dictionary
+stock_dict = {"Laptop": 50, "Mouse": 250, "Keyboard": 175}
+series_dict = pd.Series(stock_dict)
+series_dict.name = 'Stock Quantity'
+print("Series from dictionary:")
+print(series_dict)
+-->
 </section>
 <section id="series-attributes-getting-information" class="level2">
 <h2 class="anchored" data-anchor-id="series-attributes-getting-information">2.3 Series Attributes: Getting Information</h2>
@@ -3315,7 +3353,33 @@ Code Examples
 <span id="cb3-24"><a href="#cb3-24"></a>first_label <span class="op">=</span> idx[<span class="dv">0</span>]</span>
 <span id="cb3-25"><a href="#cb3-25"></a><span class="bu">print</span>(<span class="ss">f&quot;First index label: </span><span class="sc">{</span>first_label<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Explore Series attributes interactively:</p>
-<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Create%20a%20business-relevant%20Series%0Amonths%20=%20[%22Jan%22%2C%20%22Feb%22%2C%20%22Mar%22%2C%20%22Apr%22]%0Asales_data%20=%20[2500%2C%202800%2C%202650%2C%203100]%0Amonthly_sales%20=%20pd.Series%28sales_data%2C%20index=months%2C%20name=%22Monthly%20Sales%22%29%0A%0Aprint%28%22Our%20Sales%20Series%3A%22%29%0Aprint%28monthly_sales%29%0Aprint%28%22%5Cn---%20Exploring%20Attributes%20---%22%29%0A%0A#%20Access%20the%20underlying%20data%0Aprint%28f%22Values%20%28NumPy%20array%29%3A%20{monthly_sales.values}%22%29%0Aprint%28f%22Type%20of%20values%3A%20{type%28monthly_sales.values%29}%22%29%0A%0A#%20Access%20the%20index%0Aprint%28f%22%5CnIndex%3A%20{monthly_sales.index}%22%29%0Aprint%28f%22Index%20as%20list%3A%20{list%28monthly_sales.index%29}%22%29%0A%0A#%20Other%20useful%20attributes%0Aprint%28f%22%5CnData%20type%3A%20{monthly_sales.dtype}%22%29%0Aprint%28f%22Series%20name%3A%20{monthly_sales.name}%22%29%0Aprint%28f%22Shape%3A%20{monthly_sales.shape}%22%29%0Aprint%28f%22Size%20%28number%20of%20elements%29%3A%20{monthly_sales.size}%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Create%20a%20business-relevant%20Series%0Amonths%20%3D%20%5B%22Jan%22%2C%20%22Feb%22%2C%20%22Mar%22%2C%20%22Apr%22%5D%0Asales_data%20%3D%20%5B2500%2C%202800%2C%202650%2C%203100%5D%0Amonthly_sales%20%3D%20pd.Series%28sales_data%2C%20index%3Dmonths%2C%20name%3D%22Monthly%20Sales%22%29%0A%0Aprint%28%22Our%20Sales%20Series%3A%22%29%0Aprint%28monthly_sales%29%0Aprint%28%22%5Cn---%20Exploring%20Attributes%20---%22%29%0A%0A%23%20Access%20the%20underlying%20data%0Aprint%28f%22Values%20%28NumPy%20array%29%3A%20%7Bmonthly_sales.values%7D%22%29%0Aprint%28f%22Type%20of%20values%3A%20%7Btype%28monthly_sales.values%29%7D%22%29%0A%0A%23%20Access%20the%20index%0Aprint%28f%22%5CnIndex%3A%20%7Bmonthly_sales.index%7D%22%29%0Aprint%28f%22Index%20as%20list%3A%20%7Blist%28monthly_sales.index%29%7D%22%29%0A%0A%23%20Other%20useful%20attributes%0Aprint%28f%22%5CnData%20type%3A%20%7Bmonthly_sales.dtype%7D%22%29%0Aprint%28f%22Series%20name%3A%20%7Bmonthly_sales.name%7D%22%29%0Aprint%28f%22Shape%3A%20%7Bmonthly_sales.shape%7D%22%29%0Aprint%28f%22Size%20%28number%20of%20elements%29%3A%20%7Bmonthly_sales.size%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Create a business-relevant Series
+months = ["Jan", "Feb", "Mar", "Apr"]
+sales_data = [2500, 2800, 2650, 3100]
+monthly_sales = pd.Series(sales_data, index=months, name="Monthly Sales")
+
+print("Our Sales Series:")
+print(monthly_sales)
+print("\n--- Exploring Attributes ---")
+
+# Access the underlying data
+print(f"Values (NumPy array): {monthly_sales.values}")
+print(f"Type of values: {type(monthly_sales.values)}")
+
+# Access the index
+print(f"\nIndex: {monthly_sales.index}")
+print(f"Index as list: {list(monthly_sales.index)}")
+
+# Other useful attributes
+print(f"\nData type: {monthly_sales.dtype}")
+print(f"Series name: {monthly_sales.name}")
+print(f"Shape: {monthly_sales.shape}")
+print(f"Size (number of elements): {monthly_sales.size}")
+-->
 </section>
 <section id="accessing-series-elements" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-series-elements">2.4 Accessing Series Elements</h2>
@@ -3384,7 +3448,34 @@ Code Examples
 <span id="cb5-15"><a href="#cb5-15"></a><span class="bu">print</span>(<span class="st">&quot;--- DataFrame from Dict of Lists ---&quot;</span>)</span>
 <span id="cb5-16"><a href="#cb5-16"></a><span class="bu">print</span>(df_employees)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize DataFrame creation from dictionary:</p>
-<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Employee%20data%20as%20dictionary%20of%20lists%0A#%20Each%20key%20becomes%20a%20column%20name%0A#%20Each%20list%20becomes%20the%20column%20data%0Adata_dict%20=%20{%0A%20%20%20%20%27EmployeeID%27%3A%20[%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27]%2C%0A%20%20%20%20%27Name%27%3A%20[%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27]%2C%0A%20%20%20%20%27Department%27%3A%20[%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27]%2C%0A%20%20%20%20%27Salary%27%3A%20[70000%2C%2080000%2C%2075000%2C%2090000]%0A}%0A%0Aprint%28%22Our%20data%20dictionary%3A%22%29%0Afor%20key%2C%20values%20in%20data_dict.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20{key}%3A%20{values}%22%29%0A%0A#%20Create%20DataFrame%0Adf%20=%20pd.DataFrame%28data_dict%29%0A%0Aprint%28%22%5Cn---%20DataFrame%20created%20---%22%29%0Aprint%28df%29%0A%0A#%20Check%20the%20type%0Aprint%28f%22%5CnType%3A%20{type%28df%29}%22%29%0Aprint%28f%22Shape%3A%20{df.shape}%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Employee%20data%20as%20dictionary%20of%20lists%0A%23%20Each%20key%20becomes%20a%20column%20name%0A%23%20Each%20list%20becomes%20the%20column%20data%0Adata_dict%20%3D%20%7B%0A%20%20%20%20%27EmployeeID%27%3A%20%5B%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27%5D%2C%0A%20%20%20%20%27Name%27%3A%20%5B%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27%5D%2C%0A%20%20%20%20%27Department%27%3A%20%5B%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27%5D%2C%0A%20%20%20%20%27Salary%27%3A%20%5B70000%2C%2080000%2C%2075000%2C%2090000%5D%0A%7D%0A%0Aprint%28%22Our%20data%20dictionary%3A%22%29%0Afor%20key%2C%20values%20in%20data_dict.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20%7Bkey%7D%3A%20%7Bvalues%7D%22%29%0A%0A%23%20Create%20DataFrame%0Adf%20%3D%20pd.DataFrame%28data_dict%29%0A%0Aprint%28%22%5Cn---%20DataFrame%20created%20---%22%29%0Aprint%28df%29%0A%0A%23%20Check%20the%20type%0Aprint%28f%22%5CnType%3A%20%7Btype%28df%29%7D%22%29%0Aprint%28f%22Shape%3A%20%7Bdf.shape%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Employee data as dictionary of lists
+# Each key becomes a column name
+# Each list becomes the column data
+data_dict = {
+    'EmployeeID': ['E101', 'E102', 'E103', 'E104'],
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Department': ['HR', 'Sales', 'Sales', 'IT'],
+    'Salary': [70000, 80000, 75000, 90000]
+}
+
+print("Our data dictionary:")
+for key, values in data_dict.items():
+    print(f"  {key}: {values}")
+
+# Create DataFrame
+df = pd.DataFrame(data_dict)
+
+print("\n--- DataFrame created ---")
+print(df)
+
+# Check the type
+print(f"\nType: {type(df)}")
+print(f"Shape: {df.shape}")
+-->
 <p><strong>Method 2: From a List of Dictionaries</strong> * Each dict -&gt; A row. Keys -&gt; Column names. Handles missing data well (fills with <code>NaN</code>).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#| caption: &quot;Creating a DataFrame from a list of dictionaries (Section 3.2, Method 2)&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -3478,7 +3569,44 @@ Code Examples
 <span id="cb8-37"><a href="#cb8-37"></a>idx <span class="op">=</span> df.index</span>
 <span id="cb8-38"><a href="#cb8-38"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">.index: </span><span class="sc">{</span>idx<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Explore DataFrame inspection methods interactively:</p>
-<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Afrom%20io%20import%20StringIO%0A%0A#%20Create%20a%20sample%20sales%20DataFrame%0Acsv_data%20=%20%22%22%22Date%2CProduct%2CRevenue%2CQuantity%0A2025-01-05%2CWidgetA%2C150%2C10%0A2025-01-06%2CWidgetB%2C200%2C12%0A2025-01-06%2CWidgetA%2C160%2C11%0A2025-01-07%2CWidgetC%2C90%2C8%0A2025-01-08%2CWidgetB%2C210%2C14%22%22%22%0A%0Adf%20=%20pd.read_csv%28StringIO%28csv_data%29%29%0A%0Aprint%28%22Original%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn===%20Inspection%20Methods%20===%22%29%0A%0A#%20Shape%20-%20dimensions%20of%20the%20DataFrame%0Aprint%28f%22%5CnShape%3A%20{df.shape}%22%29%0Aprint%28f%22%20%20{df.shape[0]}%20rows%2C%20{df.shape[1]}%20columns%22%29%0A%0A#%20Head%20-%20first%20few%20rows%0Aprint%28%22%5CnFirst%203%20rows%20%28.head%283%29%29%3A%22%29%0Aprint%28df.head%283%29%29%0A%0A#%20Column%20names%0Aprint%28f%22%5CnColumns%3A%20{list%28df.columns%29}%22%29%0A%0A#%20Data%20types%0Aprint%28%22%5CnData%20types%3A%22%29%0Aprint%28df.dtypes%29%0A%0A#%20Basic%20info%0Aprint%28%22%5CnDataFrame%20info%3A%22%29%0Adf.info%28%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Afrom%20io%20import%20StringIO%0A%0A%23%20Create%20a%20sample%20sales%20DataFrame%0Acsv_data%20%3D%20%22%22%22Date%2CProduct%2CRevenue%2CQuantity%0A2025-01-05%2CWidgetA%2C150%2C10%0A2025-01-06%2CWidgetB%2C200%2C12%0A2025-01-06%2CWidgetA%2C160%2C11%0A2025-01-07%2CWidgetC%2C90%2C8%0A2025-01-08%2CWidgetB%2C210%2C14%22%22%22%0A%0Adf%20%3D%20pd.read_csv%28StringIO%28csv_data%29%29%0A%0Aprint%28%22Original%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%3D%3D%3D%20Inspection%20Methods%20%3D%3D%3D%22%29%0A%0A%23%20Shape%20-%20dimensions%20of%20the%20DataFrame%0Aprint%28f%22%5CnShape%3A%20%7Bdf.shape%7D%22%29%0Aprint%28f%22%20%20%7Bdf.shape%5B0%5D%7D%20rows%2C%20%7Bdf.shape%5B1%5D%7D%20columns%22%29%0A%0A%23%20Head%20-%20first%20few%20rows%0Aprint%28%22%5CnFirst%203%20rows%20%28.head%283%29%29%3A%22%29%0Aprint%28df.head%283%29%29%0A%0A%23%20Column%20names%0Aprint%28f%22%5CnColumns%3A%20%7Blist%28df.columns%29%7D%22%29%0A%0A%23%20Data%20types%0Aprint%28%22%5CnData%20types%3A%22%29%0Aprint%28df.dtypes%29%0A%0A%23%20Basic%20info%0Aprint%28%22%5CnDataFrame%20info%3A%22%29%0Adf.info%28%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+from io import StringIO
+
+# Create a sample sales DataFrame
+csv_data = """Date,Product,Revenue,Quantity
+2025-01-05,WidgetA,150,10
+2025-01-06,WidgetB,200,12
+2025-01-06,WidgetA,160,11
+2025-01-07,WidgetC,90,8
+2025-01-08,WidgetB,210,14"""
+
+df = pd.read_csv(StringIO(csv_data))
+
+print("Original DataFrame:")
+print(df)
+print("\n=== Inspection Methods ===")
+
+# Shape - dimensions of the DataFrame
+print(f"\nShape: {df.shape}")
+print(f"  {df.shape[0]} rows, {df.shape[1]} columns")
+
+# Head - first few rows
+print("\nFirst 3 rows (.head(3)):")
+print(df.head(3))
+
+# Column names
+print(f"\nColumns: {list(df.columns)}")
+
+# Data types
+print("\nData types:")
+print(df.dtypes)
+
+# Basic info
+print("\nDataFrame info:")
+df.info()
+-->
 </section>
 </section>
 <section id="selecting-data-from-dataframes" class="level1">
@@ -3523,7 +3651,40 @@ Code Examples
 <span id="cb9-30"><a href="#cb9-30"></a><span class="bu">print</span>(names_dot_series)</span>
 <span id="cb9-31"><a href="#cb9-31"></a><span class="bu">print</span>(<span class="ss">f&quot;Type of selection: </span><span class="sc">{</span><span class="bu">type</span>(names_dot_series)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Practice column selection interactively:</p>
-<iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Create%20employee%20DataFrame%0Adata%20=%20{%0A%20%20%20%20%27EmployeeID%27%3A%20[%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27]%2C%0A%20%20%20%20%27Name%27%3A%20[%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27]%2C%0A%20%20%20%20%27Department%27%3A%20[%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27]%2C%0A%20%20%20%20%27Salary%27%3A%20[70000%2C%2080000%2C%2075000%2C%2090000]%0A}%0Adf%20=%20pd.DataFrame%28data%29%0A%0Aprint%28%22Original%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20+%20%22=%22*50%29%0A%0A#%20Single%20column%20selection%20-%20returns%20Series%0Aprint%28%22%5CnSelect%20single%20column%20%27Name%27%3A%22%29%0Anames%20=%20df[%27Name%27]%0Aprint%28names%29%0Aprint%28f%22Type%3A%20{type%28names%29.__name__}%22%29%0A%0A#%20Multiple%20columns%20-%20returns%20DataFrame%0Aprint%28%22%5Cn%5CnSelect%20multiple%20columns%20[%27Name%27%2C%20%27Salary%27]%3A%22%29%0Aname_salary%20=%20df[[%27Name%27%2C%20%27Salary%27]]%0Aprint%28name_salary%29%0Aprint%28f%22Type%3A%20{type%28name_salary%29.__name__}%22%29%0A%0A#%20Dot%20notation%20%28alternative%29%0Aprint%28%22%5Cn%5CnUsing%20dot%20notation%20for%20%27Department%27%3A%22%29%0Adepts%20=%20df.Department%0Aprint%28depts%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Create%20employee%20DataFrame%0Adata%20%3D%20%7B%0A%20%20%20%20%27EmployeeID%27%3A%20%5B%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27%5D%2C%0A%20%20%20%20%27Name%27%3A%20%5B%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27%5D%2C%0A%20%20%20%20%27Department%27%3A%20%5B%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27%5D%2C%0A%20%20%20%20%27Salary%27%3A%20%5B70000%2C%2080000%2C%2075000%2C%2090000%5D%0A%7D%0Adf%20%3D%20pd.DataFrame%28data%29%0A%0Aprint%28%22Original%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20%2B%20%22%3D%22%2A50%29%0A%0A%23%20Single%20column%20selection%20-%20returns%20Series%0Aprint%28%22%5CnSelect%20single%20column%20%27Name%27%3A%22%29%0Anames%20%3D%20df%5B%27Name%27%5D%0Aprint%28names%29%0Aprint%28f%22Type%3A%20%7Btype%28names%29.__name__%7D%22%29%0A%0A%23%20Multiple%20columns%20-%20returns%20DataFrame%0Aprint%28%22%5Cn%5CnSelect%20multiple%20columns%20%5B%27Name%27%2C%20%27Salary%27%5D%3A%22%29%0Aname_salary%20%3D%20df%5B%5B%27Name%27%2C%20%27Salary%27%5D%5D%0Aprint%28name_salary%29%0Aprint%28f%22Type%3A%20%7Btype%28name_salary%29.__name__%7D%22%29%0A%0A%23%20Dot%20notation%20%28alternative%29%0Aprint%28%22%5Cn%5CnUsing%20dot%20notation%20for%20%27Department%27%3A%22%29%0Adepts%20%3D%20df.Department%0Aprint%28depts%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Create employee DataFrame
+data = {
+    'EmployeeID': ['E101', 'E102', 'E103', 'E104'],
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Department': ['HR', 'Sales', 'Sales', 'IT'],
+    'Salary': [70000, 80000, 75000, 90000]
+}
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+print("\n" + "="*50)
+
+# Single column selection - returns Series
+print("\nSelect single column 'Name':")
+names = df['Name']
+print(names)
+print(f"Type: {type(names).__name__}")
+
+# Multiple columns - returns DataFrame
+print("\n\nSelect multiple columns ['Name', 'Salary']:")
+name_salary = df[['Name', 'Salary']]
+print(name_salary)
+print(f"Type: {type(name_salary).__name__}")
+
+# Dot notation (alternative)
+print("\n\nUsing dot notation for 'Department':")
+depts = df.Department
+print(depts)
+-->
 </section>
 <section id="selecting-rows-using-.loc-label-based" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-rows-using-.loc-label-based">4.2 Selecting Rows using <code>.loc</code> (Label-Based)</h2>
@@ -3686,7 +3847,44 @@ Code Examples
 <span id="cb13-31"><a href="#cb13-31"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">High Earning Sales Team:&quot;</span>)</span>
 <span id="cb13-32"><a href="#cb13-32"></a><span class="bu">print</span>(high_earning_sales_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Master boolean indexing with this interactive example:</p>
-<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Employee%20data%0Adata%20=%20{%0A%20%20%20%20%27EmployeeID%27%3A%20[%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27%2C%20%27E105%27]%2C%0A%20%20%20%20%27Name%27%3A%20[%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27%2C%20%27Eve%27]%2C%0A%20%20%20%20%27Department%27%3A%20[%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27%2C%20%27HR%27]%2C%0A%20%20%20%20%27Salary%27%3A%20[70000%2C%2080000%2C%2075000%2C%2090000%2C%2072000]%2C%0A%20%20%20%20%27Years%27%3A%20[3%2C%205%2C%202%2C%207%2C%204]%0A}%0Adf%20=%20pd.DataFrame%28data%29%0A%0Aprint%28%22Employee%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20+%20%22=%22*60%29%0A%0A#%20Boolean%20condition%20-%20creates%20True/False%20for%20each%20row%0Aprint%28%22%5CnCondition%3A%20Salary%20&amp;gt;%2075000%22%29%0Ahigh_salary%20=%20df[%27Salary%27]%20&amp;gt;%2075000%0Aprint%28high_salary%29%0A%0A#%20Filter%20using%20boolean%20condition%0Aprint%28%22%5Cn%5CnEmployees%20with%20Salary%20&amp;gt;%2075000%3A%22%29%0Afiltered%20=%20df[high_salary]%0Aprint%28filtered%29%0A%0A#%20Combine%20conditions%20with%20%26%20%28AND%29%0Aprint%28%22%5Cn%5CnSales%20employees%20with%20Salary%20&amp;gt;%2070000%3A%22%29%0Asales_high%20=%20df[%28df[%27Department%27]%20==%20%27Sales%27%29%20%26%20%28df[%27Salary%27]%20&amp;gt;%2070000%29]%0Aprint%28sales_high%29%0A%0A#%20Using%20|%20%28OR%29%0Aprint%28%22%5Cn%5CnHR%20or%20IT%20employees%3A%22%29%0Ahr_or_it%20=%20df[%28df[%27Department%27]%20==%20%27HR%27%29%20|%20%28df[%27Department%27]%20==%20%27IT%27%29]%0Aprint%28hr_or_it%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="800" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Employee%20data%0Adata%20%3D%20%7B%0A%20%20%20%20%27EmployeeID%27%3A%20%5B%27E101%27%2C%20%27E102%27%2C%20%27E103%27%2C%20%27E104%27%2C%20%27E105%27%5D%2C%0A%20%20%20%20%27Name%27%3A%20%5B%27Alice%27%2C%20%27Bob%27%2C%20%27Charlie%27%2C%20%27David%27%2C%20%27Eve%27%5D%2C%0A%20%20%20%20%27Department%27%3A%20%5B%27HR%27%2C%20%27Sales%27%2C%20%27Sales%27%2C%20%27IT%27%2C%20%27HR%27%5D%2C%0A%20%20%20%20%27Salary%27%3A%20%5B70000%2C%2080000%2C%2075000%2C%2090000%2C%2072000%5D%2C%0A%20%20%20%20%27Years%27%3A%20%5B3%2C%205%2C%202%2C%207%2C%204%5D%0A%7D%0Adf%20%3D%20pd.DataFrame%28data%29%0A%0Aprint%28%22Employee%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20%2B%20%22%3D%22%2A60%29%0A%0A%23%20Boolean%20condition%20-%20creates%20True/False%20for%20each%20row%0Aprint%28%22%5CnCondition%3A%20Salary%20%3E%2075000%22%29%0Ahigh_salary%20%3D%20df%5B%27Salary%27%5D%20%3E%2075000%0Aprint%28high_salary%29%0A%0A%23%20Filter%20using%20boolean%20condition%0Aprint%28%22%5Cn%5CnEmployees%20with%20Salary%20%3E%2075000%3A%22%29%0Afiltered%20%3D%20df%5Bhigh_salary%5D%0Aprint%28filtered%29%0A%0A%23%20Combine%20conditions%20with%20%26%20%28AND%29%0Aprint%28%22%5Cn%5CnSales%20employees%20with%20Salary%20%3E%2070000%3A%22%29%0Asales_high%20%3D%20df%5B%28df%5B%27Department%27%5D%20%3D%3D%20%27Sales%27%29%20%26%20%28df%5B%27Salary%27%5D%20%3E%2070000%29%5D%0Aprint%28sales_high%29%0A%0A%23%20Using%20%7C%20%28OR%29%0Aprint%28%22%5Cn%5CnHR%20or%20IT%20employees%3A%22%29%0Ahr_or_it%20%3D%20df%5B%28df%5B%27Department%27%5D%20%3D%3D%20%27HR%27%29%20%7C%20%28df%5B%27Department%27%5D%20%3D%3D%20%27IT%27%29%5D%0Aprint%28hr_or_it%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Employee data
+data = {
+    'EmployeeID': ['E101', 'E102', 'E103', 'E104', 'E105'],
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'Department': ['HR', 'Sales', 'Sales', 'IT', 'HR'],
+    'Salary': [70000, 80000, 75000, 90000, 72000],
+    'Years': [3, 5, 2, 7, 4]
+}
+df = pd.DataFrame(data)
+
+print("Employee DataFrame:")
+print(df)
+print("\n" + "="*60)
+
+# Boolean condition - creates True/False for each row
+print("\nCondition: Salary > 75000")
+high_salary = df['Salary'] > 75000
+print(high_salary)
+
+# Filter using boolean condition
+print("\n\nEmployees with Salary > 75000:")
+filtered = df[high_salary]
+print(filtered)
+
+# Combine conditions with & (AND)
+print("\n\nSales employees with Salary > 70000:")
+sales_high = df[(df['Department'] == 'Sales') & (df['Salary'] > 70000)]
+print(sales_high)
+
+# Using | (OR)
+print("\n\nHR or IT employees:")
+hr_or_it = df[(df['Department'] == 'HR') | (df['Department'] == 'IT')]
+print(hr_or_it)
+-->
 </section>
 </section>
 <section id="basic-descriptive-statistics" class="level1">
@@ -3744,7 +3942,40 @@ Code Examples
 <span id="cb15-27"><a href="#cb15-27"></a>max_all <span class="op">=</span> df.<span class="bu">max</span>() <span class="co"># Calculates max for each column</span></span>
 <span id="cb15-28"><a href="#cb15-28"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Max per column:</span><span class="ch">\n</span><span class="sc">{</span>max_all<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Explore descriptive statistics interactively:</p>
-<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A#%20Sales%20data%20for%20analysis%0Adata%20=%20{%0A%20%20%20%20%27Product%27%3A%20[%27Widget%20A%27%2C%20%27Widget%20B%27%2C%20%27Widget%20A%27%2C%20%27Widget%20C%27%2C%20%27Widget%20B%27%2C%20%27Widget%20A%27]%2C%0A%20%20%20%20%27Region%27%3A%20[%27North%27%2C%20%27South%27%2C%20%27East%27%2C%20%27North%27%2C%20%27East%27%2C%20%27South%27]%2C%0A%20%20%20%20%27Sales%27%3A%20[150%2C%20200%2C%20175%2C%20125%2C%20190%2C%20160]%2C%0A%20%20%20%20%27Quantity%27%3A%20[10%2C%2015%2C%2012%2C%208%2C%2014%2C%2011]%2C%0A%20%20%20%20%27Price%27%3A%20[15.0%2C%2013.33%2C%2014.58%2C%2015.63%2C%2013.57%2C%2014.55]%0A}%0Adf%20=%20pd.DataFrame%28data%29%0A%0Aprint%28%22Sales%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20+%20%22=%22*60%29%0A%0A#%20Quick%20statistical%20summary%0Aprint%28%22%5CnDescriptive%20Statistics%20%28.describe%28%29%29%3A%22%29%0Astats%20=%20df.describe%28%29%0Aprint%28stats%29%0A%0A#%20Individual%20statistics%0Aprint%28%22%5Cn%5CnIndividual%20Statistics%3A%22%29%0Aprint%28f%22Average%20Sales%3A%20${df[%27Sales%27].mean%28%29%3A.2f}%22%29%0Aprint%28f%22Total%20Sales%3A%20${df[%27Sales%27].sum%28%29}%22%29%0Aprint%28f%22Max%20Quantity%3A%20{df[%27Quantity%27].max%28%29}%22%29%0Aprint%28f%22Min%20Price%3A%20${df[%27Price%27].min%28%29%3A.2f}%22%29%0A%0A#%20Statistics%20for%20all%20numeric%20columns%0Aprint%28%22%5Cn%5CnMean%20for%20all%20numeric%20columns%3A%22%29%0Aprint%28df.mean%28numeric_only=True%29%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="750" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0A%0A%23%20Sales%20data%20for%20analysis%0Adata%20%3D%20%7B%0A%20%20%20%20%27Product%27%3A%20%5B%27Widget%20A%27%2C%20%27Widget%20B%27%2C%20%27Widget%20A%27%2C%20%27Widget%20C%27%2C%20%27Widget%20B%27%2C%20%27Widget%20A%27%5D%2C%0A%20%20%20%20%27Region%27%3A%20%5B%27North%27%2C%20%27South%27%2C%20%27East%27%2C%20%27North%27%2C%20%27East%27%2C%20%27South%27%5D%2C%0A%20%20%20%20%27Sales%27%3A%20%5B150%2C%20200%2C%20175%2C%20125%2C%20190%2C%20160%5D%2C%0A%20%20%20%20%27Quantity%27%3A%20%5B10%2C%2015%2C%2012%2C%208%2C%2014%2C%2011%5D%2C%0A%20%20%20%20%27Price%27%3A%20%5B15.0%2C%2013.33%2C%2014.58%2C%2015.63%2C%2013.57%2C%2014.55%5D%0A%7D%0Adf%20%3D%20pd.DataFrame%28data%29%0A%0Aprint%28%22Sales%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20%2B%20%22%3D%22%2A60%29%0A%0A%23%20Quick%20statistical%20summary%0Aprint%28%22%5CnDescriptive%20Statistics%20%28.describe%28%29%29%3A%22%29%0Astats%20%3D%20df.describe%28%29%0Aprint%28stats%29%0A%0A%23%20Individual%20statistics%0Aprint%28%22%5Cn%5CnIndividual%20Statistics%3A%22%29%0Aprint%28f%22Average%20Sales%3A%20%24%7Bdf%5B%27Sales%27%5D.mean%28%29%3A.2f%7D%22%29%0Aprint%28f%22Total%20Sales%3A%20%24%7Bdf%5B%27Sales%27%5D.sum%28%29%7D%22%29%0Aprint%28f%22Max%20Quantity%3A%20%7Bdf%5B%27Quantity%27%5D.max%28%29%7D%22%29%0Aprint%28f%22Min%20Price%3A%20%24%7Bdf%5B%27Price%27%5D.min%28%29%3A.2f%7D%22%29%0A%0A%23%20Statistics%20for%20all%20numeric%20columns%0Aprint%28%22%5Cn%5CnMean%20for%20all%20numeric%20columns%3A%22%29%0Aprint%28df.mean%28numeric_only%3DTrue%29%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+
+# Sales data for analysis
+data = {
+    'Product': ['Widget A', 'Widget B', 'Widget A', 'Widget C', 'Widget B', 'Widget A'],
+    'Region': ['North', 'South', 'East', 'North', 'East', 'South'],
+    'Sales': [150, 200, 175, 125, 190, 160],
+    'Quantity': [10, 15, 12, 8, 14, 11],
+    'Price': [15.0, 13.33, 14.58, 15.63, 13.57, 14.55]
+}
+df = pd.DataFrame(data)
+
+print("Sales DataFrame:")
+print(df)
+print("\n" + "="*60)
+
+# Quick statistical summary
+print("\nDescriptive Statistics (.describe()):")
+stats = df.describe()
+print(stats)
+
+# Individual statistics
+print("\n\nIndividual Statistics:")
+print(f"Average Sales: ${df['Sales'].mean():.2f}")
+print(f"Total Sales: ${df['Sales'].sum()}")
+print(f"Max Quantity: {df['Quantity'].max()}")
+print(f"Min Price: ${df['Price'].min():.2f}")
+
+# Statistics for all numeric columns
+print("\n\nMean for all numeric columns:")
+print(df.mean(numeric_only=True))
+-->
 </section>
 </section>
 <section id="handling-missing-data-a-first-look" class="level1">
@@ -3783,7 +4014,44 @@ Code Examples
 <span id="cb16-21"><a href="#cb16-21"></a>missing_counts_series <span class="op">=</span> df_missing.isnull().<span class="bu">sum</span>()</span>
 <span id="cb16-22"><a href="#cb16-22"></a><span class="bu">print</span>(missing_counts_series)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Practice identifying missing data:</p>
-<iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Aimport%20numpy%20as%20np%0A%0A#%20Create%20DataFrame%20with%20missing%20values%0Adata%20=%20{%0A%20%20%20%20%27CustomerID%27%3A%20[%27C001%27%2C%20%27C002%27%2C%20%27C003%27%2C%20%27C004%27%2C%20%27C005%27]%2C%0A%20%20%20%20%27Name%27%3A%20[%27Alice%27%2C%20%27Bob%27%2C%20None%2C%20%27David%27%2C%20%27Eve%27]%2C%0A%20%20%20%20%27Email%27%3A%20[%27alice@co.com%27%2C%20None%2C%20%27charlie@co.com%27%2C%20%27david@co.com%27%2C%20None]%2C%0A%20%20%20%20%27Orders%27%3A%20[15%2C%2022%2C%2018%2C%20np.nan%2C%2025]%2C%0A%20%20%20%20%27Revenue%27%3A%20[1500.0%2C%202200.0%2C%20np.nan%2C%201900.0%2C%202500.0]%0A}%0Adf%20=%20pd.DataFrame%28data%29%0A%0Aprint%28%22Customer%20DataFrame%20with%20missing%20data%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20+%20%22=%22*60%29%0A%0A#%20Check%20for%20missing%20values%0Aprint%28%22%5CnMissing%20value%20check%20%28.isnull%28%29%29%3A%22%29%0Amissing%20=%20df.isnull%28%29%0Aprint%28missing%29%0A%0A#%20Count%20missing%20values%20per%20column%0Aprint%28%22%5Cn%5CnMissing%20value%20counts%20per%20column%3A%22%29%0Amissing_counts%20=%20df.isnull%28%29.sum%28%29%0Aprint%28missing_counts%29%0A%0A#%20Total%20missing%20values%0Aprint%28f%22%5CnTotal%20missing%20values%3A%20{df.isnull%28%29.sum%28%29.sum%28%29}%22%29%0A%0A#%20Percentage%20of%20missing%20data%0Aprint%28%22%5Cn%5CnPercentage%20missing%20per%20column%3A%22%29%0Apercent_missing%20=%20%28df.isnull%28%29.sum%28%29%20/%20len%28df%29%29%20*%20100%0Afor%20col%2C%20pct%20in%20percent_missing.items%28%29%3A%0A%20%20%20%20print%28f%22{col}%3A%20{pct%3A.1f}%25%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="850" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Aimport%20numpy%20as%20np%0A%0A%23%20Create%20DataFrame%20with%20missing%20values%0Adata%20%3D%20%7B%0A%20%20%20%20%27CustomerID%27%3A%20%5B%27C001%27%2C%20%27C002%27%2C%20%27C003%27%2C%20%27C004%27%2C%20%27C005%27%5D%2C%0A%20%20%20%20%27Name%27%3A%20%5B%27Alice%27%2C%20%27Bob%27%2C%20None%2C%20%27David%27%2C%20%27Eve%27%5D%2C%0A%20%20%20%20%27Email%27%3A%20%5B%27alice%40co.com%27%2C%20None%2C%20%27charlie%40co.com%27%2C%20%27david%40co.com%27%2C%20None%5D%2C%0A%20%20%20%20%27Orders%27%3A%20%5B15%2C%2022%2C%2018%2C%20np.nan%2C%2025%5D%2C%0A%20%20%20%20%27Revenue%27%3A%20%5B1500.0%2C%202200.0%2C%20np.nan%2C%201900.0%2C%202500.0%5D%0A%7D%0Adf%20%3D%20pd.DataFrame%28data%29%0A%0Aprint%28%22Customer%20DataFrame%20with%20missing%20data%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20%2B%20%22%3D%22%2A60%29%0A%0A%23%20Check%20for%20missing%20values%0Aprint%28%22%5CnMissing%20value%20check%20%28.isnull%28%29%29%3A%22%29%0Amissing%20%3D%20df.isnull%28%29%0Aprint%28missing%29%0A%0A%23%20Count%20missing%20values%20per%20column%0Aprint%28%22%5Cn%5CnMissing%20value%20counts%20per%20column%3A%22%29%0Amissing_counts%20%3D%20df.isnull%28%29.sum%28%29%0Aprint%28missing_counts%29%0A%0A%23%20Total%20missing%20values%0Aprint%28f%22%5CnTotal%20missing%20values%3A%20%7Bdf.isnull%28%29.sum%28%29.sum%28%29%7D%22%29%0A%0A%23%20Percentage%20of%20missing%20data%0Aprint%28%22%5Cn%5CnPercentage%20missing%20per%20column%3A%22%29%0Apercent_missing%20%3D%20%28df.isnull%28%29.sum%28%29%20/%20len%28df%29%29%20%2A%20100%0Afor%20col%2C%20pct%20in%20percent_missing.items%28%29%3A%0A%20%20%20%20print%28f%22%7Bcol%7D%3A%20%7Bpct%3A.1f%7D%25%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+import numpy as np
+
+# Create DataFrame with missing values
+data = {
+    'CustomerID': ['C001', 'C002', 'C003', 'C004', 'C005'],
+    'Name': ['Alice', 'Bob', None, 'David', 'Eve'],
+    'Email': ['alice@co.com', None, 'charlie@co.com', 'david@co.com', None],
+    'Orders': [15, 22, 18, np.nan, 25],
+    'Revenue': [1500.0, 2200.0, np.nan, 1900.0, 2500.0]
+}
+df = pd.DataFrame(data)
+
+print("Customer DataFrame with missing data:")
+print(df)
+print("\n" + "="*60)
+
+# Check for missing values
+print("\nMissing value check (.isnull()):")
+missing = df.isnull()
+print(missing)
+
+# Count missing values per column
+print("\n\nMissing value counts per column:")
+missing_counts = df.isnull().sum()
+print(missing_counts)
+
+# Total missing values
+print(f"\nTotal missing values: {df.isnull().sum().sum()}")
+
+# Percentage of missing data
+print("\n\nPercentage missing per column:")
+percent_missing = (df.isnull().sum() / len(df)) * 100
+for col, pct in percent_missing.items():
+    print(f"{col}: {pct:.1f}%")
+-->
 </section>
 <section id="mentioning-solutions-preview-for-module-10" class="level2">
 <h2 class="anchored" data-anchor-id="mentioning-solutions-preview-for-module-10">6.3 Mentioning Solutions (Preview for Module 10)</h2>
@@ -3863,7 +4131,43 @@ Code Examples
 <span id="cb18-48"><a href="#cb18-48"></a>regional_stats.columns <span class="op">=</span> [<span class="st">&#39;Total_Revenue&#39;</span>, <span class="st">&#39;Avg_Revenue&#39;</span>, <span class="st">&#39;Num_Sales&#39;</span>]</span>
 <span id="cb18-49"><a href="#cb18-49"></a><span class="bu">print</span>(regional_stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Explore this business analysis example interactively:</p>
-<iframe width="1000" height="750" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Afrom%20io%20import%20StringIO%0A%0A#%20Quarterly%20sales%20data%0Asales_data%20=%20%22%22%22Date%2CRegion%2CProduct%2CUnits%2CRevenue%0A2025-01-05%2CNorth%2CWidget%20A%2C15%2C225.00%0A2025-01-05%2CSouth%2CWidget%20B%2C20%2C260.00%0A2025-01-06%2CNorth%2CWidget%20A%2C12%2C180.00%0A2025-01-07%2CEast%2CWidget%20C%2C10%2C200.00%0A2025-01-08%2CSouth%2CWidget%20B%2C25%2C325.00%22%22%22%0A%0A#%20Load%20data%20into%20DataFrame%0Adf%20=%20pd.read_csv%28StringIO%28sales_data%29%29%0Aprint%28%22Sales%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20+%20%22=%22*60%29%0A%0A#%20Basic%20analysis%0Aprint%28%22%5CnQuick%20Analysis%3A%22%29%0Aprint%28f%22Total%20Revenue%3A%20${df[%27Revenue%27].sum%28%29%3A%2C.2f}%22%29%0Aprint%28f%22Average%20Units%3A%20{df[%27Units%27].mean%28%29%3A.1f}%22%29%0Aprint%28f%22Total%20Units%20Sold%3A%20{df[%27Units%27].sum%28%29}%22%29%0A%0A#%20Find%20best%20performing%20region%0Aprint%28%22%5Cn%5CnRevenue%20by%20Region%3A%22%29%0Aregion_revenue%20=%20df.groupby%28%27Region%27%29[%27Revenue%27].sum%28%29.sort_values%28ascending=False%29%0Afor%20region%2C%20revenue%20in%20region_revenue.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20{region}%3A%20${revenue%3A%2C.2f}%22%29%0A%0A#%20Product%20performance%0Aprint%28%22%5Cn%5CnUnits%20sold%20by%20Product%3A%22%29%0Aproduct_units%20=%20df.groupby%28%27Product%27%29[%27Units%27].sum%28%29%0Afor%20product%2C%20units%20in%20product_units.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20{product}%3A%20{units}%20units%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<iframe width="1000" height="750" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=import%20pandas%20as%20pd%0Afrom%20io%20import%20StringIO%0A%0A%23%20Quarterly%20sales%20data%0Asales_data%20%3D%20%22%22%22Date%2CRegion%2CProduct%2CUnits%2CRevenue%0A2025-01-05%2CNorth%2CWidget%20A%2C15%2C225.00%0A2025-01-05%2CSouth%2CWidget%20B%2C20%2C260.00%0A2025-01-06%2CNorth%2CWidget%20A%2C12%2C180.00%0A2025-01-07%2CEast%2CWidget%20C%2C10%2C200.00%0A2025-01-08%2CSouth%2CWidget%20B%2C25%2C325.00%22%22%22%0A%0A%23%20Load%20data%20into%20DataFrame%0Adf%20%3D%20pd.read_csv%28StringIO%28sales_data%29%29%0Aprint%28%22Sales%20DataFrame%3A%22%29%0Aprint%28df%29%0Aprint%28%22%5Cn%22%20%2B%20%22%3D%22%2A60%29%0A%0A%23%20Basic%20analysis%0Aprint%28%22%5CnQuick%20Analysis%3A%22%29%0Aprint%28f%22Total%20Revenue%3A%20%24%7Bdf%5B%27Revenue%27%5D.sum%28%29%3A%2C.2f%7D%22%29%0Aprint%28f%22Average%20Units%3A%20%7Bdf%5B%27Units%27%5D.mean%28%29%3A.1f%7D%22%29%0Aprint%28f%22Total%20Units%20Sold%3A%20%7Bdf%5B%27Units%27%5D.sum%28%29%7D%22%29%0A%0A%23%20Find%20best%20performing%20region%0Aprint%28%22%5Cn%5CnRevenue%20by%20Region%3A%22%29%0Aregion_revenue%20%3D%20df.groupby%28%27Region%27%29%5B%27Revenue%27%5D.sum%28%29.sort_values%28ascending%3DFalse%29%0Afor%20region%2C%20revenue%20in%20region_revenue.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20%7Bregion%7D%3A%20%24%7Brevenue%3A%2C.2f%7D%22%29%0A%0A%23%20Product%20performance%0Aprint%28%22%5Cn%5CnUnits%20sold%20by%20Product%3A%22%29%0Aproduct_units%20%3D%20df.groupby%28%27Product%27%29%5B%27Units%27%5D.sum%28%29%0Afor%20product%2C%20units%20in%20product_units.items%28%29%3A%0A%20%20%20%20print%28f%22%20%20%7Bproduct%7D%3A%20%7Bunits%7D%20units%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+import pandas as pd
+from io import StringIO
+
+# Quarterly sales data
+sales_data = """Date,Region,Product,Units,Revenue
+2025-01-05,North,Widget A,15,225.00
+2025-01-05,South,Widget B,20,260.00
+2025-01-06,North,Widget A,12,180.00
+2025-01-07,East,Widget C,10,200.00
+2025-01-08,South,Widget B,25,325.00"""
+
+# Load data into DataFrame
+df = pd.read_csv(StringIO(sales_data))
+print("Sales DataFrame:")
+print(df)
+print("\n" + "="*60)
+
+# Basic analysis
+print("\nQuick Analysis:")
+print(f"Total Revenue: ${df['Revenue'].sum():,.2f}")
+print(f"Average Units: {df['Units'].mean():.1f}")
+print(f"Total Units Sold: {df['Units'].sum()}")
+
+# Find best performing region
+print("\n\nRevenue by Region:")
+region_revenue = df.groupby('Region')['Revenue'].sum().sort_values(ascending=False)
+for region, revenue in region_revenue.items():
+    print(f"  {region}: ${revenue:,.2f}")
+
+# Product performance
+print("\n\nUnits sold by Product:")
+product_units = df.groupby('Product')['Units'].sum()
+for product, units in product_units.items():
+    print(f"  {product}: {units} units")
+-->
 <section id="working-with-real-csv-files" class="level2">
 <h2 class="anchored" data-anchor-id="working-with-real-csv-files">7.1 Working with Real CSV Files</h2>
 <p>In practice, you’ll load data from actual CSV files on your computer. Here’s how:</p>
