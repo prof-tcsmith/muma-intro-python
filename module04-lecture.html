@@ -3231,6 +3231,32 @@ vertical-align: -.125em;
 <p><strong>Why create an empty list?</strong> Often, you’ll start a program needing to collect items as you go – maybe reading user input or processing data file lines one by one. An empty list provides the initial container you can add to later using methods like <code>.append()</code>.</p>
 <p>Visualize list creation:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Basic%20List%20Creation%20---%0A%0A%23%20You%20might%20start%20with%20an%20empty%20list%20and%20add%20items%20later%0Apending_tasks%20%3D%20%5B%5D%0Aprint%28f%221.%20Started%20with%20an%20empty%20list%3A%20%7Bpending_tasks%7D%22%29%0A%0A%23%20A%20list%20of%20numerical%20data%3A%20e.g.,%20units%20sold%20per%20quarter%0Aunits_sold%20%3D%20%5B1500,%201850,%201700,%202100%5D%0Aprint%28f%222.%20Units%20Sold%20%28Q1-Q4%29%3A%20%7Bunits_sold%7D%22%29%0A%0A%23%20A%20list%20of%20text%20data%3A%20e.g.,%20product%20categories%20on%20a%20website%0Acategories%20%3D%20%5B%22Electronics%22,%20%22Clothing%22,%20%22Groceries%22,%20%22Home%20Goods%22%5D%0Aprint%28f%223.%20Product%20Categories%3A%20%7Bcategories%7D%22%29%0A%0A%23%20---%20Mixed%20Data%20Types%20---%0A%0A%23%20Lists%20*can*%20hold%20different%20types,%20useful%20for%20unstructured%20collections%0A%23%20For%20structured%20records%20%28like%20employee%20data%29,%20tuples%20are%20often%20preferred%20%28see%20later%29%0Amisc_info%20%3D%20%5B%22John%20Doe%22,%2045,%2075500.50,%20True,%20%22Sales%22%5D%0Aprint%28f%224.%20Miscellaneous%20Info%3A%20%7Bmisc_info%7D%22%29%0A%0A%23%20---%20Checking%20the%20Type%20---%0A%23%20The%20type%28%29%20function%20confirms%20it%27s%20a%20%27list%27%0Aprint%28f%225.%20The%20type%20of%20units_sold%20is%3A%20%7Btype%28units_sold%29%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Basic List Creation ---
+
+# You might start with an empty list and add items later
+pending_tasks = []
+print(f"1. Started with an empty list: {pending_tasks}")
+
+# A list of numerical data: e.g., units sold per quarter
+units_sold = [1500, 1850, 1700, 2100]
+print(f"2. Units Sold (Q1-Q4): {units_sold}")
+
+# A list of text data: e.g., product categories on a website
+categories = ["Electronics", "Clothing", "Groceries", "Home Goods"]
+print(f"3. Product Categories: {categories}")
+
+# --- Mixed Data Types ---
+
+# Lists *can* hold different types, useful for unstructured collections
+# For structured records (like employee data), tuples are often preferred (see later)
+misc_info = ["John Doe", 45, 75500.50, True, "Sales"]
+print(f"4. Miscellaneous Info: {misc_info}")
+
+# --- Checking the Type ---
+# The type() function confirms it's a 'list'
+print(f"5. The type of units_sold is: {type(units_sold)}")
+-->
 </section>
 <section id="accessing-list-elements-getting-items-by-position-indexing-and-slicing" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-list-elements-getting-items-by-position-indexing-and-slicing">2.2 Accessing List Elements: Getting Items by Position (Indexing and Slicing)</h2>
@@ -3287,6 +3313,47 @@ vertical-align: -.125em;
 <span id="cb3-39"><a href="#cb3-39"></a><span class="bu">print</span>(<span class="ss">f&quot;Full Copy (slice :): </span><span class="sc">{</span>all_sales_copy<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize list indexing and slicing:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Example%3A%20Quarterly%20sales%20data%0Aquarterly_sales%20%3D%20%5B45000,%2052000,%2048000,%2055000%5D%0A%23%20Indices%3A%20%20%20%20%20%20%20%20%200%20%20%20%20%20%201%20%20%20%20%20%202%20%20%20%20%20%203%0A%23%20Negative%3A%20%20%20%20%20%20-4%20%20%20%20%20-3%20%20%20%20%20-2%20%20%20%20%20-1%0A%0A%23%20---%20Indexing%20Examples%20---%0Aprint%28%22---%20Indexing%20---%22%29%0A%23%20Get%20the%20first%20quarter%27s%20sales%20%28index%200%29%0Aq1_sales%20%3D%20quarterly_sales%5B0%5D%0Aprint%28f%22Q1%20Sales%20%28index%200%29%3A%20%7Bq1_sales%7D%22%29%0A%0A%23%20Get%20the%20third%20quarter%27s%20sales%20%28index%202%29%0Aq3_sales%20%3D%20quarterly_sales%5B2%5D%0Aprint%28f%22Q3%20Sales%20%28index%202%29%3A%20%7Bq3_sales%7D%22%29%0A%0A%23%20Get%20the%20last%20quarter%27s%20sales%20using%20negative%20indexing%0Aq4_sales%20%3D%20quarterly_sales%5B-1%5D%0Aprint%28f%22Q4%20Sales%20%28index%20-1%29%3A%20%7Bq4_sales%7D%22%29%0A%0A%23%20---%20Slicing%20Examples%20---%0Aprint%28%22%5Cn---%20Slicing%20---%22%29%0A%23%20Get%20Q1%20and%20Q2%20sales%20%28indices%200%20and%201%29%0A%23%20Slice%20from%20index%200%20up%20to%20%28but%20not%20including%29%20index%202%0Afirst_half%20%3D%20quarterly_sales%5B0%3A2%5D%0Aprint%28f%22First%20Half%20%28slice%200%3A2%29%3A%20%7Bfirst_half%7D%22%29%20%23%20Result%20is%20a%20NEW%20list%0A%0A%23%20Get%20Q3%20and%20Q4%20sales%20%28indices%202%20and%203%29%0A%23%20Slice%20from%20index%202%20through%20to%20the%20end%0Asecond_half%20%3D%20quarterly_sales%5B2%3A%5D%0Aprint%28f%22Second%20Half%20%28slice%202%3A%29%3A%20%7Bsecond_half%7D%22%29%0A%0A%23%20Get%20Q2%20and%20Q3%20sales%20%28indices%201%20and%202%29%0A%23%20Slice%20from%20index%201%20up%20to%20%28but%20not%20including%29%20index%203%0Amiddle_sales%20%3D%20quarterly_sales%5B1%3A3%5D%0Aprint%28f%22Middle%20Sales%20%28slice%201%3A3%29%3A%20%7Bmiddle_sales%7D%22%29%0A%0A%23%20Get%20a%20copy%20of%20the%20entire%20list%20%28useful%20sometimes%29%0Aall_sales_copy%20%3D%20quarterly_sales%5B%3A%5D%20%23%20Omitting%20start%20and%20stop%0Aprint%28f%22Full%20Copy%20%28slice%20%3A%29%3A%20%7Ball_sales_copy%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Example: Quarterly sales data
+quarterly_sales = [45000, 52000, 48000, 55000]
+# Indices:         0      1      2      3
+# Negative:      -4     -3     -2     -1
+
+# --- Indexing Examples ---
+print("--- Indexing ---")
+# Get the first quarter's sales (index 0)
+q1_sales = quarterly_sales[0]
+print(f"Q1 Sales (index 0): {q1_sales}")
+
+# Get the third quarter's sales (index 2)
+q3_sales = quarterly_sales[2]
+print(f"Q3 Sales (index 2): {q3_sales}")
+
+# Get the last quarter's sales using negative indexing
+q4_sales = quarterly_sales[-1]
+print(f"Q4 Sales (index -1): {q4_sales}")
+
+# --- Slicing Examples ---
+print("\n--- Slicing ---")
+# Get Q1 and Q2 sales (indices 0 and 1)
+# Slice from index 0 up to (but not including) index 2
+first_half = quarterly_sales[0:2]
+print(f"First Half (slice 0:2): {first_half}") # Result is a NEW list
+
+# Get Q3 and Q4 sales (indices 2 and 3)
+# Slice from index 2 through to the end
+second_half = quarterly_sales[2:]
+print(f"Second Half (slice 2:): {second_half}")
+
+# Get Q2 and Q3 sales (indices 1 and 2)
+# Slice from index 1 up to (but not including) index 3
+middle_sales = quarterly_sales[1:3]
+print(f"Middle Sales (slice 1:3): {middle_sales}")
+
+# Get a copy of the entire list (useful sometimes)
+all_sales_copy = quarterly_sales[:] # Omitting start and stop
+print(f"Full Copy (slice :): {all_sales_copy}")
+-->
 </section>
 <section id="the-power-of-mutability-changing-list-content-in-place" class="level2">
 <h2 class="anchored" data-anchor-id="the-power-of-mutability-changing-list-content-in-place">2.3 The Power of Mutability: Changing List Content “In-Place”</h2>
@@ -3307,6 +3374,19 @@ vertical-align: -.125em;
 <p><strong>Analogy:</strong> Think of your pencil-written shopping list (<code>list</code>). You can erase “Milk” (at index 1, say) and write “Almond Milk” in the <em>same spot</em>. The list itself is the same piece of paper, but its content is updated. Now think of a printed document (<code>string</code> or <code>tuple</code>). You can’t erase and rewrite. To change it, you must print a <em>new</em> document with the correction.</p>
 <p>Visualize list mutability via index assignment:</p>
 <iframe width="1000" height="450" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Start%20with%20a%20list%20of%20project%20team%20members%0Aproject_team%20%3D%20%5B%22Alice%22,%20%22Bob%22,%20%22Charlie%22%5D%0Aprint%28f%22Initial%20team%3A%20%7Bproject_team%7D%22%29%0A%0A%23%20Bob%20is%20moving%20to%20another%20project,%20replace%20him%20with%20David%20at%20index%201%0Aproject_team%5B1%5D%20%3D%20%22David%22%0Aprint%28f%22Team%20after%20replacement%3A%20%7Bproject_team%7D%22%29%20%23%20Notice%20the%20original%20list%20changed!%0A%0A%23%20Let%27s%20correct%20Alice%27s%20name%20capitalization%20%28index%200%29%0Aproject_team%5B0%5D%20%3D%20%22ALICE%22%0Aprint%28f%22Team%20after%20capitalization%20change%3A%20%7Bproject_team%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Start with a list of project team members
+project_team = ["Alice", "Bob", "Charlie"]
+print(f"Initial team: {project_team}")
+
+# Bob is moving to another project, replace him with David at index 1
+project_team[1] = "David"
+print(f"Team after replacement: {project_team}") # Notice the original list changed!
+
+# Let's correct Alice's name capitalization (index 0)
+project_team[0] = "ALICE"
+print(f"Team after capitalization change: {project_team}")
+-->
 </section>
 <section id="common-list-methods-tools-for-modifying-lists" class="level2">
 <h2 class="anchored" data-anchor-id="common-list-methods-tools-for-modifying-lists">2.4 Common List Methods: Tools for Modifying Lists</h2>
@@ -3430,6 +3510,54 @@ vertical-align: -.125em;
 <span id="cb7-31"><a href="#cb7-31"></a><span class="bu">print</span>(<span class="ss">f&quot;The list itself remains sorted: </span><span class="sc">{</span>sales_figures<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize list methods (append, insert, pop, remove, sort, reverse) and the <code>None</code> return value of sort/reverse:</p>
 <iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Append%20/%20Insert%20---%0Adaily_tasks%20%3D%20%5B%22Check%20Email%22,%20%22Prepare%20Report%22%5D%0Aprint%28f%221.%20Morning%3A%20%7Bdaily_tasks%7D%22%29%0Adaily_tasks.append%28%22Team%20Meeting%22%29%0Aprint%28f%222.%20Appended%3A%20%7Bdaily_tasks%7D%22%29%0Adaily_tasks.insert%280,%20%22Urgent%20Call%22%29%0Aprint%28f%223.%20Inserted%20Start%3A%20%7Bdaily_tasks%7D%22%29%0Adaily_tasks.insert%283,%20%22Review%20Meeting%20Notes%22%29%0Aprint%28f%224.%20Inserted%20Mid%3A%20%7Bdaily_tasks%7D%22%29%0A%0Aprint%28%22%5Cn---%20Pop%20/%20Remove%20---%22%29%0Ainventory%20%3D%20%5B%22Laptop%22,%20%22Mouse%22,%20%22Keyboard%22,%20%22Monitor%22,%20%22Webcam%22,%20%22Mouse%22%5D%0Aprint%28f%221.%20Inventory%3A%20%7Binventory%7D%22%29%0Alast_item%20%3D%20inventory.pop%28%29%0Aprint%28f%222.%20Popped%20last%3A%20%27%7Blast_item%7D%27,%20List%3A%20%7Binventory%7D%22%29%0Afirst_item%20%3D%20inventory.pop%280%29%0Aprint%28f%223.%20Popped%20first%3A%20%27%7Bfirst_item%7D%27,%20List%3A%20%7Binventory%7D%22%29%0Ainventory.remove%28%22Mouse%22%29%0Aprint%28f%224.%20Removed%20%27Mouse%27%3A%20%7Binventory%7D%22%29%0Atry%3A%0A%20%20inventory.remove%28%22Microphone%22%29%0Aexcept%20ValueError%3A%0A%20%20print%28%225.%20Could%20not%20remove%20%27Microphone%27.%22%29%0A%0Aprint%28%22%5Cn---%20Sort%20/%20Reverse%20---%22%29%0Aproduct_codes%20%3D%20%5B%22Z10%22,%20%22A50%22,%20%22M30%22,%20%22B20%22%5D%0Asales_figures%20%3D%20%5B500.5,%20150.2,%20800.0,%20300.8%5D%0Aprint%28f%221.%20Original%20Codes%3A%20%7Bproduct_codes%7D%22%29%0Aprint%28f%222.%20Original%20Sales%3A%20%7Bsales_figures%7D%22%29%0Aprint%28%22...%20sorting%20codes%20...%22%29%0Aproduct_codes.sort%28%29%0Aprint%28f%223.%20Sorted%20Codes%20%28A-Z%29%3A%20%7Bproduct_codes%7D%22%29%0Aprint%28%22...%20sorting%20sales%20ascending%20...%22%29%0Asales_figures.sort%28%29%0Aprint%28f%224.%20Sorted%20Sales%20%28Asc%29%3A%20%7Bsales_figures%7D%22%29%0Aprint%28%22...%20sorting%20sales%20descending%20...%22%29%0Asales_figures.sort%28reverse%3DTrue%29%0Aprint%28f%225.%20Sales%20sorted%20%28Desc%29%3A%20%7Bsales_figures%7D%22%29%0Aprint%28%22...%20reversing%20codes%20...%22%29%0Aproduct_codes.reverse%28%29%0Aprint%28f%226.%20Codes%20reversed%20%28now%20Z-A%29%3A%20%7Bproduct_codes%7D%22%29%0A%0Aprint%28%22%5Cn---%20Common%20Mistake%20---%22%29%0Asorted_variable%20%3D%20sales_figures.sort%28%29%0Aprint%28f%22Variable%20assigned%20result%20of%20.sort%28%29%3A%20%7Bsorted_variable%7D%22%29%0Aprint%28f%22The%20list%20itself%20remains%20sorted%3A%20%7Bsales_figures%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Append / Insert ---
+daily_tasks = ["Check Email", "Prepare Report"]
+print(f"1. Morning: {daily_tasks}")
+daily_tasks.append("Team Meeting")
+print(f"2. Appended: {daily_tasks}")
+daily_tasks.insert(0, "Urgent Call")
+print(f"3. Inserted Start: {daily_tasks}")
+daily_tasks.insert(3, "Review Meeting Notes")
+print(f"4. Inserted Mid: {daily_tasks}")
+
+print("\n--- Pop / Remove ---")
+inventory = ["Laptop", "Mouse", "Keyboard", "Monitor", "Webcam", "Mouse"]
+print(f"1. Inventory: {inventory}")
+last_item = inventory.pop()
+print(f"2. Popped last: '{last_item}', List: {inventory}")
+first_item = inventory.pop(0)
+print(f"3. Popped first: '{first_item}', List: {inventory}")
+inventory.remove("Mouse")
+print(f"4. Removed 'Mouse': {inventory}")
+try:
+  inventory.remove("Microphone")
+except ValueError:
+  print("5. Could not remove 'Microphone'.")
+
+print("\n--- Sort / Reverse ---")
+product_codes = ["Z10", "A50", "M30", "B20"]
+sales_figures = [500.5, 150.2, 800.0, 300.8]
+print(f"1. Original Codes: {product_codes}")
+print(f"2. Original Sales: {sales_figures}")
+print("... sorting codes ...")
+product_codes.sort()
+print(f"3. Sorted Codes (A-Z): {product_codes}")
+print("... sorting sales ascending ...")
+sales_figures.sort()
+print(f"4. Sorted Sales (Asc): {sales_figures}")
+print("... sorting sales descending ...")
+sales_figures.sort(reverse=True)
+print(f"5. Sales sorted (Desc): {sales_figures}")
+print("... reversing codes ...")
+product_codes.reverse()
+print(f"6. Codes reversed (now Z-A): {product_codes}")
+
+print("\n--- Common Mistake ---")
+sorted_variable = sales_figures.sort()
+print(f"Variable assigned result of .sort(): {sorted_variable}")
+print(f"The list itself remains sorted: {sales_figures}")
+-->
 </section>
 <section id="list-operations-length-combining-repeating-checking-membership" class="level2">
 <h2 class="anchored" data-anchor-id="list-operations-length-combining-repeating-checking-membership">2.5 List Operations: Length, Combining, Repeating, Checking Membership</h2>
@@ -3474,6 +3602,40 @@ vertical-align: -.125em;
 <span id="cb8-32"><a href="#cb8-32"></a><span class="bu">print</span>(<span class="ss">f&quot;Is &#39;David&#39; NOT an active user? </span><span class="sc">{</span>is_not_active<span class="sc">}</span><span class="ss">&quot;</span>) <span class="co"># Output: True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize these list operations:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=list_a%20%3D%20%5B10,%2020%5D%0Alist_b%20%3D%20%5B%22A%22,%20%22B%22,%20%22C%22%5D%0A%0A%23%20Length%0Alen_a%20%3D%20len%28list_a%29%0Alen_b%20%3D%20len%28list_b%29%0Aprint%28f%22List%20A%20has%20%7Blen_a%7D%20items.%20List%20B%20has%20%7Blen_b%7D%20items.%22%29%0A%0A%23%20Concatenation%20%28%2B%29%20-%20Creates%20a%20NEW%20list%0Aprint%28%22%5Cn---%20Concatenation%20---%22%29%0Alist_c%20%3D%20list_a%20%2B%20list_b%0Aprint%28f%22Concatenated%20List%20C%3A%20%7Blist_c%7D%22%29%0Aprint%28f%22Original%20List%20A%20is%20unchanged%3A%20%7Blist_a%7D%22%29%20%23%20Important%21%20%2B%20does%20not%20modify%20originals.%0A%0A%23%20Repetition%20%28*%29%20-%20Creates%20a%20NEW%20list%0Aprint%28%22%5Cn---%20Repetition%20---%22%29%0Alist_d%20%3D%20list_a%20*%203%0Aprint%28f%22Repeated%20List%20D%3A%20%7Blist_d%7D%22%29%0A%0A%23%20Membership%20%28in%20/%20not%20in%29%0Aprint%28%22%5Cn---%20Membership%20---%22%29%0Aactive_users%20%3D%20%5B%22Alice%22,%20%22Bob%22,%20%22Charlie%22%5D%0Auser_to_check%20%3D%20%22Bob%22%0Ais_active%20%3D%20user_to_check%20in%20active_users%0Aprint%28f%22Is%20%27%7Buser_to_check%7D%27%20an%20active%20user%3F%20%7Bis_active%7D%22%29%0A%0Auser_to_check_2%20%3D%20%22Eve%22%0Ais_active_2%20%3D%20user_to_check_2%20in%20active_users%0Aprint%28f%22Is%20%27%7Buser_to_check_2%7D%27%20an%20active%20user%3F%20%7Bis_active_2%7D%22%29%0A%0Ais_not_active%20%3D%20%22David%22%20not%20in%20active_users%0Aprint%28f%22Is%20%27David%27%20NOT%20an%20active%20user%3F%20%7Bis_not_active%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+list_a = [10, 20]
+list_b = ["A", "B", "C"]
+
+# Length
+len_a = len(list_a)
+len_b = len(list_b)
+print(f"List A has {len_a} items. List B has {len_b} items.")
+
+# Concatenation (+) - Creates a NEW list
+print("\n--- Concatenation ---")
+list_c = list_a + list_b
+print(f"Concatenated List C: {list_c}")
+print(f"Original List A is unchanged: {list_a}") # Important! + does not modify originals.
+
+# Repetition (*) - Creates a NEW list
+print("\n--- Repetition ---")
+list_d = list_a * 3
+print(f"Repeated List D: {list_d}")
+
+# Membership (in / not in)
+print("\n--- Membership ---")
+active_users = ["Alice", "Bob", "Charlie"]
+user_to_check = "Bob"
+is_active = user_to_check in active_users
+print(f"Is '{user_to_check}' an active user? {is_active}")
+
+user_to_check_2 = "Eve"
+is_active_2 = user_to_check_2 in active_users
+print(f"Is '{user_to_check_2}' an active user? {is_active_2}")
+
+is_not_active = "David" not in active_users
+print(f"Is 'David' NOT an active user? {is_not_active}")
+-->
 </section>
 <section id="nested-lists-lists-inside-lists-a-glimpse-of-tables" class="level2">
 <h2 class="anchored" data-anchor-id="nested-lists-lists-inside-lists-a-glimpse-of-tables">2.6 Nested Lists: Lists Inside Lists (A Glimpse of Tables)</h2>
@@ -3515,6 +3677,41 @@ vertical-align: -.125em;
 <p>Working extensively with nested lists (like processing every row or column) often requires loops, which we’ll learn about soon. For now, understand this structure allows you to represent simple grids and access specific “cells” using <code>[row][column]</code> indexing.</p>
 <p>Visualize nested lists:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Representing%20a%20simple%203x2%20table%3A%20Student%20Name%20and%20Grade%0A%23%20Each%20inner%20list%20is%20a%20%27row%27%0Astudent_grades%20%3D%20%5B%0A%20%20%20%20%5B%22Alice%22,%2085%5D,%20%20%20%23%20Row%200%0A%20%20%20%20%5B%22Bob%22,%20%20%2092%5D,%20%20%20%23%20Row%201%0A%20%20%20%20%5B%22Charlie%22,%2078%5D%20%20%23%20Row%202%0A%5D%0A%0Aprint%28f%22Student%20Grades%20Table%20%28List%20of%20Lists%29%3A%5Cn%7Bstudent_grades%7D%22%29%0A%0A%23%20---%20Accessing%20Nested%20Elements%20---%0A%23%20To%20get%20an%20item%20inside%20a%20nested%20list,%20use%20two%20sets%20of%20square%20brackets%3A%0A%23%20outer_list%5Brow_index%5D%5Bcolumn_index%5D%0A%0A%23%20Get%20Bob%27s%20grade%3A%20Access%20Row%201,%20then%20access%20Column%201%20within%20that%20row.%0Abobs_grade%20%3D%20student_grades%5B1%5D%5B1%5D%20%23%20student_grades%5B1%5D%20is%20%5B%27Bob%27,%2092%5D.%20Then%20%5B1%5D%20gets%2092.%0Aprint%28f%22%5CnBob%27s%20grade%20%28row%201,%20col%201%29%3A%20%7Bbobs_grade%7D%22%29%0A%0A%23%20Get%20Charlie%27s%20name%3A%20Access%20Row%202,%20then%20access%20Column%200%20within%20that%20row.%0Acharlies_name%20%3D%20student_grades%5B2%5D%5B0%5D%20%23%20student_grades%5B2%5D%20is%20%5B%27Charlie%27,%2078%5D.%20Then%20%5B0%5D%20gets%20%27Charlie%27.%0Aprint%28f%22Student%20in%20row%202%20%28col%200%29%3A%20%7Bcharlies_name%7D%22%29%0A%0A%23%20Get%20the%20entire%20first%20row%20%28Alice%27s%20data%29%20as%20a%20list%0Aalices_data%20%3D%20student_grades%5B0%5D%0Aprint%28f%22Alice%27s%20data%20%28row%200%29%3A%20%7Balices_data%7D%22%29%0A%0A%23%20---%20Modifying%20Nested%20Elements%20---%0A%23%20You%20can%20modify%20elements%20in%20nested%20lists%20just%20like%20in%20regular%20lists%0Aprint%28f%22%5CnOriginal%20grade%20for%20Charlie%3A%20%7Bstudent_grades%5B2%5D%5B1%5D%7D%22%29%0A%23%20Update%20Charlie%27s%20grade%20%28Row%202,%20Column%201%29%0Astudent_grades%5B2%5D%5B1%5D%20%3D%2081%0Aprint%28f%22Updated%20grades%20table%3A%20%7Bstudent_grades%7D%22%29%0Aprint%28f%22Charlie%27s%20new%20grade%3A%20%7Bstudent_grades%5B2%5D%5B1%5D%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Representing a simple 3x2 table: Student Name and Grade
+# Each inner list is a 'row'
+student_grades = [
+    ["Alice", 85],   # Row 0
+    ["Bob",   92],   # Row 1
+    ["Charlie", 78]  # Row 2
+]
+
+print(f"Student Grades Table (List of Lists):\n{student_grades}")
+
+# --- Accessing Nested Elements ---
+# To get an item inside a nested list, use two sets of square brackets:
+# outer_list[row_index][column_index]
+
+# Get Bob's grade: Access Row 1, then access Column 1 within that row.
+bobs_grade = student_grades[1][1] # student_grades[1] is ['Bob', 92]. Then [1] gets 92.
+print(f"\nBob's grade (row 1, col 1): {bobs_grade}")
+
+# Get Charlie's name: Access Row 2, then access Column 0 within that row.
+charlies_name = student_grades[2][0] # student_grades[2] is ['Charlie', 78]. Then [0] gets 'Charlie'.
+print(f"Student in row 2 (col 0): {charlies_name}")
+
+# Get the entire first row (Alice's data) as a list
+alices_data = student_grades[0]
+print(f"Alice's data (row 0): {alices_data}")
+
+# --- Modifying Nested Elements ---
+# You can modify elements in nested lists just like in regular lists
+print(f"\nOriginal grade for Charlie: {student_grades[2][1]}")
+# Update Charlie's grade (Row 2, Column 1)
+student_grades[2][1] = 81
+print(f"Updated grades table: {student_grades}")
+print(f"Charlie's new grade: {student_grades[2][1]}")
+-->
 </section>
 </section>
 <section id="tuples-fixed-unchangeable-collections" class="level1">
@@ -3560,6 +3757,40 @@ vertical-align: -.125em;
 <span id="cb10-32"><a href="#cb10-32"></a><span class="bu">print</span>(<span class="ss">f&quot;7. Not a tuple (just int): </span><span class="sc">{</span>just_a_number<span class="sc">}</span><span class="ss">, Type: </span><span class="sc">{</span><span class="bu">type</span>(just_a_number)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize tuple creation, especially the crucial single-item comma:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Basic%20Tuple%20Creation%20---%0A%23%20An%20empty%20tuple%20%28possible%20but%20less%20common%20than%20empty%20lists%29%0Aempty_tuple%20%3D%20%28%29%0Aprint%28f%221.%20Empty%20tuple%3A%20%7Bempty_tuple%7D,%20Type%3A%20%7Btype%28empty_tuple%29%7D%22%29%0A%0A%23%20A%20tuple%20representing%20fixed%20geographic%20coordinates%20%28latitude,%20longitude%29%0A%23%20This%20pair%20of%20numbers%20represents%20ONE%20location%20and%20shouldn%27t%20change%20independently.%0Anyc_coords%20%3D%20%2840.7128,%20-74.0060%29%0Aprint%28f%222.%20NYC%20Coordinates%3A%20%7Bnyc_coords%7D%22%29%0A%0A%23%20A%20tuple%20often%20represents%20a%20single%20%22record%22%20or%20structured%20piece%20of%20info%0A%23%20E.g.,%20Product%20ID,%20Name,%20Price%20-%20these%20describe%20ONE%20product%20together.%0Aproduct_record%20%3D%20%28%22XYZ123%22,%20%22Wireless%20Mouse%22,%2029.99%29%0Aprint%28f%223.%20Product%20Record%3A%20%7Bproduct_record%7D%22%29%0A%0A%23%20---%20Parentheses%20Optional%20%28Comma%20is%20Key!%29%20---%0A%23%20Python%20recognizes%20comma-separated%20values%20as%20a%20tuple%0Apoint_2d%20%3D%20100,%20200%20%23%20Creates%20the%20tuple%20%28100,%20200%29%0Aprint%28f%224.%202D%20Point%20%28no%20parens%29%3A%20%7Bpoint_2d%7D,%20Type%3A%20%7Btype%28point_2d%29%7D%22%29%0A%0A%23%20---%20The%20Single-Item%20Tuple%20TRICK%20---%0A%23%20This%20often%20confuses%20beginners!%20To%20create%20a%20tuple%20with%20just%20ONE%20item,%0A%23%20you%20MUST%20include%20a%20comma%20after%20the%20item.%0A%23%20Otherwise,%20parentheses%20are%20just%20seen%20as%20grouping%20for%20math/order%20of%20operations.%0Asingle_tuple%20%3D%20%28%22Alice%22,%29%20%23%20The%20comma%20MAKES%20it%20a%20tuple%0Aprint%28f%225.%20Single%20item%20tuple%3A%20%7Bsingle_tuple%7D,%20Type%3A%20%7Btype%28single_tuple%29%7D%22%29%0A%0Ajust_a_string%20%3D%20%28%22Alice%22%29%20%23%20NO%20comma%20-%3E%20just%20the%20string%20%22Alice%22%20inside%20parentheses%0Aprint%28f%226.%20Not%20a%20tuple%20%28just%20string%29%3A%20%7Bjust_a_string%7D,%20Type%3A%20%7Btype%28just_a_string%29%7D%22%29%0A%0Ajust_a_number%20%3D%20%2850%29%20%23%20NO%20comma%20-%3E%20just%20the%20integer%2050%0Aprint%28f%227.%20Not%20a%20tuple%20%28just%20int%29%3A%20%7Bjust_a_number%7D,%20Type%3A%20%7Btype%28just_a_number%29%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Basic Tuple Creation ---
+# An empty tuple (possible but less common than empty lists)
+empty_tuple = ()
+print(f"1. Empty tuple: {empty_tuple}, Type: {type(empty_tuple)}")
+
+# A tuple representing fixed geographic coordinates (latitude, longitude)
+# This pair of numbers represents ONE location and shouldn't change independently.
+nyc_coords = (40.7128, -74.0060)
+print(f"2. NYC Coordinates: {nyc_coords}")
+
+# A tuple often represents a single "record" or structured piece of info
+# E.g., Product ID, Name, Price - these describe ONE product together.
+product_record = ("XYZ123", "Wireless Mouse", 29.99)
+print(f"3. Product Record: {product_record}")
+
+# --- Parentheses Optional (Comma is Key!) ---
+# Python recognizes comma-separated values as a tuple
+point_2d = 100, 200 # Creates the tuple (100, 200)
+print(f"4. 2D Point (no parens): {point_2d}, Type: {type(point_2d)}")
+
+# --- The Single-Item Tuple TRICK ---
+# This often confuses beginners! To create a tuple with just ONE item,
+# you MUST include a comma after the item.
+# Otherwise, parentheses are just seen as grouping for math/order of operations.
+single_tuple = ("Alice",) # The comma MAKES it a tuple
+print(f"5. Single item tuple: {single_tuple}, Type: {type(single_tuple)}")
+
+just_a_string = ("Alice") # NO comma -> just the string "Alice" inside parentheses
+print(f"6. Not a tuple (just string): {just_a_string}, Type: {type(just_a_string)}")
+
+just_a_number = (50) # NO comma -> just the integer 50
+print(f"7. Not a tuple (just int): {just_a_number}, Type: {type(just_a_number)}")
+-->
 </section>
 <section id="accessing-tuple-elements-just-like-lists-and-strings" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-tuple-elements-just-like-lists-and-strings">3.2 Accessing Tuple Elements: Just Like Lists and Strings!</h2>
@@ -3632,6 +3863,37 @@ vertical-align: -.125em;
 <p>The key takeaway: Any operation that seems like it would modify a tuple (like concatenation <code>+</code>) actually creates and returns a brand <strong>new</strong> tuple object. The original remains untouched.</p>
 <p>Visualize tuple immutability and the resulting errors:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20A%20tuple%20representing%20fixed%20configuration%20settings%0Adb_config%20%3D%20%28%22db.example.com%22,%205432,%20%22readonly_user%22%29%0Aprint%28f%221.%20Initial%20DB%20Config%3A%20%7Bdb_config%7D%22%29%0A%0A%23%20---%20Attempt%201%3A%20Change%20an%20element%20via%20index%20---%0Aprint%28%22%5CnAttempting%20to%20change%20port...%22%29%0Atry%3A%0A%20%20%20%20%23%20This%20will%20cause%20a%20TypeError!%0A%20%20%20%20db_config%5B1%5D%20%3D%209999%20%23%20Trying%20to%20assign%20to%20index%201%0Aexcept%20TypeError%20as%20e%3A%0A%20%20%20%20print%28f%22--%3E%20Error%20received%3A%20%7Be%7D%22%29%0A%0A%23%20---%20Attempt%202%3A%20Add%20an%20element%20using%20append%20%28like%20lists%29%20---%0Aprint%28%22%5CnAttempting%20to%20append...%22%29%0Atry%3A%0A%20%20%20%20%23%20Tuples%20don%27t%20have%20an%20append%20method!%20This%20causes%20AttributeError.%0A%20%20%20%20db_config.append%28%22new_password%22%29%0Aexcept%20AttributeError%20as%20e%3A%0A%20%20%20%20print%28f%22--%3E%20Error%20received%3A%20%7Be%7D%22%29%0A%0A%23%20---%20The%20tuple%20remains%20unchanged%20---%0Aprint%28f%22%5CnOriginal%20tuple%20is%20safe%20and%20unchanged%3A%20%7Bdb_config%7D%22%29%0A%0A%23%20---%20Creating%20a%20NEW%20tuple%20---%0A%23%20If%20you%20need%20a%20different%20configuration,%20you%20must%20build%20a%20completely%20new%20tuple.%0Aprint%28%22%5CnCreating%20a%20new%20tuple%20based%20on%20the%20old%20one...%22%29%0A%23%20Example%3A%20Create%20new%20tuple%20with%20updated%20user%0Aupdated_config%20%3D%20%28db_config%5B0%5D,%20db_config%5B1%5D,%20%22admin_user%22%29%0Aprint%28f%22New%20config%20tuple%3A%20%7Bupdated_config%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# A tuple representing fixed configuration settings
+db_config = ("db.example.com", 5432, "readonly_user")
+print(f"1. Initial DB Config: {db_config}")
+
+# --- Attempt 1: Change an element via index ---
+print("\nAttempting to change port...")
+try:
+    # This will cause a TypeError!
+    db_config[1] = 9999 # Trying to assign to index 1
+except TypeError as e:
+    print(f"--> Error received: {e}&quot;)
+
+# --- Attempt 2: Add an element using append (like lists) ---
+print(&quot;\nAttempting to append...&quot;)
+try:
+    # Tuples don&#39;t have an append method! This causes AttributeError.
+    db_config.append(&quot;new_password&quot;)
+except AttributeError as e:
+    print(f&quot;--&gt; Error received: {e}&quot;)
+
+# --- The tuple remains unchanged ---
+print(f&quot;\nOriginal tuple is safe and unchanged: {db_config}&quot;)
+
+# --- Creating a NEW tuple ---
+# If you need a different configuration, you must build a completely new tuple.
+print(&quot;\nCreating a new tuple based on the old one...&quot;)
+# Example: Create new tuple with updated user
+updated_config = (db_config[0], db_config[1], &quot;admin_user&quot;)
+print(f&quot;New config tuple: {updated_config}&quot;)
+--&gt;
 </section>
 <section id="tuple-operations-length-combining-repeating-checking-membership" class="level2">
 <h2 class="anchored" data-anchor-id="tuple-operations-length-combining-repeating-checking-membership">3.4 Tuple Operations: Length, Combining, Repeating, Checking Membership</h2>
@@ -3708,6 +3970,26 @@ vertical-align: -.125em;
 <p>Tuple unpacking is a frequently used technique that leads to cleaner, more expressive Python code when dealing with fixed-size sequences.</p>
 <p>Visualize tuple unpacking:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Example%3A%20Unpacking%20Coordinates%20---%0Alocation%20%3D%20%2840.7128,%20-74.0060%29%0Alatitude,%20longitude%20%3D%20location%20%23%202%20variables%20match%202%20tuple%20items%0Aprint%28f%22%5CnLocation%3A%20Lat%3D%7Blatitude%7D,%20Lon%3D%7Blongitude%7D%22%29%0A%0A%23%20---%20Example%3A%20Unpacking%20Employee%20Data%20---%0Aemployee_data%20%3D%20%28%22E123%22,%20%22Alice%20Wonderland%22,%20%22HR%22,%2070000%29%0Aemp_id,%20full_name,%20department,%20salary%20%3D%20employee_data%20%23%204%20variables%20match%204%20tuple%20items%0Aprint%28f%22%5CnEmployee%3A%20%7Bfull_name%7D%20%28ID%3A%20%7Bemp_id%7D%29,%20Dept%3A%20%7Bdepartment%7D,%20Salary%3A%20%24%7Bsalary%3A%2C%7D%22%29%0A%0A%23%20---%20Error%20Example%3A%20Mismatch%20---%0Aprint%28%22%5Cn---%20Unpacking%20Error%20Example%20---%22%29%0Argb_color%20%3D%20%28255,%200,%200%29%20%23%20Tuple%20has%203%20items%0Atry%3A%0A%20%20%20%20%23%20Trying%20to%20unpack%20into%20only%202%20variables%0A%20%20%20%20red,%20green%20%3D%20rgb_color%0Aexcept%20ValueError%20as%20e%3A%0A%20%20%20%20print%28f%22Error%20trying%20to%20unpack%203%20items%20into%202%20variables%3A%20%7Be%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Example: Unpacking Coordinates ---
+location = (40.7128, -74.0060)
+latitude, longitude = location # 2 variables match 2 tuple items
+print(f"\nLocation: Lat={latitude}, Lon={longitude}")
+
+# --- Example: Unpacking Employee Data ---
+employee_data = ("E123", "Alice Wonderland", "HR", 70000)
+emp_id, full_name, department, salary = employee_data # 4 variables match 4 tuple items
+print(f"\nEmployee: {full_name} (ID: {emp_id}), Dept: {department}, Salary: ${salary:,}")
+
+# --- Error Example: Mismatch ---
+print("\n--- Unpacking Error Example ---")
+rgb_color = (255, 0, 0) # Tuple has 3 items
+try:
+    # Trying to unpack into only 2 variables
+    red, green = rgb_color
+except ValueError as e:
+    print(f"Error trying to unpack 3 items into 2 variables: {e}")
+-->
 </section>
 </section>
 <section id="lists-vs.-tuples-making-the-right-choice-summary-table" class="level1">
@@ -3831,6 +4113,52 @@ vertical-align: -.125em;
 <span id="cb17-44"><a href="#cb17-44"></a><span class="co"># while the items_purchased list was modified.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize these scenarios:</p>
 <iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Scenario%201%3A%20Storing%20fixed%20details%20for%20a%20specific%20report%20version%20%28Tuple%29%0A%23%20Report%20Version,%20Date%20Generated,%20Generated%20By%20-%20forms%20a%20fixed%20record.%0Areport_meta%20%3D%20%28%22V2.1%22,%20%222025-03-26%22,%20%22Alice%22%29%0Aprint%28%22---%20Report%20Metadata%20%28Tuple%29%20---%22%29%0A%23%20Unpacking%20makes%20accessing%20easy%20and%20readable%0Aversion,%20date_generated,%20author%20%3D%20report_meta%0Aprint%28f%22Version%3A%20%7Bversion%7D,%20Date%3A%20%7Bdate_generated%7D,%20Author%3A%20%7Bauthor%7D%22%29%0A%23%20We%20know%20this%20tuple%20won%27t%20be%20accidentally%20changed.%0A%0A%23%20---%0A%0A%23%20Scenario%202%3A%20Collecting%20customer%20feedback%20scores%20%28List%29%0A%23%20We%20expect%20to%20add%20more%20scores%20as%20feedback%20comes%20in.%0Afeedback_scores%20%3D%20%5B8,%2010,%207%5D%0Aprint%28%22%5Cn---%20Customer%20Feedback%20Scores%20%28List%29%20---%22%29%0Aprint%28f%22Initial%20scores%3A%20%7Bfeedback_scores%7D%22%29%0A%0A%23%20Add%20a%20new%20score%0Anew_score%20%3D%209%0Afeedback_scores.append%28new_score%29%0Aprint%28f%22After%20adding%20score%20%7Bnew_score%7D%3A%20%7Bfeedback_scores%7D%22%29%0A%0A%23%20Let%27s%20say%20we%20want%20to%20see%20the%20scores%20sorted%20%28modifies%20the%20list%29%0Afeedback_scores.sort%28%29%0Aprint%28f%22Sorted%20scores%3A%20%7Bfeedback_scores%7D%22%29%0A%0A%23%20---%0A%0A%23%20Scenario%203%3A%20Representing%20a%20transaction%20%28Tuple%20for%20core,%20List%20for%20items%29%0A%23%20The%20core%20transaction%20ID%20and%20timestamp%20might%20be%20fixed%20%28Tuple%29%0Atransaction_info%20%3D%20%28%22T1001%22,%20%222025-03-26%2009%3A00%3A00%22%29%0A%23%20The%20list%20of%20items%20in%20the%20transaction%20can%20grow%20%28List%29%0Aitems_purchased%20%3D%20%5B%22Laptop%22,%20%22Mouse%22%5D%0A%0Aprint%28%22%5Cn---%20Transaction%20Example%20---%22%29%0Atrans_id,%20timestamp%20%3D%20transaction_info%0Aprint%28f%22Transaction%3A%20%7Btrans_id%7D%20at%20%7Btimestamp%7D%22%29%0Aprint%28f%22Initial%20items%3A%20%7Bitems_purchased%7D%22%29%0A%0A%23%20Add%20another%20item%20to%20the%20purchase%20list%0Aitems_purchased.append%28%22Keyboard%22%29%0Aprint%28f%22Updated%20items%3A%20%7Bitems_purchased%7D%22%29%0A%23%20Note%3A%20The%20transaction_info%20tuple%20remains%20unchanged,%0A%23%20while%20the%20items_purchased%20list%20was%20modified.&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Scenario 1: Storing fixed details for a specific report version (Tuple)
+# Report Version, Date Generated, Generated By - forms a fixed record.
+report_meta = ("V2.1", "2025-03-26", "Alice")
+print("--- Report Metadata (Tuple) ---")
+# Unpacking makes accessing easy and readable
+version, date_generated, author = report_meta
+print(f"Version: {version}, Date: {date_generated}, Author: {author}")
+# We know this tuple won't be accidentally changed.
+
+# ---
+
+# Scenario 2: Collecting customer feedback scores (List)
+# We expect to add more scores as feedback comes in.
+feedback_scores = [8, 10, 7]
+print("\n--- Customer Feedback Scores (List) ---")
+print(f"Initial scores: {feedback_scores}")
+
+# Add a new score
+new_score = 9
+feedback_scores.append(new_score)
+print(f"After adding score {new_score}: {feedback_scores}")
+
+# Let's say we want to see the scores sorted (modifies the list)
+feedback_scores.sort()
+print(f"Sorted scores: {feedback_scores}")
+
+# ---
+
+# Scenario 3: Representing a transaction (Tuple for core, List for items)
+# The core transaction ID and timestamp might be fixed (Tuple)
+transaction_info = ("T1001", "2025-03-26 09:00:00")
+# The list of items in the transaction can grow (List)
+items_purchased = ["Laptop", "Mouse"]
+
+print("\n--- Transaction Example ---")
+trans_id, timestamp = transaction_info
+print(f"Transaction: {trans_id} at {timestamp}")
+print(f"Initial items: {items_purchased}")
+
+# Add another item to the purchase list
+items_purchased.append("Keyboard")
+print(f"Updated items: {items_purchased}")
+# Note: The transaction_info tuple remains unchanged,
+# while the items_purchased list was modified.
+-->
 </section>
 <section id="best-practices-and-common-pitfalls" class="level1">
 <h1>6. Best Practices and Common Pitfalls</h1>

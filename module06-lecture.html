@@ -3211,6 +3211,24 @@ text-align: center;
 <span id="cb2-16"><a href="#cb2-16"></a></span>
 <span id="cb2-17"><a href="#cb2-17"></a><span class="bu">print</span>(<span class="st">&quot;Processing complete.&quot;</span>) <span class="co"># This line runs regardless of the &#39;if&#39; condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=order_total%20%3D%20120%0Adiscount_threshold%20%3D%20100%0A%0Aprint%28f%22Checking%20order%20total%3A%20%24%7Border_total%3A.2f%7D%22%29%0Aprint%28f%22Discount%20threshold%3A%20%24%7Bdiscount_threshold%3A.2f%7D%22%29%0A%0Aif%20order_total%20%3E%20discount_threshold%3A%20%20%23%20Condition%3A%20Is%20the%20total%20greater%20than%20the%20threshold%3F%0A%20%20%20%20%23%20This%20block%20runs%20ONLY%20because%20120%20%3E%20100%20is%20True%0A%20%20%20%20print%28%22Condition%20met%3A%20Order%20total%20is%20greater%20than%20threshold.%22%29%0A%20%20%20%20print%28%22Customer%20qualifies%20for%20a%20discount%21%22%29%0A%20%20%20%20discount%20%3D%20order_total%20*%200.1%20%20%23%20Calculate%2010%25%20discount%0A%20%20%20%20final_total%20%3D%20order_total%20-%20discount%0A%20%20%20%20print%28f%22Discount%20applied%3A%20%24%7Bdiscount%3A.2f%7D%22%29%0A%20%20%20%20print%28f%22Final%20total%3A%20%24%7Bfinal_total%3A.2f%7D%22%29%0A%0Aprint%28%22Processing%20complete.%22%29%20%23%20This%20line%20runs%20regardless%20of%20the%20%27if%27%20condition&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+order_total = 120
+discount_threshold = 100
+
+print(f"Checking order total: ${order_total:.2f}")
+print(f"Discount threshold: ${discount_threshold:.2f}")
+
+if order_total > discount_threshold:  # Condition: Is the total greater than the threshold?
+    # This block runs ONLY because 120 > 100 is True
+    print("Condition met: Order total is greater than threshold.")
+    print("Customer qualifies for a discount!")
+    discount = order_total * 0.1  # Calculate 10% discount
+    final_total = order_total - discount
+    print(f"Discount applied: ${discount:.2f}")
+    print(f"Final total: ${final_total:.2f}")
+
+print("Processing complete.") # This line runs regardless of the 'if' condition
+-->
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -3268,6 +3286,26 @@ text-align: center;
 <span id="cb4-18"><a href="#cb4-18"></a></span>
 <span id="cb4-19"><a href="#cb4-19"></a><span class="bu">print</span>(<span class="st">&quot;Inventory check complete.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=current_inventory%20%3D%2015%0Areorder_point%20%3D%2020%0A%0Aprint%28f%22Current%20inventory%3A%20%7Bcurrent_inventory%7D%20units%22%29%0Aprint%28f%22Reorder%20point%3A%20%7Breorder_point%7D%20units%22%29%0A%0Aif%20current_inventory%20%3C%20reorder_point%3A%20%23%20Condition%3A%20Is%20inventory%20below%20the%20minimum%3F%0A%20%20%20%20%23%20This%20block%20runs%20because%2015%20%3C%2020%20is%20True%0A%20%20%20%20print%28%22Condition%20met%3A%20Inventory%20is%20below%20reorder%20point.%22%29%0A%20%20%20%20print%28%22ALERT%3A%20Inventory%20below%20reorder%20point%21%22%29%0A%20%20%20%20print%28f%22Please%20order%20at%20least%20%7Breorder_point%20-%20current_inventory%7D%20more%20units.%22%29%0Aelse%3A%0A%20%20%20%20%23%20This%20block%20is%20SKIPPED%20because%20the%20%27if%27%20condition%20was%20True%0A%20%20%20%20print%28%22Condition%20not%20met%3A%20Inventory%20is%20sufficient.%22%29%0A%20%20%20%20print%28%22Inventory%20levels%20are%20sufficient.%22%29%0A%20%20%20%20print%28f%22Current%20inventory%3A%20%7Bcurrent_inventory%7D%20units.%22%29%0A%0Aprint%28%22Inventory%20check%20complete.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+current_inventory = 15
+reorder_point = 20
+
+print(f"Current inventory: {current_inventory} units")
+print(f"Reorder point: {reorder_point} units")
+
+if current_inventory < reorder_point: # Condition: Is inventory below the minimum?
+    # This block runs because 15 < 20 is True
+    print("Condition met: Inventory is below reorder point.")
+    print("ALERT: Inventory below reorder point!")
+    print(f"Please order at least {reorder_point - current_inventory} more units.")
+else:
+    # This block is SKIPPED because the 'if' condition was True
+    print("Condition not met: Inventory is sufficient.")
+    print("Inventory levels are sufficient.")
+    print(f"Current inventory: {current_inventory} units.")
+
+print("Inventory check complete.")
+-->
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -3338,6 +3376,33 @@ text-align: center;
 <span id="cb6-25"><a href="#cb6-25"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Assigned Customer tier: </span><span class="sc">{</span>customer_tier<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb6-26"><a href="#cb6-26"></a><span class="bu">print</span>(<span class="ss">f&quot;Applicable discount rate: </span><span class="sc">{</span>discount_rate<span class="sc">:.0%}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=annual_purchase%20%3D%205000%0Acustomer_tier%20%3D%20%22Not%20yet%20determined%22%20%23%20Initialize%20variables%0Adiscount_rate%20%3D%200.0%0A%0Aprint%28f%22Analyzing%20customer%20with%20annual%20purchase%3A%20%24%7Bannual_purchase%3A.2f%7D%22%29%0A%0Aif%20annual_purchase%20%3E%3D%2010000%3A%20%23%20Check%20Platinum%20first%20%28most%20specific%29%0A%20%20%20%20customer_tier%20%3D%20%22Platinum%22%0A%20%20%20%20discount_rate%20%3D%200.15%20%20%23%2015%25%20discount%0A%20%20%20%20print%28%22Condition%20met%3A%20%3E%3D%2010000%22%29%0Aelif%20annual_purchase%20%3E%3D%205000%3A%20%23%20Checked%20only%20if%20purchase%20%3C%2010000%0A%20%20%20%20customer_tier%20%3D%20%22Gold%22%0A%20%20%20%20discount_rate%20%3D%200.10%20%20%23%2010%25%20discount%0A%20%20%20%20print%28%22Condition%20met%3A%20%3E%3D%205000%20%28and%20%3C%2010000%29%22%29%0Aelif%20annual_purchase%20%3E%3D%201000%3A%20%23%20Checked%20only%20if%20purchase%20%3C%205000%0A%20%20%20%20customer_tier%20%3D%20%22Silver%22%0A%20%20%20%20discount_rate%20%3D%200.05%20%20%23%205%25%20discount%0A%20%20%20%20print%28%22Condition%20met%3A%20%3E%3D%201000%20%28and%20%3C%205000%29%22%29%0Aelse%3A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20Runs%20only%20if%20purchase%20%3C%201000%0A%20%20%20%20customer_tier%20%3D%20%22Bronze%22%0A%20%20%20%20discount_rate%20%3D%200.02%20%20%23%202%25%20discount%0A%20%20%20%20print%28%22Condition%20met%3A%20%3C%201000%22%29%0A%0Aprint%28f%22%5CnAssigned%20Customer%20tier%3A%20%7Bcustomer_tier%7D%22%29%0Aprint%28f%22Applicable%20discount%20rate%3A%20%7Bdiscount_rate%3A.0%25%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+annual_purchase = 5000
+customer_tier = "Not yet determined" # Initialize variables
+discount_rate = 0.0
+
+print(f"Analyzing customer with annual purchase: ${annual_purchase:.2f}")
+
+if annual_purchase >= 10000: # Check Platinum first (most specific)
+    customer_tier = "Platinum"
+    discount_rate = 0.15  # 15% discount
+    print("Condition met: >= 10000")
+elif annual_purchase >= 5000: # Checked only if purchase < 10000
+    customer_tier = "Gold"
+    discount_rate = 0.10  # 10% discount
+    print("Condition met: >= 5000 (and < 10000)")
+elif annual_purchase >= 1000: # Checked only if purchase < 5000
+    customer_tier = "Silver"
+    discount_rate = 0.05  # 5% discount
+    print("Condition met: >= 1000 (and < 5000)")
+else:                        # Runs only if purchase < 1000
+    customer_tier = "Bronze"
+    discount_rate = 0.02  # 2% discount
+    print("Condition met: < 1000")
+
+print(f"\nAssigned Customer tier: {customer_tier}")
+print(f"Applicable discount rate: {discount_rate:.0%}")
+-->
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -3431,6 +3496,26 @@ text-align: center;
 <span id="cb7-18"><a href="#cb7-18"></a>    percentage_higher <span class="op">=</span> (price_difference <span class="op">/</span> competitor_price) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb7-19"><a href="#cb7-19"></a>    <span class="bu">print</span>(<span class="ss">f&quot;We are $</span><span class="sc">{</span>price_difference<span class="sc">:.2f}</span><span class="ss"> (or </span><span class="sc">{</span>percentage_higher<span class="sc">:.1f}</span><span class="ss">%) more expensive.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=our_price%20%3D%2089.99%0Acompetitor_price%20%3D%2094.99%0A%0Aprint%28f%22Our%20price%3A%20%24%7Bour_price%3A.2f%7D%22%29%0Aprint%28f%22Competitor%20price%3A%20%24%7Bcompetitor_price%3A.2f%7D%22%29%0A%0Aif%20our_price%20%3C%20competitor_price%3A%20%23%20Is%20our%20price%20strictly%20less%20than%20theirs%3F%0A%20%20%20%20print%28%22%5CnAnalysis%3A%20Our%20price%20is%20lower%20than%20the%20competitor.%22%29%0A%20%20%20%20price_difference%20%3D%20competitor_price%20-%20our_price%0A%20%20%20%20percentage_lower%20%3D%20%28price_difference%20/%20competitor_price%29%20*%20100%0A%20%20%20%20print%28f%22We%20are%20%24%7Bprice_difference%3A.2f%7D%20%28or%20%7Bpercentage_lower%3A.1f%7D%25%29%20cheaper.%22%29%0Aelif%20our_price%20%3D%3D%20competitor_price%3A%20%23%20Are%20the%20prices%20exactly%20the%20same%3F%0A%20%20%20%20print%28%22%5CnAnalysis%3A%20Our%20price%20matches%20the%20competitor%27s%20price.%22%29%0Aelse%3A%20%23%20If%20neither%20%3C%20nor%20%3D%3D%2C%20then%20it%20must%20be%20%3E%0A%20%20%20%20print%28%22%5CnAnalysis%3A%20Our%20price%20is%20higher%20than%20the%20competitor.%22%29%0A%20%20%20%20price_difference%20%3D%20our_price%20-%20competitor_price%0A%20%20%20%20percentage_higher%20%3D%20%28price_difference%20/%20competitor_price%29%20*%20100%0A%20%20%20%20print%28f%22We%20are%20%24%7Bprice_difference%3A.2f%7D%20%28or%20%7Bpercentage_higher%3A.1f%7D%25%29%20more%20expensive.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+our_price = 89.99
+competitor_price = 94.99
+
+print(f"Our price: ${our_price:.2f}")
+print(f"Competitor price: ${competitor_price:.2f}")
+
+if our_price < competitor_price: # Is our price strictly less than theirs?
+    print("\nAnalysis: Our price is lower than the competitor.")
+    price_difference = competitor_price - our_price
+    percentage_lower = (price_difference / competitor_price) * 100
+    print(f"We are ${price_difference:.2f} (or {percentage_lower:.1f}%) cheaper.")
+elif our_price == competitor_price: # Are the prices exactly the same?
+    print("\nAnalysis: Our price matches the competitor's price.")
+else: # If neither < nor ==, then it must be >
+    print("\nAnalysis: Our price is higher than the competitor.")
+    price_difference = our_price - competitor_price
+    percentage_higher = (price_difference / competitor_price) * 100
+    print(f"We are ${price_difference:.2f} (or {percentage_higher:.1f}%) more expensive.")
+-->
 </section>
 </section>
 <section id="logical-operators-combining-conditions" class="level3">
@@ -3510,6 +3595,41 @@ text-align: center;
 <span id="cb8-33"><a href="#cb8-33"></a></span>
 <span id="cb8-34"><a href="#cb8-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Basic evaluation complete.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=credit_score%20%3D%20720%0Aannual_income%20%3D%2065000%0Aloan_amount%20%3D%20200000%20%23%20This%20variable%20is%20not%20used%20in%20the%20basic%20criteria%20check%20below%2C%20but%20relevant%20context%0Adebt_to_income_ratio%20%3D%200.28%20%23%20Represents%2028%25%0A%0Amin_score%20%3D%20700%0Amin_income%20%3D%2050000%0Amax_dti%20%3D%200.30%20%23%20Maximum%20allowed%20Debt-to-Income%20ratio%0A%0Aprint%28%22Evaluating%20Loan%20Application%20Basic%20Criteria...%22%29%0Aprint%28f%22Score%3A%20%7Bcredit_score%7D%2C%20Income%3A%20%24%7Bannual_income%3A%2C.0f%7D%2C%20DTI%3A%20%7Bdebt_to_income_ratio%3A.0%25%7D%22%29%0A%0A%23%20Combine%20multiple%20criteria%20using%20%27and%27%0A%23%20Parentheses%20used%20for%20readability%2C%20especially%20with%20line%20breaks%0Ameets_basic_criteria%20%3D%20%28credit_score%20%3E%3D%20min_score%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20annual_income%20%3E%3D%20min_income%20and%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20debt_to_income_ratio%20%3C%20max_dti%29%0A%0A%23%20Simple%20if-else%20based%20on%20the%20combined%20condition%0Aif%20meets_basic_criteria%3A%0A%20%20%20%20print%28%22%5CnResult%3A%20Loan%20application%20meets%20basic%20criteria.%22%29%0A%20%20%20%20%23%20Further%20checks%20%28like%20comparing%20loan_amount%20to%20max_loan_allowed%29%20could%20happen%20here%0Aelse%3A%0A%20%20%20%20print%28%22%5CnResult%3A%20Loan%20application%20does%20not%20meet%20basic%20criteria.%22%29%0A%20%20%20%20%23%20Provide%20specific%20reasons%20using%20separate%20%27if%27%20statements%20%28not%20elif%2C%20as%20multiple%20reasons%20could%20apply%29%0A%20%20%20%20if%20credit_score%20%3C%20min_score%3A%0A%20%20%20%20%20%20%20%20print%28f%22-%3E%20Reason%3A%20Credit%20score%20%28%7Bcredit_score%7D%29%20is%20below%20the%20minimum%20requirement%20of%20%7Bmin_score%7D.%22%29%0A%20%20%20%20if%20annual_income%20%3C%20min_income%3A%0A%20%20%20%20%20%20%20%20print%28f%22-%3E%20Reason%3A%20Annual%20income%20%28%24%7Bannual_income%3A%2C.0f%7D%29%20is%20below%20the%20minimum%20requirement%20of%20%24%7Bmin_income%3A%2C.0f%7D.%22%29%0A%20%20%20%20if%20debt_to_income_ratio%20%3E%3D%20max_dti%3A%0A%20%20%20%20%20%20%20%20print%28f%22-%3E%20Reason%3A%20Debt-to-income%20ratio%20%28%7Bdebt_to_income_ratio%3A.0%25%7D%29%20is%20too%20high%20%28maximum%20allowed%20is%20%7Bmax_dti%3A.0%25%7D%29.%22%29%0A%0Aprint%28%22%5CnBasic%20evaluation%20complete.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+credit_score = 720
+annual_income = 65000
+loan_amount = 200000 # This variable is not used in the basic criteria check below, but relevant context
+debt_to_income_ratio = 0.28 # Represents 28%
+
+min_score = 700
+min_income = 50000
+max_dti = 0.30 # Maximum allowed Debt-to-Income ratio
+
+print("Evaluating Loan Application Basic Criteria...")
+print(f"Score: {credit_score}, Income: ${annual_income:,.0f}, DTI: {debt_to_income_ratio:.0%}")
+
+# Combine multiple criteria using 'and'
+# Parentheses used for readability, especially with line breaks
+meets_basic_criteria = (credit_score >= min_score and
+                      annual_income >= min_income and
+                      debt_to_income_ratio < max_dti)
+
+# Simple if-else based on the combined condition
+if meets_basic_criteria:
+    print("\nResult: Loan application meets basic criteria.")
+    # Further checks (like comparing loan_amount to max_loan_allowed) could happen here
+else:
+    print("\nResult: Loan application does not meet basic criteria.")
+    # Provide specific reasons using separate 'if' statements (not elif, as multiple reasons could apply)
+    if credit_score < min_score:
+        print(f"-> Reason: Credit score ({credit_score}) is below the minimum requirement of {min_score}.")
+    if annual_income < min_income:
+        print(f"-> Reason: Annual income (${annual_income:,.0f}) is below the minimum requirement of ${min_income:,.0f}.")
+    if debt_to_income_ratio >= max_dti:
+        print(f"-> Reason: Debt-to-income ratio ({debt_to_income_ratio:.0%}) is too high (maximum allowed is {max_dti:.0%}).")
+
+print("\nBasic evaluation complete.")
+-->
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -3595,6 +3715,49 @@ text-align: center;
 <span id="cb10-41"><a href="#cb10-41"></a>        </span>
 <span id="cb10-42"><a href="#cb10-42"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Final calculated shipping cost: $</span><span class="sc">{</span>shipping_cost<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=order_total%20%3D%2085.00%0Ais_international%20%3D%20True%0Acountry%20%3D%20%22Canada%22%20%23%20Try%20changing%20this%20to%20%22UK%22%20or%20setting%20is_international%20to%20False%0A%0Aprint%28f%22Calculating%20shipping%20for%20order%20total%3A%20%24%7Border_total%3A.2f%7D%22%29%0A%0Aif%20is_international%3A%20%23%20Outer%20condition%3A%20Is%20it%20international%3F%0A%20%20%20%20print%28%22-%3E%20Shipping%20type%3A%20International%22%29%0A%20%20%20%20shipping_cost%20%3D%200.0%20%23%20Initialize%20shipping%20cost%0A%20%20%20%20%0A%20%20%20%20%23%20Inner%20condition%201%3A%20Check%20specific%20countries%20for%20special%20rates%0A%20%20%20%20if%20country%20%3D%3D%20%22Canada%22%20or%20country%20%3D%3D%20%22Mexico%22%3A%0A%20%20%20%20%20%20%20%20print%28f%22--%3E%20Destination%3A%20%7Bcountry%7D%20%28North%20America%20Neighbor%29%22%29%0A%20%20%20%20%20%20%20%20shipping_cost%20%3D%2015.00%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28f%22--%3E%20Destination%3A%20%7Bcountry%7D%20%28Other%20International%29%22%29%0A%20%20%20%20%20%20%20%20shipping_cost%20%3D%2025.00%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20print%28f%22--%3E%20Base%20international%20shipping%20cost%3A%20%24%7Bshipping_cost%3A.2f%7D%22%29%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%23%20Inner%20condition%202%3A%20Check%20if%20order%20qualifies%20for%20international%20discount%0A%20%20%20%20if%20order_total%20%3E%20100%3A%0A%20%20%20%20%20%20%20%20print%28%22--%3E%20Order%20qualifies%20for%20reduced%20international%20shipping%21%22%29%0A%20%20%20%20%20%20%20%20shipping_discount%20%3D%20shipping_cost%20*%200.15%20%23%2015%25%20discount%20on%20shipping%0A%20%20%20%20%20%20%20%20shipping_cost%20-%3D%20shipping_discount%0A%20%20%20%20%20%20%20%20print%28f%22--%3E%20Shipping%20discount%20applied%3A%20%24%7Bshipping_discount%3A.2f%7D%22%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22--%3E%20Order%20total%20too%20low%20for%20international%20shipping%20discount.%22%29%0A%20%20%20%20%20%20%20%20%0Aelse%3A%20%23%20Outer%20condition%20was%20False%20%28it%27s%20domestic%29%0A%20%20%20%20print%28%22-%3E%20Shipping%20type%3A%20Domestic%22%29%0A%20%20%20%20%0A%20%20%20%20%23%20Inner%20condition%3A%20Check%20for%20free%20domestic%20shipping%20threshold%0A%20%20%20%20if%20order_total%20%3E%2050%3A%0A%20%20%20%20%20%20%20%20print%28%22--%3E%20Order%20qualifies%20for%20FREE%20domestic%20shipping%20%28orders%20over%20%2450%29%21%22%29%0A%20%20%20%20%20%20%20%20shipping_cost%20%3D%200.00%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22--%3E%20Standard%20domestic%20shipping%20rate%20applies.%22%29%0A%20%20%20%20%20%20%20%20shipping_cost%20%3D%205.99%0A%20%20%20%20%20%20%20%20%0Aprint%28f%22%5CnFinal%20calculated%20shipping%20cost%3A%20%24%7Bshipping_cost%3A.2f%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"></iframe>
+<!-- Python code for the above iframe:
+order_total = 85.00
+is_international = True
+country = "Canada" # Try changing this to "UK" or setting is_international to False
+
+print(f"Calculating shipping for order total: ${order_total:.2f}")
+
+if is_international: # Outer condition: Is it international?
+    print("-> Shipping type: International")
+    shipping_cost = 0.0 # Initialize shipping cost
+    
+    # Inner condition 1: Check specific countries for special rates
+    if country == "Canada" or country == "Mexico":
+        print(f"--> Destination: {country} (North America Neighbor)&quot;)
+        shipping_cost = 15.00
+    else:
+        print(f&quot;--&gt; Destination: {country} (Other International)&quot;)
+        shipping_cost = 25.00
+        
+    print(f&quot;--&gt; Base international shipping cost: ${shipping_cost:.2f}&quot;)
+        
+    # Inner condition 2: Check if order qualifies for international discount
+    if order_total &gt; 100:
+        print(&quot;--&gt; Order qualifies for reduced international shipping!&quot;)
+        shipping_discount = shipping_cost * 0.15 # 15% discount on shipping
+        shipping_cost -= shipping_discount
+        print(f&quot;--&gt; Shipping discount applied: ${shipping_discount:.2f}&quot;)
+    else:
+        print(&quot;--&gt; Order total too low for international shipping discount.&quot;)
+        
+else: # Outer condition was False (it&#39;s domestic)
+    print(&quot;-&gt; Shipping type: Domestic&quot;)
+    
+    # Inner condition: Check for free domestic shipping threshold
+    if order_total &gt; 50:
+        print(&quot;--&gt; Order qualifies for FREE domestic shipping (orders over $50)!&quot;)
+        shipping_cost = 0.00
+    else:
+        print(&quot;--&gt; Standard domestic shipping rate applies.&quot;)
+        shipping_cost = 5.99
+        
+print(f&quot;\nFinal calculated shipping cost: ${shipping_cost:.2f}&quot;)
+--&gt;
 <div class="callout callout-style-simple callout-caution">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">

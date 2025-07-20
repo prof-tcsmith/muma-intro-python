@@ -3260,6 +3260,50 @@ vertical-align: -.125em;
 <span id="cb2-42"><a href="#cb2-42"></a><span class="co"># invalid_dict = { [&quot;A&quot;, &quot;B&quot;]: 1 } # This line would raise a TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize dictionary creation:</p>
 <iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Creating%20Dictionaries%20---%0A%0A%23%20An%20empty%20dictionary%0Aempty_dict%20%3D%20%7B%7D%0Aprint%28f%221.%20Empty%20Dictionary%3A%20%7Bempty_dict%7D,%20Type%3A%20%7Btype%28empty_dict%29%7D%22%29%0A%0A%23%20Dictionary%20storing%20product%20prices%20%28Key%3A%20Product%20ID%20string,%20Value%3A%20Price%20float%29%0Aproduct_prices%20%3D%20%7B%0A%20%20%20%20%22SKU123%22%3A%201200.00,%0A%20%20%20%20%22SKU456%22%3A%2025.00,%0A%20%20%20%20%22SKU789%22%3A%2075.00%0A%7D%0Aprint%28f%22%5Cn2.%20Product%20Prices%3A%20%7Bproduct_prices%7D%22%29%0A%0A%23%20Dictionary%20storing%20configuration%20settings%20%28Key%3A%20Setting%20name%20string,%20Value%3A%20Mixed%20types%29%0Aconfig%20%3D%20%7B%0A%20%20%20%20%22server%22%3A%20%22api.mycompany.com%22,%0A%20%20%20%20%22port%22%3A%20443,%0A%20%20%20%20%22timeout%22%3A%2030,%0A%20%20%20%20%22debug_mode%22%3A%20False%0A%7D%0Aprint%28f%22%5Cn3.%20Configuration%3A%20%7Bconfig%7D%22%29%0A%0A%23%20Dictionary%20storing%20simple%20user%20roles%20%28Key%3A%20Username%20string,%20Value%3A%20Role%20string%29%0Auser_roles%20%3D%20%7B%0A%20%20%20%20%22alice%22%3A%20%22admin%22,%0A%20%20%20%20%22bob%22%3A%20%22editor%22,%0A%20%20%20%20%22charlie%22%3A%20%22viewer%22%0A%7D%0Aprint%28f%22%5Cn4.%20User%20Roles%3A%20%7Buser_roles%7D%22%29%0A%0A%23%20Keys%20must%20be%20immutable%20%28strings%20and%20numbers%20are%20common%29%0A%23%20Values%20can%20be%20lists,%20tuples,%20or%20even%20other%20dictionaries%0Acomplex_dict%20%3D%20%7B%0A%20%20%20%20%22customer_id%22%3A%20%22CUST-001%22,%0A%20%20%20%20%22orders%22%3A%20%5B101,%20105,%20112%5D,%20%23%20Value%20is%20a%20list%0A%20%20%20%20%22location%22%3A%20%28%22NY%22,%20%22USA%22%29%20%20%23%20Value%20is%20a%20tuple%0A%7D%0Aprint%28f%22%5Cn5.%20Complex%20Dictionary%3A%20%7Bcomplex_dict%7D%22%29%0A%0A%23%20Invalid%3A%20List%20as%20a%20key%20%28will%20cause%20TypeError%29%0A%23%20invalid_dict%20%3D%20%7B%20%5B%22A%22,%20%22B%22%5D%3A%201%20%7D%20%23%20This%20line%20would%20raise%20a%20TypeError&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Creating Dictionaries ---
+
+# An empty dictionary
+empty_dict = {}
+print(f"1. Empty Dictionary: {empty_dict}, Type: {type(empty_dict)}")
+
+# Dictionary storing product prices (Key: Product ID string, Value: Price float)
+product_prices = {
+    "SKU123": 1200.00,
+    "SKU456": 25.00,
+    "SKU789": 75.00
+}
+print(f"\n2. Product Prices: {product_prices}")
+
+# Dictionary storing configuration settings (Key: Setting name string, Value: Mixed types)
+config = {
+    "server": "api.mycompany.com",
+    "port": 443,
+    "timeout": 30,
+    "debug_mode": False
+}
+print(f"\n3. Configuration: {config}")
+
+# Dictionary storing simple user roles (Key: Username string, Value: Role string)
+user_roles = {
+    "alice": "admin",
+    "bob": "editor",
+    "charlie": "viewer"
+}
+print(f"\n4. User Roles: {user_roles}")
+
+# Keys must be immutable (strings and numbers are common)
+# Values can be lists, tuples, or even other dictionaries
+complex_dict = {
+    "customer_id": "CUST-001",
+    "orders": [101, 105, 112], # Value is a list
+    "location": ("NY", "USA")  # Value is a tuple
+}
+print(f"\n5. Complex Dictionary: {complex_dict}")
+
+# Invalid: List as a key (will cause TypeError)
+# invalid_dict = { ["A", "B"]: 1 } # This line would raise a TypeError
+-->
 </section>
 <section id="accessing-values-using-keys" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-values-using-keys">2.2 Accessing Values Using Keys <code>[]</code></h2>
@@ -3290,6 +3334,31 @@ vertical-align: -.125em;
 <p><strong>KeyError:</strong> This error is specific to dictionaries. It occurs when you try to access a key that isn’t present in the dictionary. This is different from the <code>IndexError</code> you get with lists/tuples when an index is out of bounds.</p>
 <p>Visualize accessing dictionary values and the <code>KeyError</code>:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=product_prices%20%3D%20%7B%0A%20%20%20%20%22SKU123%22%3A%201200.00,%0A%20%20%20%20%22SKU456%22%3A%2025.00,%0A%20%20%20%20%22SKU789%22%3A%2075.00%0A%7D%0A%0A%23%20Get%20the%20price%20for%20product%20%22SKU456%22%0Amouse_price%20%3D%20product_prices%5B%22SKU456%22%5D%0Aprint%28f%22Price%20of%20SKU456%3A%20%24%7Bmouse_price%3A.2f%7D%22%29%0A%0A%23%20Get%20the%20price%20for%20product%20%22SKU123%22%0Alaptop_price%20%3D%20product_prices%5B%22SKU123%22%5D%0Aprint%28f%22Price%20of%20SKU123%3A%20%24%7Blaptop_price%3A.2f%7D%22%29%0A%0A%23%20---%20What%20happens%20if%20the%20key%20doesn%27t%20exist%3F%20---%0Aprint%28%22%5CnAttempting%20to%20access%20a%20non-existent%20key...%22%29%0Atry%3A%0A%20%20%20%20%23%20%22SKU999%22%20is%20not%20a%20key%20in%20our%20dictionary%0A%20%20%20%20non_existent_price%20%3D%20product_prices%5B%22SKU999%22%5D%0A%20%20%20%20print%28f%22Price%20of%20SKU999%3A%20%7Bnon_existent_price%7D%22%29%0Aexcept%20KeyError%20as%20e%3A%0A%20%20%20%20print%28f%22--%3E%20Error%20accessing%20key%3A%20%7Be%7D%22%29%0A%20%20%20%20print%28%22--%3E%20The%20key%20%27SKU999%27%20was%20not%20found%20in%20the%20dictionary.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+product_prices = {
+    "SKU123": 1200.00,
+    "SKU456": 25.00,
+    "SKU789": 75.00
+}
+
+# Get the price for product "SKU456"
+mouse_price = product_prices["SKU456"]
+print(f"Price of SKU456: ${mouse_price:.2f}")
+
+# Get the price for product "SKU123"
+laptop_price = product_prices["SKU123"]
+print(f"Price of SKU123: ${laptop_price:.2f}")
+
+# --- What happens if the key doesn't exist? ---
+print("\nAttempting to access a non-existent key...")
+try:
+    # "SKU999" is not a key in our dictionary
+    non_existent_price = product_prices["SKU999"]
+    print(f"Price of SKU999: {non_existent_price}")
+except KeyError as e:
+    print(f"--> Error accessing key: {e}&quot;)
+    print(&quot;--&gt; The key &#39;SKU999&#39; was not found in the dictionary.&quot;)
+--&gt;
 </section>
 <section id="adding-and-modifying-key-value-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="adding-and-modifying-key-value-pairs">2.3 Adding and Modifying Key-Value Pairs</h2>
@@ -3325,6 +3394,31 @@ vertical-align: -.125em;
 <p>This easy adding/updating makes dictionaries very useful for accumulating data (like counts) or keeping track of changing information associated with specific identifiers.</p>
 <p>Visualize adding and modifying dictionary entries:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Start%20with%20some%20product%20prices%0Aproduct_prices%20%3D%20%7B%0A%20%20%20%20%22SKU123%22%3A%201200.00,%20%23%20Laptop%0A%20%20%20%20%22SKU456%22%3A%2025.00%20%20%20%23%20Mouse%0A%7D%0Aprint%28f%221.%20Initial%20Prices%3A%20%7Bproduct_prices%7D%22%29%0A%0A%23%20---%20Modify%20an%20Existing%20Value%20---%0A%23%20Update%20the%20price%20of%20the%20laptop%20%28SKU123%29%0Aprint%28%22%5CnUpdating%20SKU123%20price...%22%29%0Aproduct_prices%5B%22SKU123%22%5D%20%3D%201150.00%20%23%20Key%20exists,%20so%20value%20is%20updated%0Aprint%28f%222.%20Updated%20Prices%3A%20%7Bproduct_prices%7D%22%29%0A%0A%23%20---%20Add%20a%20New%20Key-Value%20Pair%20---%0A%23%20Add%20a%20new%20product%20%28Keyboard,%20SKU789%29%0Aprint%28%22%5CnAdding%20SKU789...%22%29%0Aproduct_prices%5B%22SKU789%22%5D%20%3D%2075.00%20%23%20Key%20%22SKU789%22%20does%20not%20exist,%20so%20it%27s%20added%0Aprint%28f%223.%20Prices%20after%20adding%20keyboard%3A%20%7Bproduct_prices%7D%22%29%0A%0A%23%20Add%20another%20product%20%28Webcam,%20SKUABC%29%0Aprint%28%22%5CnAdding%20SKUABC...%22%29%0Aproduct_prices%5B%22SKUABC%22%5D%20%3D%2049.95%0Aprint%28f%224.%20Prices%20after%20adding%20webcam%3A%20%7Bproduct_prices%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Start with some product prices
+product_prices = {
+    "SKU123": 1200.00, # Laptop
+    "SKU456": 25.00   # Mouse
+}
+print(f"1. Initial Prices: {product_prices}")
+
+# --- Modify an Existing Value ---
+# Update the price of the laptop (SKU123)
+print("\nUpdating SKU123 price...")
+product_prices["SKU123"] = 1150.00 # Key exists, so value is updated
+print(f"2. Updated Prices: {product_prices}")
+
+# --- Add a New Key-Value Pair ---
+# Add a new product (Keyboard, SKU789)
+print("\nAdding SKU789...")
+product_prices["SKU789"] = 75.00 # Key "SKU789" does not exist, so it's added
+print(f"3. Prices after adding keyboard: {product_prices}")
+
+# Add another product (Webcam, SKUABC)
+print("\nAdding SKUABC...")
+product_prices["SKUABC"] = 49.95
+print(f"4. Prices after adding webcam: {product_prices}")
+-->
 </section>
 <section id="removing-key-value-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="removing-key-value-pairs">2.4 Removing Key-Value Pairs</h2>
@@ -3365,6 +3459,37 @@ vertical-align: -.125em;
 <span id="cb5-29"><a href="#cb5-29"></a><span class="bu">print</span>(<span class="ss">f&quot;4. Roles remain: </span><span class="sc">{</span>user_roles<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize removing items with <code>.pop()</code>:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=user_roles%20%3D%20%7B%0A%20%20%20%20%22alice%22%3A%20%22admin%22,%0A%20%20%20%20%22bob%22%3A%20%22editor%22,%0A%20%20%20%20%22charlie%22%3A%20%22viewer%22,%0A%20%20%20%20%22david%22%3A%20%22editor%22%0A%7D%0Aprint%28f%221.%20Initial%20Roles%3A%20%7Buser_roles%7D%22%29%0A%0A%23%20Remove%20&#39;charlie&#39;%20and%20get%20their%20role%0Aprint%28%22%5CnRemoving%20&#39;charlie&#39;...%22%29%0Aremoved_role%20%3D%20user_roles.pop%28%22charlie%22%29%0Aprint%28f%22%20%20%20Removed%20role%20was%3A%20%27%7Bremoved_role%7D%27%22%29%0Aprint%28f%222.%20Roles%20after%20removing%20charlie%3A%20%7Buser_roles%7D%22%29%0A%0A%23%20Remove%20&#39;bob&#39;%0Aprint%28%22%5CnRemoving%20&#39;bob&#39;...%22%29%0Aremoved_role_bob%20%3D%20user_roles.pop%28%22bob%22%29%0Aprint%28f%22%20%20%20Removed%20role%20was%3A%20%27%7Bremoved_role_bob%7D%27%22%29%0Aprint%28f%223.%20Roles%20after%20removing%20bob%3A%20%7Buser_roles%7D%22%29%0A%0A%23%20Try%20removing%20a%20key%20that%20doesn&#39;t%20exist%0Aprint%28%22%5CnAttempting%20to%20remove%20%27eve%27...%22%29%0Atry%3A%0A%20%20%20%20user_roles.pop%28%22eve%22%29%0Aexcept%20KeyError%20as%20e%3A%0A%20%20%20%20print%28f%22--%3E%20Error%20removing%20key%3A%20%7Be%7D%22%29%0A%20%20%20%20print%28%22--%3E%20Key%20%27eve%27%20not%20found.%22%29%0A%0Aprint%28f%224.%20Roles%20remain%3A%20%7Buser_roles%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+user_roles = {
+    "alice": "admin",
+    "bob": "editor",
+    "charlie": "viewer",
+    "david": "editor"
+}
+print(f"1. Initial Roles: {user_roles}")
+
+# Remove 'charlie' and get their role
+print("\nRemoving 'charlie'...")
+removed_role = user_roles.pop("charlie")
+print(f"   Removed role was: '{removed_role}'")
+print(f"2. Roles after removing charlie: {user_roles}")
+
+# Remove 'bob'
+print("\nRemoving 'bob'...")
+removed_role_bob = user_roles.pop("bob")
+print(f"   Removed role was: '{removed_role_bob}'")
+print(f"3. Roles after removing bob: {user_roles}")
+
+# Try removing a key that doesn't exist
+print("\nAttempting to remove 'eve'...")
+try:
+    user_roles.pop("eve")
+except KeyError as e:
+    print(f"--> Error removing key: {e}&quot;)
+    print(&quot;--&gt; Key &#39;eve&#39; not found.&quot;)
+
+print(f&quot;4. Roles remain: {user_roles}&quot;)
+--&gt;
 </section>
 <section id="checking-for-key-existence-in" class="level2">
 <h2 class="anchored" data-anchor-id="checking-for-key-existence-in">2.5 Checking for Key Existence (<code>in</code>)</h2>
@@ -3400,6 +3525,32 @@ vertical-align: -.125em;
 <span id="cb6-24"><a href="#cb6-24"></a><span class="bu">print</span>(<span class="ss">f&quot;Safe to access &#39;</span><span class="sc">{</span>check_key<span class="sc">}</span><span class="ss">&#39;? </span><span class="sc">{</span>check_key <span class="kw">in</span> product_prices<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize checking for keys:</p>
 <iframe width="1000" height="450" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=product_prices%20%3D%20%7B%0A%20%20%20%20%22SKU123%22%3A%201150.00,%0A%20%20%20%20%22SKU456%22%3A%2025.00,%0A%20%20%20%20%22SKU789%22%3A%2075.00%0A%7D%0A%0Akey_to_check%20%3D%20%22SKU456%22%20%23%20This%20key%20exists%0Aif_exists%20%3D%20key_to_check%20in%20product_prices%0Aprint%28f%22Does%20key%20%27%7Bkey_to_check%7D%27%20exist%3F%20%7Bif_exists%7D%22%29%0A%0Akey_to_check%20%3D%20%22SKU999%22%20%23%20This%20key%20does%20NOT%20exist%0Aif_exists%20%3D%20key_to_check%20in%20product_prices%0Aprint%28f%22Does%20key%20%27%7Bkey_to_check%7D%27%20exist%3F%20%7Bif_exists%7D%22%29%0A%0A%23%20Using%20%27not%20in%27%0Aif_not_exists%20%3D%20%22SKU000%22%20not%20in%20product_prices%0Aprint%28f%22Does%20key%20%27SKU000%27%20NOT%20exist%3F%20%7Bif_not_exists%7D%22%29%0A%0A%23%20Checking%20prevents%20KeyErrors%20when%20accessing%3A%0Acheck_key%20%3D%20%22SKU789%22%0A%23%20Instead%20of%20just%20doing%20product_prices%5Bcheck_key%5D%20which%20might%20fail,%0A%23%20you%27d%20typically%20check%20first%20%28using%20%27if%27%20which%20we%20learn%20later%29.%0A%23%20For%20now,%20just%20see%20the%20result%20of%20the%20%27in%27%20check%3A%0Aprint%28f%22Safe%20to%20access%20%27%7Bcheck_key%7D%27%3F%20%7Bcheck_key%20in%20product_prices%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+product_prices = {
+    "SKU123": 1150.00,
+    "SKU456": 25.00,
+    "SKU789": 75.00
+}
+
+key_to_check = "SKU456" # This key exists
+if_exists = key_to_check in product_prices
+print(f"Does key '{key_to_check}' exist? {if_exists}")
+
+key_to_check = "SKU999" # This key does NOT exist
+if_exists = key_to_check in product_prices
+print(f"Does key '{key_to_check}' exist? {if_exists}")
+
+# Using 'not in'
+if_not_exists = "SKU000" not in product_prices
+print(f"Does key 'SKU000' NOT exist? {if_not_exists}")
+
+# Checking prevents KeyErrors when accessing:
+check_key = "SKU789"
+# Instead of just doing product_prices[check_key] which might fail,
+# you'd typically check first (using 'if' which we learn later).
+# For now, just see the result of the 'in' check:
+print(f"Safe to access '{check_key}'? {check_key in product_prices}")
+-->
 </section>
 <section id="dictionary-size-len" class="level2">
 <h2 class="anchored" data-anchor-id="dictionary-size-len">2.6 Dictionary Size (<code>len()</code>)</h2>
@@ -3456,6 +3607,35 @@ vertical-align: -.125em;
 <p>Being able to get <code>list(keys)</code> or <code>list(values)</code> is important because we can then apply other functions (like aggregation functions we’ll see next) to these lists.</p>
 <p>Visualize dictionary views and conversion to lists:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=user_roles%20%3D%20%7B%0A%20%20%20%20%22alice%22%3A%20%22admin%22,%0A%20%20%20%20%22bob%22%3A%20%22editor%22,%0A%20%20%20%20%22david%22%3A%20%22editor%22%0A%7D%0Aprint%28f%22Original%20Dictionary%3A%20%7Buser_roles%7D%22%29%0A%0A%23%20---%20Get%20Keys%20---%0Akeys_view%20%3D%20user_roles.keys%28%29%0Aprint%28f%22%5CnKeys%20view%20object%3A%20%7Bkeys_view%7D%22%29%0A%23%20Convert%20to%20list%20to%20see%20keys%20clearly%0Akeys_list%20%3D%20list%28keys_view%29%0Aprint%28f%22Keys%20as%20a%20list%3A%20%7Bkeys_list%7D%22%29%0A%0A%23%20---%20Get%20Values%20---%0Avalues_view%20%3D%20user_roles.values%28%29%0Aprint%28f%22%5CnValues%20view%20object%3A%20%7Bvalues_view%7D%22%29%0A%23%20Convert%20to%20list%20to%20see%20values%20clearly%0Avalues_list%20%3D%20list%28values_view%29%0Aprint%28f%22Values%20as%20a%20list%3A%20%7Bvalues_list%7D%22%29%20%23%20Note%3A%20duplicates%20are%20included%0A%0A%23%20---%20Get%20Key-Value%20Pairs%20%28Items%29%20---%0Aitems_view%20%3D%20user_roles.items%28%29%0Aprint%28f%22%5CnItems%20view%20object%3A%20%7Bitems_view%7D%22%29%0A%23%20Convert%20to%20list%20to%20see%20items%20clearly%20%28list%20of%20tuples%29%0Aitems_list%20%3D%20list%28items_view%29%0Aprint%28f%22Items%20as%20a%20list%20of%20%28key,%20value%29%20tuples%3A%20%7Bitems_list%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+user_roles = {
+    "alice": "admin",
+    "bob": "editor",
+    "david": "editor"
+}
+print(f"Original Dictionary: {user_roles}")
+
+# --- Get Keys ---
+keys_view = user_roles.keys()
+print(f"\nKeys view object: {keys_view}")
+# Convert to list to see keys clearly
+keys_list = list(keys_view)
+print(f"Keys as a list: {keys_list}")
+
+# --- Get Values ---
+values_view = user_roles.values()
+print(f"\nValues view object: {values_view}")
+# Convert to list to see values clearly
+values_list = list(values_view)
+print(f"Values as a list: {values_list}") # Note: duplicates are included
+
+# --- Get Key-Value Pairs (Items) ---
+items_view = user_roles.items()
+print(f"\nItems view object: {items_view}")
+# Convert to list to see items clearly (list of tuples)
+items_list = list(items_view)
+print(f"Items as a list of (key, value) tuples: {items_list}")
+-->
 </section>
 </section>
 <section id="basic-aggregation-functions-summarizing-collections" class="level1">
@@ -3516,6 +3696,38 @@ vertical-align: -.125em;
 <span id="cb10-36"><a href="#cb10-36"></a><span class="co"># sum(list(mixed_values_dict.values())) # Would cause TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize summing lists, tuples, and dictionary values:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=sales_figures%20%3D%20%5B1250.50,%201410.00,%201320.75%5D%20%23%20List%20of%20numbers%0Aquantities%20%3D%20%2810,%205,%208%29%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20Tuple%20of%20numbers%0Aproduct_names%20%3D%20%5B%22Pen%22,%20%22Paper%22,%20%22Stapler%22%5D%20%20%23%20List%20of%20strings%0A%0A%23%20Summing%20numeric%20list/tuple%20works%0Atotal_sales%20%3D%20sum%28sales_figures%29%0Atotal_quantity%20%3D%20sum%28quantities%29%0Aprint%28f%22Total%20Sales%3A%20%24%7Btotal_sales%3A.2f%7D%22%29%0Aprint%28f%22Total%20Quantity%3A%20%7Btotal_quantity%7D%22%29%0A%0A%23%20Trying%20to%20sum%20strings%20will%20fail%0Atry%3A%0A%20%20%20%20sum%28product_names%29%0Aexcept%20TypeError%20as%20e%3A%0A%20%20%20%20print%28f%22%5CnError%20summing%20strings%3A%20%7Be%7D%22%29%0A%0A%23%20---%20Summing%20Dictionary%20Values%20---%0Aproduct_prices%20%3D%20%7B%22SKU123%22%3A%201150.00,%20%22SKU456%22%3A%2025.00,%20%22SKU789%22%3A%2075.00%7D%0A%0A%23%201.%20Get%20the%20values%20%28as%20a%20view%20object%29%0Aprice_values%20%3D%20product_prices.values%28%29%0Aprint%28f%22%5CnPrice%20values%20view%3A%20%7Bprice_values%7D%22%29%0A%0A%23%202.%20Convert%20the%20view%20to%20a%20list%20of%20numbers%0Aprice_list%20%3D%20list%28price_values%29%0Aprint%28f%22Prices%20as%20list%3A%20%7Bprice_list%7D%22%29%0A%0A%23%203.%20Sum%20the%20list%20of%20numbers%0Atotal_price_value%20%3D%20sum%28price_list%29%0Aprint%28f%22Sum%20of%20all%20prices%3A%20%24%7Btotal_price_value%3A.2f%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+sales_figures = [1250.50, 1410.00, 1320.75] # List of numbers
+quantities = (10, 5, 8)                  # Tuple of numbers
+product_names = ["Pen", "Paper", "Stapler"]  # List of strings
+
+# Summing numeric list/tuple works
+total_sales = sum(sales_figures)
+total_quantity = sum(quantities)
+print(f"Total Sales: ${total_sales:.2f}")
+print(f"Total Quantity: {total_quantity}")
+
+# Trying to sum strings will fail
+try:
+    sum(product_names)
+except TypeError as e:
+    print(f"\nError summing strings: {e}")
+
+# --- Summing Dictionary Values ---
+product_prices = {"SKU123": 1150.00, "SKU456": 25.00, "SKU789": 75.00}
+
+# 1. Get the values (as a view object)
+price_values = product_prices.values()
+print(f"\nPrice values view: {price_values}")
+
+# 2. Convert the view to a list of numbers
+price_list = list(price_values)
+print(f"Prices as list: {price_list}")
+
+# 3. Sum the list of numbers
+total_price_value = sum(price_list)
+print(f"Sum of all prices: ${total_price_value:.2f}")
+-->
 </section>
 <section id="min-and-max---finding-extremes" class="level2">
 <h2 class="anchored" data-anchor-id="min-and-max---finding-extremes">3.3 <code>min()</code> and <code>max()</code> - Finding Extremes</h2>
@@ -3565,6 +3777,47 @@ vertical-align: -.125em;
 <span id="cb11-39"><a href="#cb11-39"></a><span class="bu">print</span>(<span class="ss">f&quot;Max key from list: </span><span class="sc">{</span><span class="bu">max</span>(key_list)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize <code>min()</code> and <code>max()</code> on lists, tuples, and dictionary components:</p>
 <iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=numbers%20%3D%20%5B10,%205,%208,%2012,%203%5D%0Anames%20%3D%20%5B%22Eve%22,%20%22Alice%22,%20%22Bob%22,%20%22David%22%5D%0Amixed%20%3D%20%5B1,%20%22Apple%22,%203%5D%0A%0A%23%20Min/Max%20on%20numbers%0Aprint%28f%22Numbers%3A%20%7Bnumbers%7D%22%29%0Aprint%28f%22Min%20number%3A%20%7Bmin%28numbers%29%7D%22%29%0Aprint%28f%22Max%20number%3A%20%7Bmax%28numbers%29%7D%22%29%0A%0A%23%20Min/Max%20on%20strings%20%28alphabetical%20order%29%0Aprint%28f%22%5CnNames%3A%20%7Bnames%7D%22%29%0Aprint%28f%22Min%20name%20%28first%20alphabetically%29%3A%20%7Bmin%28names%29%7D%22%29%0Aprint%28f%22Max%20name%20%28last%20alphabetically%29%3A%20%7Bmax%28names%29%7D%22%29%0A%0A%23%20Min/Max%20on%20mixed%20types%20usually%20fails%0Atry%3A%0A%20%20%20%20min%28mixed%29%0Aexcept%20TypeError%20as%20e%3A%0A%20%20%20%20print%28f%22%5CnError%20finding%20min%20in%20mixed%20list%3A%20%7Be%7D%22%29%0A%0A%23%20---%20Min/Max%20with%20Dictionaries%20---%0Aproduct_prices%20%3D%20%7B%22Laptop%22%3A%201150.00,%20%22Mouse%22%3A%2025.00,%20%22Keyboard%22%3A%2075.00%7D%0Aprint%28f%22%5CnProduct%20Prices%20Dict%3A%20%7Bproduct_prices%7D%22%29%0A%0A%23%20Applying%20min/max%20directly%20to%20a%20dictionary%20operates%20on%20its%20KEYS%0Aprint%28f%22Min%20key%20%28alphabetical%29%3A%20%7Bmin%28product_prices%29%7D%22%29%0Aprint%28f%22Max%20key%20%28alphabetical%29%3A%20%7Bmax%28product_prices%29%7D%22%29%0A%0A%23%20To%20find%20min/max%20VALUES,%20get%20the%20values,%20convert%20to%20list,%20then%20apply%0Aprice_list%20%3D%20list%28product_prices.values%28%29%29%0Aprint%28f%22Price%20list%3A%20%7Bprice_list%7D%22%29%0Aprint%28f%22Min%20price%20%28value%29%3A%20%7Bmin%28price_list%29%7D%22%29%0Aprint%28f%22Max%20price%20%28value%29%3A%20%7Bmax%28price_list%29%7D%22%29%0A%0A%23%20Similarly%20for%20keys%20if%20you%20want%20them%20as%20a%20list%20first%0Akey_list%20%3D%20list%28product_prices.keys%28%29%29%0Aprint%28f%22Key%20list%3A%20%7Bkey_list%7D%22%29%0Aprint%28f%22Min%20key%20from%20list%3A%20%7Bmin%28key_list%29%7D%22%29%0Aprint%28f%22Max%20key%20from%20list%3A%20%7Bmax%28key_list%29%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+numbers = [10, 5, 8, 12, 3]
+names = ["Eve", "Alice", "Bob", "David"]
+mixed = [1, "Apple", 3]
+
+# Min/Max on numbers
+print(f"Numbers: {numbers}")
+print(f"Min number: {min(numbers)}")
+print(f"Max number: {max(numbers)}")
+
+# Min/Max on strings (alphabetical order)
+print(f"\nNames: {names}")
+print(f"Min name (first alphabetically): {min(names)}")
+print(f"Max name (last alphabetically): {max(names)}")
+
+# Min/Max on mixed types usually fails
+try:
+    min(mixed)
+except TypeError as e:
+    print(f"\nError finding min in mixed list: {e}")
+
+# --- Min/Max with Dictionaries ---
+product_prices = {"Laptop": 1150.00, "Mouse": 25.00, "Keyboard": 75.00}
+print(f"\nProduct Prices Dict: {product_prices}")
+
+# Applying min/max directly to a dictionary operates on its KEYS
+print(f"Min key (alphabetical): {min(product_prices)}")
+print(f"Max key (alphabetical): {max(product_prices)}")
+
+# To find min/max VALUES, get the values, convert to list, then apply
+price_list = list(product_prices.values())
+print(f"Price list: {price_list}")
+print(f"Min price (value): {min(price_list)}")
+print(f"Max price (value): {max(price_list)}")
+
+# Similarly for keys if you want them as a list first
+key_list = list(product_prices.keys())
+print(f"Key list: {key_list}")
+print(f"Min key from list: {min(key_list)}")
+print(f"Max key from list: {max(key_list)}")
+-->
 </section>
 </section>
 <section id="business-examples-dictionaries-aggregation" class="level1">
@@ -3625,6 +3878,61 @@ vertical-align: -.125em;
 <span id="cb12-53"><a href="#cb12-53"></a><span class="bu">print</span>(<span class="ss">f&quot;Highest month in Q1: $</span><span class="sc">{</span><span class="bu">max</span>(q1_sales)<span class="sc">:,.2f}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize these combined examples:</p>
 <iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Example%201%3A%20Product%20Inventory%20Dictionary%20---%0A%23%20Key%3A%20Product%20Name%20%28string%29,%20Value%3A%20Quantity%20in%20Stock%20%28int%29%0Ainventory%20%3D%20%7B%0A%20%20%20%20%22Laptop%22%3A%2050,%0A%20%20%20%20%22Mouse%22%3A%20250,%0A%20%20%20%20%22Keyboard%22%3A%20175,%0A%20%20%20%20%22Webcam%22%3A%2080%0A%7D%0Aprint%28%22---%20Inventory%20Dictionary%20---%22%29%0Aprint%28f%22Initial%20Inventory%3A%20%7Binventory%7D%22%29%0A%0A%23%201a.%20Check%20stock%20for%20%27Mouse%27%0Amouse_stock%20%3D%20inventory%5B%22Mouse%22%5D%0Aprint%28f%22%5CnStock%20of%20Mouse%3A%20%7Bmouse_stock%7D%22%29%0A%0A%23%201b.%20A%20shipment%20arrives%3A%20Update%20%27Laptop%27%20stock%0Ainventory%5B%22Laptop%22%5D%20%3D%20inventory%5B%22Laptop%22%5D%20%2B%2025%20%23%20Access,%20calculate,%20assign%20back%0Aprint%28f%22Updated%20Laptop%20Stock%3A%20%7Binventory%5B%27Laptop%27%5D%7D%22%29%0Aprint%28f%22Inventory%20after%20shipment%3A%20%7Binventory%7D%22%29%0A%0A%23%201c.%20Add%20a%20new%20product%3A%20%27Monitor%27%0Ainventory%5B%22Monitor%22%5D%20%3D%2060%0Aprint%28f%22Inventory%20after%20adding%20Monitor%3A%20%7Binventory%7D%22%29%0A%0A%23%201d.%20Check%20number%20of%20product%20types%20tracked%0Anum_product_types%20%3D%20len%28inventory%29%0Aprint%28f%22%5CnNumber%20of%20product%20types%3A%20%7Bnum_product_types%7D%22%29%0A%0A%23%201e.%20Get%20list%20of%20product%20names%20%28keys%29%0Aproduct_names%20%3D%20list%28inventory.keys%28%29%29%0Aproduct_names.sort%28%29%20%23%20Sort%20the%20list%20of%20names%0Aprint%28f%22Products%20tracked%20%28alphabetical%29%3A%20%7Bproduct_names%7D%22%29%0A%0A%23%201f.%20Get%20list%20of%20stock%20quantities%20%28values%29%20and%20find%20total%20stock%0Astock_levels%20%3D%20list%28inventory.values%28%29%29%0Atotal_stock%20%3D%20sum%28stock_levels%29%0Aprint%28f%22%5CnStock%20levels%3A%20%7Bstock_levels%7D%22%29%0Aprint%28f%22Total%20units%20in%20stock%3A%20%7Btotal_stock%7D%22%29%0A%0A%23%201g.%20Find%20min/max%20stock%20level%0Amin_stock%20%3D%20min%28stock_levels%29%0Amax_stock%20%3D%20max%28stock_levels%29%0Aprint%28f%22Minimum%20stock%20level%20for%20any%20product%3A%20%7Bmin_stock%7D%22%29%0Aprint%28f%22Maximum%20stock%20level%20for%20any%20product%3A%20%7Bmax_stock%7D%22%29%0A%0A%23%20---%20Example%202%3A%20Aggregating%20a%20List%20of%20Sales%20---%0Aq1_sales%20%3D%20%5B25000,%2028000,%2026500%5D%20%23%20Sales%20for%20Jan,%20Feb,%20Mar%0Aprint%28%22%5Cn---%20Q1%20Sales%20List%20---%22%29%0Aprint%28f%22Q1%20Sales%3A%20%7Bq1_sales%7D%22%29%0Aprint%28f%22Number%20of%20months%20in%20Q1%3A%20%7Blen%28q1_sales%29%7D%22%29%0Aprint%28f%22Total%20Q1%20Sales%3A%20%24%7Bsum%28q1_sales%29%3A%2C.2f%7D%22%29%0Aprint%28f%22Lowest%20month%20in%20Q1%3A%20%24%7Bmin%28q1_sales%29%3A%2C.2f%7D%22%29%0Aprint%28f%22Highest%20month%20in%20Q1%3A%20%24%7Bmax%28q1_sales%29%3A%2C.2f%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Example 1: Product Inventory Dictionary ---
+# Key: Product Name (string), Value: Quantity in Stock (int)
+inventory = {
+    "Laptop": 50,
+    "Mouse": 250,
+    "Keyboard": 175,
+    "Webcam": 80
+}
+print("--- Inventory Dictionary ---")
+print(f"Initial Inventory: {inventory}")
+
+# 1a. Check stock for 'Mouse'
+mouse_stock = inventory["Mouse"]
+print(f"\nStock of Mouse: {mouse_stock}")
+
+# 1b. A shipment arrives: Update 'Laptop' stock
+inventory["Laptop"] = inventory["Laptop"] + 25 # Access, calculate, assign back
+print(f"Updated Laptop Stock: {inventory['Laptop']}")
+print(f"Inventory after shipment: {inventory}")
+
+# 1c. Add a new product: 'Monitor'
+inventory["Monitor"] = 60
+print(f"Inventory after adding Monitor: {inventory}")
+
+# 1d. Check number of product types tracked
+num_product_types = len(inventory)
+print(f"\nNumber of product types: {num_product_types}")
+
+# 1e. Get list of product names (keys)
+product_names = list(inventory.keys())
+product_names.sort() # Sort the list of names
+print(f"Products tracked (alphabetical): {product_names}")
+
+# 1f. Get list of stock quantities (values) and find total stock
+stock_levels = list(inventory.values())
+total_stock = sum(stock_levels)
+print(f"\nStock levels: {stock_levels}")
+print(f"Total units in stock: {total_stock}")
+
+# 1g. Find min/max stock level
+min_stock = min(stock_levels)
+max_stock = max(stock_levels)
+print(f"Minimum stock level for any product: {min_stock}")
+print(f"Maximum stock level for any product: {max_stock}")
+
+# --- Example 2: Aggregating a List of Sales ---
+q1_sales = [25000, 28000, 26500] # Sales for Jan, Feb, Mar
+print("\n--- Q1 Sales List ---")
+print(f"Q1 Sales: {q1_sales}")
+print(f"Number of months in Q1: {len(q1_sales)}")
+print(f"Total Q1 Sales: ${sum(q1_sales):,.2f}")
+print(f"Lowest month in Q1: ${min(q1_sales):,.2f}")
+print(f"Highest month in Q1: ${max(q1_sales):,.2f}")
+-->
 </section>
 <section id="best-practices-and-common-pitfalls" class="level1">
 <h1>5. Best Practices and Common Pitfalls</h1>

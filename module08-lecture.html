@@ -3315,6 +3315,25 @@ vertical-align: -.125em;
 <p>When you call a function, the program’s execution jumps from the call site to the first line inside the function’s body, executes the body, and then (usually) returns to the point right after where the function was called.</p>
 <p>Visualize defining and calling simple functions:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Define%20the%20function%0Adef%20greet_simple%28%29%3A%0A%20%20print%28%22Hello%20from%20the%20greet_simple%20function!%22%29%0A%0A%23%20---%20Now,%20CALL%20the%20function%20---%0Aprint%28%22About%20to%20call%20the%20function...%22%29%0Agreet_simple%28%29%20%23%20This%20executes%20the%20print%20statement%20inside%20the%20function%0Aprint%28%22...Function%20call%20finished.%22%29%0A%0A%23%20Calling%20another%20function%0Adef%20display_company_motto%28%29%3A%0A%20%20motto%20%3D%20%22Innovate%20for%20a%20better%20future%22%0A%20%20print%28f%22Our%20motto%3A%20%7Bmotto%7D%22%29%0A%0Aprint%28%22%5CnCalling%20motto%20function...%22%29%0Adisplay_company_motto%28%29%20%23%20Executes%20the%20code%20inside%20display_company_motto%0Adisplay_company_motto%28%29%20%23%20You%20can%20call%20it%20as%20many%20times%20as%20needed!&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Define the function
+def greet_simple():
+  print("Hello from the greet_simple function!")
+
+# --- Now, CALL the function ---
+print("About to call the function...")
+greet_simple() # This executes the print statement inside the function
+print("...Function call finished.")
+
+# Calling another function
+def display_company_motto():
+  motto = "Innovate for a better future"
+  print(f"Our motto: {motto}")
+
+print("\nCalling motto function...")
+display_company_motto() # Executes the code inside display_company_motto
+display_company_motto() # You can call it as many times as needed!
+-->
 </section>
 <section id="docstrings-docstring-goes-here-documenting-your-functions" class="level2">
 <h2 class="anchored" data-anchor-id="docstrings-docstring-goes-here-documenting-your-functions">2.3 Docstrings (<code>&quot;&quot;&quot;Docstring Goes Here&quot;&quot;&quot;</code>): Documenting Your Functions</h2>
@@ -3409,6 +3428,42 @@ vertical-align: -.125em;
 <p>When you call a function, Python matches the arguments you provide to the parameters defined in the function signature.</p>
 <p>Visualize parameters and arguments:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Define%20the%20function%20with%20the%20%27name%27%20parameter%0Adef%20greet_user%28name%29%3A%0A%20%20%22%22%22Greets%20the%20user%20by%20their%20name.%22%22%22%0A%20%20print%28f%22Hello,%20%7Bname%7D!%20Welcome.%22%29%0A%0A%23%20---%20Call%20the%20function%20with%20arguments%20---%0A%23%20%22Alice%22%20is%20the%20argument%20passed%20to%20the%20%27name%27%20parameter%0Aprint%28%22Calling%20with%20Alice...%22%29%0Agreet_user%28%22Alice%22%29%0A%0A%23%20%22Bob%22%20is%20the%20argument%20passed%20to%20the%20%27name%27%20parameter%0Acustomer_name%20%3D%20%22Bob%22%0Aprint%28%22%5CnCalling%20with%20Bob...%22%29%0Agreet_user%28customer_name%29%20%23%20You%20can%20pass%20variables%20as%20arguments%20too%0A%0Aprint%28%22%5Cn----------%22%29%0A%0A%23%20Define%20function%20with%20multiple%20parameters%0Adef%20calculate_simple_interest%28principal,%20rate,%20years%29%3A%0A%20%20%22%22%22Calculates%20simple%20interest%20%28without%20returning%20yet%29.%22%22%22%0A%20%20interest%20%3D%20principal%20*%20rate%20*%20years%0A%20%20print%28f%22Principal%3A%20%24%7Bprincipal%3A%2C.2f%7D,%20Rate%3A%20%7Brate%3A.1%25%7D,%20Years%3A%20%7Byears%7D%22%29%0A%20%20print%28f%22Simple%20Interest%20Earned%3A%20%24%7Binterest%3A%2C.2f%7D%22%29%0A%0A%23%20Call%20with%20corresponding%20arguments%0A%23%201000%20maps%20to%20principal,%200.05%20maps%20to%20rate,%205%20maps%20to%20years%0Aprint%28%22%5CnCalculating%20interest...%22%29%0Acalculate_simple_interest%281000,%200.05,%205%29%0A%0Aprint%28%22%5CnCalculating%20interest%20again...%22%29%0Ainvestment%20%3D%205000%0Ainterest_rate%20%3D%200.03%0Aterm%20%3D%2010%0Acalculate_simple_interest%28investment,%20interest_rate,%20term%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Define the function with the 'name' parameter
+def greet_user(name):
+  """Greets the user by their name."""
+  print(f"Hello, {name}! Welcome.")
+
+# --- Call the function with arguments ---
+# "Alice" is the argument passed to the 'name' parameter
+print("Calling with Alice...")
+greet_user("Alice")
+
+# "Bob" is the argument passed to the 'name' parameter
+customer_name = "Bob"
+print("\nCalling with Bob...")
+greet_user(customer_name) # You can pass variables as arguments too
+
+print("\n----------")
+
+# Define function with multiple parameters
+def calculate_simple_interest(principal, rate, years):
+  """Calculates simple interest (without returning yet)."""
+  interest = principal * rate * years
+  print(f"Principal: ${principal:,.2f}, Rate: {rate:.1%}, Years: {years}")
+  print(f"Simple Interest Earned: ${interest:,.2f}")
+
+# Call with corresponding arguments
+# 1000 maps to principal, 0.05 maps to rate, 5 maps to years
+print("\nCalculating interest...")
+calculate_simple_interest(1000, 0.05, 5)
+
+print("\nCalculating interest again...")
+investment = 5000
+interest_rate = 0.03
+term = 10
+calculate_simple_interest(investment, interest_rate, term)
+-->
 </section>
 <section id="positional-vs.-keyword-arguments" class="level2">
 <h2 class="anchored" data-anchor-id="positional-vs.-keyword-arguments">3.3 Positional vs. Keyword Arguments</h2>
@@ -3448,6 +3503,31 @@ vertical-align: -.125em;
 </ul>
 <p>Visualize positional and keyword arguments:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=def%20describe_product%28product_id,%20name,%20price%29%3A%0A%20%20%22%22%22Prints%20product%20details.%22%22%22%0A%20%20print%28f%22---%20Product%3A%20%7Bproduct_id%7D%20---%22%29%0A%20%20print%28f%22%20%20Name%3A%20%7Bname%7D%22%29%0A%20%20print%28f%22%20%20Price%3A%20%24%7Bprice%3A.2f%7D%22%29%0A%0A%23%20---%20Calling%20with%20Positional%20Arguments%20---%0A%23%20Order%20matters%3A%20%22P101%22%20-%3E%20product_id,%20%22Coffee%20Mug%22%20-%3E%20name,%209.99%20-%3E%20price%0Aprint%28%22Calling%20with%20positional%20arguments%3A%22%29%0Adescribe_product%28%22P101%22,%20%22Coffee%20Mug%22,%209.99%29%0A%0A%23%20---%20Calling%20with%20Keyword%20Arguments%20---%0A%23%20Order%20doesn%27t%20matter%20when%20using%20keywords%0Aprint%28%22%5CnCalling%20with%20keyword%20arguments%20%28order%20mixed%29%3A%22%29%0Adescribe_product%28price%3D75.00,%20product_id%3D%22K205%22,%20name%3D%22Keyboard%22%29%0A%0A%23%20---%20Mixing%20Positional%20and%20Keyword%20---%0A%23%20You%20can%20mix%20them,%20but%20positional%20arguments%20MUST%20come%20BEFORE%20keyword%20arguments%0Aprint%28%22%5CnCalling%20with%20mixed%20arguments%20%28positional%20first%29%3A%22%29%0Adescribe_product%28%22M300%22,%20price%3D25.00,%20name%3D%22Mouse%22%29%0A%0A%23%20This%20would%20cause%20a%20SyntaxError%3A%20positional%20argument%20follows%20keyword%20argument%0A%23%20describe_product%28product_id%3D%22L450%22,%20%22Laptop%22,%20price%3D1200.00%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+def describe_product(product_id, name, price):
+  """Prints product details."""
+  print(f"--- Product: {product_id} ---")
+  print(f"  Name: {name}")
+  print(f"  Price: ${price:.2f}")
+
+# --- Calling with Positional Arguments ---
+# Order matters: "P101" -> product_id, "Coffee Mug" -> name, 9.99 -> price
+print("Calling with positional arguments:")
+describe_product("P101", "Coffee Mug", 9.99)
+
+# --- Calling with Keyword Arguments ---
+# Order doesn't matter when using keywords
+print("\nCalling with keyword arguments (order mixed):")
+describe_product(price=75.00, product_id="K205", name="Keyboard")
+
+# --- Mixing Positional and Keyword ---
+# You can mix them, but positional arguments MUST come BEFORE keyword arguments
+print("\nCalling with mixed arguments (positional first):")
+describe_product("M300", price=25.00, name="Mouse")
+
+# This would cause a SyntaxError: positional argument follows keyword argument
+# describe_product(product_id="L450", "Laptop", price=1200.00)
+-->
 </section>
 <section id="default-parameter-values-making-arguments-optional" class="level2">
 <h2 class="anchored" data-anchor-id="default-parameter-values-making-arguments-optional">3.4 Default Parameter Values: Making Arguments Optional</h2>
@@ -3500,6 +3580,48 @@ vertical-align: -.125em;
 <p>Default values make functions more flexible, allowing callers to provide only the information that differs from the common case.</p>
 <p>Visualize default parameter values:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20%27rate%27%20has%20a%20default%20value%20of%200.07%20%287%25%29%0Adef%20calculate_tax%28amount,%20rate%3D0.07%29%3A%0A%20%20%22%22%22Calculates%20tax%20amount,%20using%20a%20default%20rate%20if%20none%20provided.%22%22%22%0A%20%20tax%20%3D%20amount%20*%20rate%0A%20%20print%28f%22Amount%3A%20%24%7Bamount%3A%2C.2f%7D,%20Rate%3A%20%7Brate%3A.1%25%7D,%20Tax%3A%20%24%7Btax%3A%2C.2f%7D%22%29%0A%0A%23%20---%20Calling%20with%20default%20rate%20---%0Aprint%28%22Calculating%20tax%20with%20default%20rate%20%287%25%29%3A%22%29%0Acalculate_tax%281000.00%29%20%23%20Only%20%27amount%27%20is%20provided,%20%27rate%27%20uses%20default%200.07%0A%0A%23%20---%20Calling%20with%20a%20specific%20rate%20---%0Aprint%28%22%5CnCalculating%20tax%20with%20specific%20rate%20%285%25%29%3A%22%29%0Acalculate_tax%281000.00,%200.05%29%20%23%20%27rate%27%20is%20provided,%20overrides%20default%0A%0A%23%20Using%20keyword%20argument%20for%20clarity%20or%20if%20skipping%20other%20defaults%20%28if%20any%29%0Aprint%28%22%5CnCalculating%20tax%20with%20specific%20rate%20%288%25%29%20using%20keyword%3A%22%29%0Acalculate_tax%28amount%3D2500.00,%20rate%3D0.08%29%0A%0A%23%20Define%20with%20multiple%20defaults%20-%20non-defaults%20must%20come%20first%0Adef%20shipping_cost%28weight,%20speed%3D%22standard%22,%20insurance%3DFalse%29%3A%0A%20%20%22%22%22Calculates%20shipping%20cost%20%28simplified%29.%22%22%22%0A%20%20cost%20%3D%20weight%20*%202.5%20%23%20Base%20cost%0A%20%20if%20speed%20%3D%3D%20%22express%22%3A%0A%20%20%20%20cost%20%3D%20cost%20%2B%2010%0A%20%20if%20insurance%3A%0A%20%20%20%20cost%20%3D%20cost%20%2B%205%0A%20%20print%28f%22Weight%3A%20%7Bweight%7Dkg,%20Speed%3A%20%7Bspeed%7D,%20Insurance%3A%20%7Binsurance%7D,%20Cost%3A%20%24%7Bcost%3A.2f%7D%22%29%0A%0Aprint%28%22%5Cn---%20Shipping%20Calculations%20---%22%29%0A%23%20Call%20with%20only%20required%20argument%20%27weight%27%0Ashipping_cost%285%29%20%23%20Uses%20defaults%3A%20speed%3D%22standard%22,%20insurance%3DFalse%0A%0A%23%20Override%20speed,%20use%20default%20insurance%0Ashipping_cost%285,%20speed%3D%22express%22%29%0A%0A%23%20Override%20insurance%20%28must%20use%20keyword%20argument%20if%20skipping%20%27speed%27%29%0Ashipping_cost%285,%20insurance%3DTrue%29%0A%0A%23%20Override%20both%20speed%20and%20insurance%0Ashipping_cost%285,%20speed%3D%22express%22,%20insurance%3DTrue%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# 'rate' has a default value of 0.07 (7%)
+def calculate_tax(amount, rate=0.07):
+  """Calculates tax amount, using a default rate if none provided."""
+  tax = amount * rate
+  print(f"Amount: ${amount:,.2f}, Rate: {rate:.1%}, Tax: ${tax:,.2f}")
+
+# --- Calling with default rate ---
+print("Calculating tax with default rate (7%):")
+calculate_tax(1000.00) # Only 'amount' is provided, 'rate' uses default 0.07
+
+# --- Calling with a specific rate ---
+print("\nCalculating tax with specific rate (5%):")
+calculate_tax(1000.00, 0.05) # 'rate' is provided, overrides default
+
+# Using keyword argument for clarity or if skipping other defaults (if any)
+print("\nCalculating tax with specific rate (8%) using keyword:")
+calculate_tax(amount=2500.00, rate=0.08)
+
+# Define with multiple defaults - non-defaults must come first
+def shipping_cost(weight, speed="standard", insurance=False):
+  """Calculates shipping cost (simplified)."""
+  cost = weight * 2.5 # Base cost
+  if speed == "express":
+    cost = cost + 10
+  if insurance:
+    cost = cost + 5
+  print(f"Weight: {weight}kg, Speed: {speed}, Insurance: {insurance}, Cost: ${cost:.2f}")
+
+print("\n--- Shipping Calculations ---")
+# Call with only required argument 'weight'
+shipping_cost(5) # Uses defaults: speed="standard", insurance=False
+
+# Override speed, use default insurance
+shipping_cost(5, speed="express")
+
+# Override insurance (must use keyword argument if skipping 'speed')
+shipping_cost(5, insurance=True)
+
+# Override both speed and insurance
+shipping_cost(5, speed="express", insurance=True)
+-->
 </section>
 </section>
 <section id="getting-results-back-the-return-statement" class="level1">
@@ -3615,6 +3737,56 @@ vertical-align: -.125em;
 <p>This is a common and convenient pattern for functions that need to compute or retrieve multiple related pieces of information.</p>
 <p>Visualize returning values, including multiple values as a tuple:</p>
 <iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Function%20that%20returns%20a%20value%0Adef%20add_numbers%28num1,%20num2%29%3A%0A%20%20%22%22%22Adds%20two%20numbers%20and%20returns%20the%20result.%22%22%22%0A%20%20total%20%3D%20num1%20%2B%20num2%0A%20%20print%28%22...inside%20add_numbers...%22%29%0A%20%20return%20total%0A%0A%23%20Capture%20return%20value%0Asum_result%20%3D%20add_numbers%2810,%205%29%0Aprint%28f%22Returned%20sum%3A%20%7Bsum_result%7D%22%29%0A%0Aprint%28%22%5Cn----------%22%29%0A%0A%23%20Contrast%20print%20vs%20return%0Adef%20print_greeting%28name%29%3A%0A%20%20print%28f%22Hello,%20%7Bname%7D!%22%29%0A%20%20%23%20Implicitly%20returns%20None%0A%0Adef%20return_greeting%28name%29%3A%0A%20%20greeting_text%20%3D%20f%22Hi%20there,%20%7Bname%7D!%22%0A%20%20return%20greeting_text%0A%0Aprint_result%20%3D%20print_greeting%28%22Alice%22%29%0Areturn_result%20%3D%20return_greeting%28%22Bob%22%29%0Aprint%28f%22Result%20from%20print_greeting%3A%20%7Bprint_result%7D%22%29%0Aprint%28f%22Result%20from%20return_greeting%3A%20%27%7Breturn_result%7D%27%22%29%0A%0Aprint%28%22%5Cn----------%22%29%0A%0A%23%20Returning%20Multiple%20Values%20%28as%20a%20tuple%29%0Adef%20get_product_info%28product_id%29%3A%0A%20%20if%20product_id%20%3D%3D%20%22P101%22%3A%0A%20%20%20%20return%20%22Coffee%20Mug%22,%209.99%0A%20%20elif%20product_id%20%3D%3D%20%22K205%22%3A%0A%20%20%20%20return%20%22Keyboard%22,%2075.00%0A%20%20else%3A%0A%20%20%20%20return%20%22Not%20Found%22,%200.00%0A%0A%23%20Capture%20as%20tuple%0Aprod_tuple%20%3D%20get_product_info%28%22K205%22%29%0Aprint%28f%22Returned%20tuple%3A%20%7Bprod_tuple%7D%22%29%0A%0A%23%20Unpack%20directly%0Aprod_name,%20prod_price%20%3D%20get_product_info%28%22P101%22%29%0Aprint%28f%22Unpacked%3A%20Name%3D%27%7Bprod_name%7D%27,%20Price%3D%7Bprod_price%7D%22%29%0A%0Anf_name,%20nf_price%20%3D%20get_product_info%28%22XXX%22%29%0Aprint%28f%22Unpacked%20NF%3A%20Name%3D%27%7Bnf_name%7D%27,%20Price%3D%7Bnf_price%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Function that returns a value
+def add_numbers(num1, num2):
+  """Adds two numbers and returns the result."""
+  total = num1 + num2
+  print("...inside add_numbers...")
+  return total
+
+# Capture return value
+sum_result = add_numbers(10, 5)
+print(f"Returned sum: {sum_result}")
+
+print("\n----------")
+
+# Contrast print vs return
+def print_greeting(name):
+  print(f"Hello, {name}!")
+  # Implicitly returns None
+
+def return_greeting(name):
+  greeting_text = f"Hi there, {name}!"
+  return greeting_text
+
+print_result = print_greeting("Alice")
+return_result = return_greeting("Bob")
+print(f"Result from print_greeting: {print_result}")
+print(f"Result from return_greeting: '{return_result}'")
+
+print("\n----------")
+
+# Returning Multiple Values (as a tuple)
+def get_product_info(product_id):
+  if product_id == "P101":
+    return "Coffee Mug", 9.99
+  elif product_id == "K205":
+    return "Keyboard", 75.00
+  else:
+    return "Not Found", 0.00
+
+# Capture as tuple
+prod_tuple = get_product_info("K205")
+print(f"Returned tuple: {prod_tuple}")
+
+# Unpack directly
+prod_name, prod_price = get_product_info("P101")
+print(f"Unpacked: Name='{prod_name}', Price={prod_price}")
+
+nf_name, nf_price = get_product_info("XXX")
+print(f"Unpacked NF: Name='{nf_name}', Price={nf_price}")
+-->
 </section>
 </section>
 <section id="understanding-variable-scope-where-variables-live" class="level1">
@@ -3699,6 +3871,43 @@ vertical-align: -.125em;
 <p>Focus on using local variables within your functions and communicating via parameters and return values. This leads to cleaner, more modular code.</p>
 <p>Visualize local vs. global scope:</p>
 <iframe width="1000" height="650" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Global%20variable%0Acompany_name%20%3D%20%22Global%20Tech%20Inc.%22%0Acall_count%20%3D%200%20%23%20Another%20global%20variable%0A%0Adef%20print_company_info%28department%29%3A%0A%20%20%22%22%22Reads%20global%20variable%20and%20uses%20local%20parameter.%22%22%22%0A%20%20%23%20Can%20READ%20the%20global%20variable%20%27company_name%27%20without%20issues%0A%20%20print%28f%22Department%3A%20%7Bdepartment%7D%20at%20%7Bcompany_name%7D%22%29%0A%20%20%23%20%27department%27%20is%20local%20to%20this%20function%0A%0Adef%20increment_call_count%28%29%3A%0A%20%20%22%22%22Attempts%20to%20modify%20a%20global%20variable%20%28needs%20%27global%27%20keyword%29.%22%22%22%0A%20%20%23%20To%20MODIFY%20a%20global%20variable,%20you%20MUST%20declare%20it%20global%20first%0A%20%20global%20call_count%0A%20%20call_count%20%3D%20call_count%20%2B%201%0A%20%20print%28f%22Inside%20function%3A%20call_count%20is%20now%20%7Bcall_count%7D%22%29%0A%0A%23%20---%20Reading%20global%20---%0Aprint_company_info%28%22Sales%22%29%0Aprint_company_info%28%22Marketing%22%29%0A%0A%23%20---%20Modifying%20global%20---%0Aprint%28f%22%5CnInitial%20call_count%20%28global%29%3A%20%7Bcall_count%7D%22%29%0Aincrement_call_count%28%29%0Aincrement_call_count%28%29%0Aprint%28f%22Final%20call_count%20%28global%29%3A%20%7Bcall_count%7D%22%29%0A%0A%23%20Local%20variables%20with%20the%20same%20name%20DO%20NOT%20affect%20globals%20unless%20%27global%27%20is%20used%0Adef%20test_local_scope%28%29%3A%0A%20%20%20%20company_name%20%3D%20%22Local%20Business%20Ltd.%22%20%23%20This%20is%20a%20NEW%20LOCAL%20variable%0A%20%20%20%20print%28f%22Inside%20test_local_scope%3A%20%7Bcompany_name%7D%22%29%0A%0Aprint%28%22%5CnTesting%20local%20scope...%22%29%0Atest_local_scope%28%29%0Aprint%28f%22Global%20company_name%20is%20still%3A%20%7Bcompany_name%7D%22%29%20%23%20Unchanged&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Global variable
+company_name = "Global Tech Inc."
+call_count = 0 # Another global variable
+
+def print_company_info(department):
+  """Reads global variable and uses local parameter."""
+  # Can READ the global variable 'company_name' without issues
+  print(f"Department: {department} at {company_name}")
+  # 'department' is local to this function
+
+def increment_call_count():
+  """Attempts to modify a global variable (needs 'global' keyword)."""
+  # To MODIFY a global variable, you MUST declare it global first
+  global call_count
+  call_count = call_count + 1
+  print(f"Inside function: call_count is now {call_count}")
+
+# --- Reading global ---
+print_company_info("Sales")
+print_company_info("Marketing")
+
+# --- Modifying global ---
+print(f"\nInitial call_count (global): {call_count}")
+increment_call_count()
+increment_call_count()
+print(f"Final call_count (global): {call_count}")
+
+# Local variables with the same name DO NOT affect globals unless 'global' is used
+def test_local_scope():
+    company_name = "Local Business Ltd." # This is a NEW LOCAL variable
+    print(f"Inside test_local_scope: {company_name}")
+
+print("\nTesting local scope...")
+test_local_scope()
+print(f"Global company_name is still: {company_name}") # Unchanged
+-->
 </section>
 </section>
 <section id="lambda-functions-quick-anonymous-functions" class="level1">
@@ -3757,6 +3966,34 @@ vertical-align: -.125em;
 <p>For beginners, focus on mastering <code>def</code> functions first. Lambdas are a convenient shortcut you might encounter, but clear <code>def</code> functions are usually preferred for readability in business application code.</p>
 <p>Visualize lambda functions:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20---%20Equivalent%20%27def%27%20function%20---%0Adef%20add_def%28x,%20y%29%3A%0A%20%20return%20x%20%2B%20y%0A%0A%23%20---%20Lambda%20function%20doing%20the%20same%20---%0A%23%20Assign%20the%20lambda%20function%20to%20a%20variable%20%27add_lambda%27%0Aadd_lambda%20%3D%20lambda%20x,%20y%3A%20x%20%2B%20y%0A%0A%23%20---%20Calling%20them%20---%0Aresult_def%20%3D%20add_def%2810,%205%29%0Aresult_lambda%20%3D%20add_lambda%2810,%205%29%20%23%20Call%20the%20lambda%20via%20the%20variable%20it%27s%20assigned%20to%0A%0Aprint%28f%22Result%20from%20def%20function%3A%20%7Bresult_def%7D%22%29%0Aprint%28f%22Result%20from%20lambda%20function%3A%20%7Bresult_lambda%7D%22%29%0A%0A%23%20---%20Another%20simple%20example%3A%20calculate%20price%20with%20tax%20---%0Aprice_with_tax%20%3D%20lambda%20price,%20rate%3A%20price%20*%20%281%20%2B%20rate%29%0A%0Afinal_price%20%3D%20price_with_tax%28100,%200.07%29%0Aprint%28f%22%5CnPrice%20with%20tax%20%28lambda%29%3A%20%24%7Bfinal_price%3A.2f%7D%22%29%0A%0A%23%20---%20Example%3A%20Get%20first%20character%20---%0Aget_initial%20%3D%20lambda%20name%3A%20name%5B0%5D%20%23%20Assumes%20name%20is%20not%20empty!%0A%0Ainitial%20%3D%20get_initial%28%22Alice%22%29%0Aprint%28f%22Initial%20using%20lambda%3A%20%7Binitial%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# --- Equivalent 'def' function ---
+def add_def(x, y):
+  return x + y
+
+# --- Lambda function doing the same ---
+# Assign the lambda function to a variable 'add_lambda'
+add_lambda = lambda x, y: x + y
+
+# --- Calling them ---
+result_def = add_def(10, 5)
+result_lambda = add_lambda(10, 5) # Call the lambda via the variable it's assigned to
+
+print(f"Result from def function: {result_def}")
+print(f"Result from lambda function: {result_lambda}")
+
+# --- Another simple example: calculate price with tax ---
+price_with_tax = lambda price, rate: price * (1 + rate)
+
+final_price = price_with_tax(100, 0.07)
+print(f"\nPrice with tax (lambda): ${final_price:.2f}")
+
+# --- Example: Get first character ---
+get_initial = lambda name: name[0] # Assumes name is not empty!
+
+initial = get_initial("Alice")
+print(f"Initial using lambda: {initial}")
+-->
 </section>
 </section>
 <section id="modular-programming-principles-building-with-blocks" class="level1">

@@ -3245,6 +3245,26 @@ vertical-align: -.125em;
 <p><strong>Why is negative indexing useful?</strong> It lets you easily access characters near the end of a string without needing to know the string’s exact length beforehand. Want the last character? It’s always <code>[-1]</code>.</p>
 <p>Visualize indexing:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=market%20%3D%20%22NASDAQ%22%0A%23%20Indices%3A%20N%20%20A%20%20S%20%20D%20%20A%20%20Q%0A%23%20Positive%3A0%20%201%20%202%20%203%20%204%20%205%0A%23%20Negative%3A-6%20-5%20-4%20-3%20-2%20-1%0A%0A%23%20Positive%20Indexing%0Afirst_char%20%3D%20market%5B0%5D%20%20%23%20Gets%20the%20character%20at%20index%200%3A%20&#39;N&#39;%0Aprint%28f%22First%20character%3A%20%7Bfirst_char%7D%22%29%0A%0Athird_char%20%3D%20market%5B2%5D%20%20%23%20Gets%20the%20character%20at%20index%202%3A%20&#39;S&#39;%0Aprint%28f%22Third%20character%3A%20%7Bthird_char%7D%22%29%0A%0A%23%20Negative%20Indexing%20-%20often%20very%20convenient!%0Alast_char%20%3D%20market%5B-1%5D%20%23%20Gets%20the%20last%20character%3A%20&#39;Q&#39;%0Aprint%28f%22Last%20character%3A%20%7Blast_char%7D%22%29%0A%0Asecond_last%20%3D%20market%5B-2%5D%20%23%20Gets%20the%20second-to-last%20character%3A%20&#39;A&#39;%0Aprint%28f%22Second-to-last%20character%3A%20%7Bsecond_last%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+market = "NASDAQ"
+# Indices: N  A  S  D  A  Q
+# Positive:0  1  2  3  4  5
+# Negative:-6 -5 -4 -3 -2 -1
+
+# Positive Indexing
+first_char = market[0]  # Gets the character at index 0: 'N'
+print(f"First character: {first_char}")
+
+third_char = market[2]  # Gets the character at index 2: 'S'
+print(f"Third character: {third_char}")
+
+# Negative Indexing - often very convenient!
+last_char = market[-1] # Gets the last character: 'Q'
+print(f"Last character: {last_char}")
+
+second_last = market[-2] # Gets the second-to-last character: 'A'
+print(f"Second-to-last character: {second_last}")
+-->
 </section>
 <section id="accessing-substrings-slicing-extracting-sections-of-text" class="level2">
 <h2 class="anchored" data-anchor-id="accessing-substrings-slicing-extracting-sections-of-text">1.3 Accessing Substrings: Slicing – Extracting Sections of Text</h2>
@@ -3304,6 +3324,53 @@ vertical-align: -.125em;
 <p>Slicing is incredibly powerful for parsing text data that follows a consistent format, like log files, formatted IDs, or filenames.</p>
 <p>Visualize slicing:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=data_filename%20%3D%20%22SalesData_Q4_2025.csv%22%0A%23%20Indices%3A%20%20%20%20%20%20S%20a%20l%20e%20s%20D%20a%20t%20a%20_%20Q%20%204%20%20_%20%202%20%200%20%202%20%205%20%20.%20%20c%20%20s%20%20v%0A%23%20Positive%3A%20%20%20%20%200%201%202%203%204%205%206%207%208%209%2010%2011%2012%2013%2014%2015%2016%2017%2018%2019%2020%0A%0A%23%20Get%20&#39;SalesData&#39;%20%28start%20at%200,%20stop%20at%209%29%0Areport_type%20%3D%20data_filename%5B0%3A9%5D%0Aprint%28f%22Report%20Type%3A%20%7Breport_type%7D%22%29%0A%0A%23%20Get%20&#39;Q4&#39;%20%28start%20at%2010,%20stop%20at%2012%29%0Aquarter%20%3D%20data_filename%5B10%3A12%5D%0Aprint%28f%22Quarter%3A%20%7Bquarter%7D%22%29%0A%0A%23%20Get%20&#39;2025&#39;%20%28start%20at%2013,%20stop%20at%2017%29%0Ayear%20%3D%20data_filename%5B13%3A17%5D%0Aprint%28f%22Year%3A%20%7Byear%7D%22%29%0A%0A%23%20---%20Using%20Defaults%20---%0A%0A%23%20Omit%20start%20index%20-%3E%20Starts%20from%20beginning%20%28equivalent%20to%20%5B0%3A9%5D%29%0Areport_type_alt%20%3D%20data_filename%5B%3A9%5D%0Aprint%28f%22Report%20Type%20%28alt%29%3A%20%7Breport_type_alt%7D%22%29%0A%0A%23%20Omit%20stop%20index%20-%3E%20Goes%20to%20the%20end%20%28equivalent%20to%20%5B10%3Aend%5D%29%0Aperiod_file%20%3D%20data_filename%5B10%3A%5D%0Aprint%28f%22Period%20and%20File%3A%20%7Bperiod_file%7D%22%29%0A%0A%23%20---%20Using%20Negative%20Indices%20and%20Steps%20---%0A%0A%23%20Get%20the%20file%20extension%20&#39;.csv&#39;%20%28last%204%20characters%29%0A%23%20Start%204%20characters%20from%20the%20end,%20go%20to%20the%20very%20end%0Aextension%20%3D%20data_filename%5B-4%3A%5D%0Aprint%28f%22Extension%3A%20%7Bextension%7D%22%29%0A%0A%23%20Get%20&#39;Data&#39;%20%28indices%205,%206,%207,%208%29%20using%20negative%20indices%0A%23%20Start%20at%20-16%20%28&#39;D&#39;%29,%20stop%20at%20-12%20%28&#39;_&#39;%29%0Adata_part%20%3D%20data_filename%5B-16%3A-12%5D%0Aprint%28f%22Data%20part%3A%20%7Bdata_part%7D%22%29%0A%0A%23%20Get%20every%20second%20character%20from%20the%20whole%20string%0Aevery_second%20%3D%20data_filename%5B%3A%3A2%5D%20%23%20Start%3Ddefault,%20Stop%3Ddefault,%20Step%3D2%0Aprint%28f%22Every%20second%20char%3A%20%7Bevery_second%7D%22%29%0A%0A%23%20Reverse%20the%20string%20using%20a%20step%20of%20-1%0Areversed_data%20%3D%20data_filename%5B%3A%3A-1%5D%20%23%20Start%3Ddefault,%20Stop%3Ddefault,%20Step%3D-1%0Aprint%28f%22Reversed%3A%20%7Breversed_data%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+data_filename = "SalesData_Q4_2025.csv"
+# Indices:      S a l e s D a t a _ Q  4  _  2  0  2  5  .  c  s  v
+# Positive:     0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+# Get 'SalesData' (start at 0, stop at 9)
+report_type = data_filename[0:9]
+print(f"Report Type: {report_type}")
+
+# Get 'Q4' (start at 10, stop at 12)
+quarter = data_filename[10:12]
+print(f"Quarter: {quarter}")
+
+# Get '2025' (start at 13, stop at 17)
+year = data_filename[13:17]
+print(f"Year: {year}")
+
+# --- Using Defaults ---
+
+# Omit start index -> Starts from beginning (equivalent to [0:9])
+report_type_alt = data_filename[:9]
+print(f"Report Type (alt): {report_type_alt}")
+
+# Omit stop index -> Goes to the end (equivalent to [10:end])
+period_file = data_filename[10:]
+print(f"Period and File: {period_file}")
+
+# --- Using Negative Indices and Steps ---
+
+# Get the file extension '.csv' (last 4 characters)
+# Start 4 characters from the end, go to the very end
+extension = data_filename[-4:]
+print(f"Extension: {extension}")
+
+# Get 'Data' (indices 5, 6, 7, 8) using negative indices
+# Start at -16 ('D'), stop at -12 ('_')
+data_part = data_filename[-16:-12]
+print(f"Data part: {data_part}")
+
+# Get every second character from the whole string
+every_second = data_filename[::2] # Start=default, Stop=default, Step=2
+print(f"Every second char: {every_second}")
+
+# Reverse the string using a step of -1
+reversed_data = data_filename[::-1] # Start=default, Stop=default, Step=-1
+print(f"Reversed: {reversed_data}")
+-->
 </section>
 <section id="string-immutability-you-cant-change-strings-in-place" class="level2">
 <h2 class="anchored" data-anchor-id="string-immutability-you-cant-change-strings-in-place">1.4 String Immutability: You Can’t Change Strings In Place!</h2>
@@ -3345,6 +3412,26 @@ Note
 </div>
 </div>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=product_code%20%3D%20%22ABC-100%22%0Aprint%28f%22Original%20code%3A%20%7Bproduct_code%7D%22%29%0A%0A%23%20Let&#39;s%20TRY%20to%20change%20the%20first%20character%20to%20&#39;X&#39;%0A%23%20This%20will%20fail%20with%20a%20TypeError!%20Python%20protects%20the%20original%20string.%0Atry%3A%0A%20%20%20%20product_code%5B0%5D%20%3D%20&#39;X&#39;%20%23%20Attempting%20the%20&#39;impossible&#39;%20change%0Aexcept%20TypeError%20as%20e%3A%0A%20%20%20%20print%28f%22--%3E%20Error%20received%3A%20%7Be%7D%22%29%0A%20%20%20%20print%28%22--%3E%20This%20demonstrates%20strings%20are%20immutable.%22%29%0A%0A%23%20So,%20how%20do%20we%20&#39;change&#39;%20a%20string%3F%20We%20create%20a%20NEW%20one%20based%20on%20the%20old%20one.%0A%23%20For%20example,%20use%20slicing%20and%20concatenation%3A%0Anew_product_code%20%3D%20&#39;X&#39;%20%2B%20product_code%5B1%3A%5D%20%23%20Create%20NEW%20string%3A%20&#39;X&#39;%20%2B%20&#39;BC-100&#39;%0Aprint%28f%22New%20code%20created%3A%20%7Bnew_product_code%7D%22%29%0A%0A%23%20Importantly,%20the%20original%20string%20remains%20untouched%3A%0Aprint%28f%22Original%20code%20is%20still%3A%20%7Bproduct_code%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+product_code = "ABC-100"
+print(f"Original code: {product_code}")
+
+# Let's TRY to change the first character to 'X'
+# This will fail with a TypeError! Python protects the original string.
+try:
+    product_code[0] = 'X' # Attempting the 'impossible' change
+except TypeError as e:
+    print(f"--> Error received: {e}&quot;)
+    print(&quot;--&gt; This demonstrates strings are immutable.&quot;)
+
+# So, how do we &#39;change&#39; a string? We create a NEW one based on the old one.
+# For example, use slicing and concatenation:
+new_product_code = &#39;X&#39; + product_code[1:] # Create NEW string: &#39;X&#39; + &#39;BC-100&#39;
+print(f&quot;New code created: {new_product_code}&quot;)
+
+# Importantly, the original string remains untouched:
+print(f&quot;Original code is still: {product_code}&quot;)
+--&gt;
 </section>
 <section id="string-operations-concatenation-and-repetition" class="level2">
 <h2 class="anchored" data-anchor-id="string-operations-concatenation-and-repetition">1.5 String Operations: Concatenation (+) and Repetition (*)</h2>
@@ -3377,6 +3464,30 @@ Note
 <span id="cb5-22"><a href="#cb5-22"></a><span class="bu">print</span>(report_header)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize these operations:</p>
 <iframe width="1000" height="500" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=first_name%20%3D%20%22Jane%22%0Alast_name%20%3D%20%22Doe%22%0Agreeting%20%3D%20%22Hello%20%22%0Aseparator%20%3D%20%22-%22%20*%2020%20%23%20Creates%20%22--------------------%22%0A%0A%23%20Concatenation%20to%20build%20a%20full%20name%20and%20a%20message%0Afull_name%20%3D%20first_name%20%2B%20%22%20%22%20%2B%20last_name%20%23%20Add%20a%20space%20in%20between!%0Amessage%20%3D%20greeting%20%2B%20full_name%20%2B%20%22!%22%0Aprint%28message%29%0A%0A%23%20Repetition%20for%20visual%20formatting%0Aprint%28separator%29%0Aprint%28%22REPORT%20HEADER%22%29%0Aprint%28separator%29%0A%0A%23%20Important%3A%20You%20can%20only%20concatenate%20strings%20with%20other%20strings!%0Adept_code%20%3D%20405%0A%23%20report_header%20%3D%20%22Department%3A%20%22%20%2B%20dept_code%20%20%23%20This%20causes%20a%20TypeError!%0A%0A%23%20You%20MUST%20convert%20numbers%20%28or%20other%20types%29%20to%20strings%20using%20str%28%29%20first%3A%0Areport_header%20%3D%20%22Department%3A%20%22%20%2B%20str%28dept_code%29%0Aprint%28report_header%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+first_name = "Jane"
+last_name = "Doe"
+greeting = "Hello "
+separator = "-" * 20 # Creates "--------------------"
+
+# Concatenation to build a full name and a message
+full_name = first_name + " " + last_name # Add a space in between!
+message = greeting + full_name + "!"
+print(message)
+
+# Repetition for visual formatting
+print(separator)
+print("REPORT HEADER")
+print(separator)
+
+# Important: You can only concatenate strings with other strings!
+dept_code = 405
+# report_header = "Department: " + dept_code  # This causes a TypeError!
+
+# You MUST convert numbers (or other types) to strings using str() first:
+report_header = "Department: " + str(dept_code)
+print(report_header)
+-->
 </section>
 <section id="finding-the-length-of-a-string-len" class="level2">
 <h2 class="anchored" data-anchor-id="finding-the-length-of-a-string-len">1.6 Finding the Length of a String: <code>len()</code></h2>
@@ -3590,6 +3701,36 @@ Quick Recap: Methods vs. Functions
 <span id="cb15-28"><a href="#cb15-28"></a>    <span class="bu">print</span>(<span class="st">&quot;Error converting price to float.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize this multi-step processing:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=data_line%20%3D%20%22%20%20%20SuperWidget%20%7C%20199.99%20%7C%20electronics%20%20%20%22%0A%0A%23%201.%20Remove%20leading/trailing%20whitespace%0Acleaned_line%20%3D%20data_line.strip%28%29%0Aprint%28f%221.%20Stripped%3A%20%27%7Bcleaned_line%7D%27%22%29%0A%0A%23%202.%20Split%20the%20line%20into%20parts%20using%20%27%7C%27%20as%20the%20separator%0Aparts%20%3D%20cleaned_line.split%28%27%7C%27%29%0Aprint%28f%222.%20Split%20Parts%3A%20%7Bparts%7D%22%29%0A%23%20Note%3A%20parts%20might%20still%20have%20extra%20spaces%20around%20them!%0A%0A%23%203.%20Clean%20up%20each%20part%20and%20store%20them%0A%23%20We%20need%20to%20strip%20whitespace%20from%20each%20individual%20part%20after%20splitting%0Aproduct_name%20%3D%20parts%5B0%5D.strip%28%29%0Aprice_str%20%3D%20parts%5B1%5D.strip%28%29%20%23%20Price%20is%20still%20a%20string%20here%0Acategory%20%3D%20parts%5B2%5D.strip%28%29.capitalize%28%29%20%23%20Also%20capitalize%20the%20category%0A%0Aprint%28f%223.%20Final%20Product%3A%20%27%7Bproduct_name%7D%27%22%29%0Aprint%28f%22%20%20%20Final%20Price%20String%3A%20%27%7Bprice_str%7D%27%22%29%0Aprint%28f%22%20%20%20Final%20Category%3A%20%27%7Bcategory%7D%27%22%29%0A%0A%23%204.%20%28Further%20processing%29%20Convert%20price%20string%20to%20a%20float%20for%20calculations%0Atry%3A%0A%20%20%20%20price_float%20%3D%20float%28price_str%29%0A%20%20%20%20print%28f%224.%20Price%20as%20float%3A%20%7Bprice_float%7D%22%29%0A%20%20%20%20%23%20Now%20price_float%20can%20be%20used%20in%20calculations%0Aexcept%20ValueError%3A%0A%20%20%20%20print%28%22Error%20converting%20price%20to%20float.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+data_line = "   SuperWidget | 199.99 | electronics   "
+
+# 1. Remove leading/trailing whitespace
+cleaned_line = data_line.strip()
+print(f"1. Stripped: '{cleaned_line}'")
+
+# 2. Split the line into parts using '|' as the separator
+parts = cleaned_line.split('|')
+print(f"2. Split Parts: {parts}")
+# Note: parts might still have extra spaces around them!
+
+# 3. Clean up each part and store them
+# We need to strip whitespace from each individual part after splitting
+product_name = parts[0].strip()
+price_str = parts[1].strip() # Price is still a string here
+category = parts[2].strip().capitalize() # Also capitalize the category
+
+print(f"3. Final Product: '{product_name}'")
+print(f"   Final Price String: '{price_str}'")
+print(f"   Final Category: '{category}'")
+
+# 4. (Further processing) Convert price string to a float for calculations
+try:
+    price_float = float(price_str)
+    print(f"4. Price as float: {price_float}")
+    # Now price_float can be used in calculations
+except ValueError:
+    print("Error converting price to float.")
+-->
 </section>
 <section id="checking-membership-in-and-not-in-does-a-string-contain" class="level2">
 <h2 class="anchored" data-anchor-id="checking-membership-in-and-not-in-does-a-string-contain">1.8 Checking Membership: <code>in</code> and <code>not in</code> – Does a String Contain…?</h2>
@@ -3623,6 +3764,30 @@ Quick Recap: Methods vs. Functions
 <span id="cb16-22"><a href="#cb16-22"></a><span class="bu">print</span>(<span class="ss">f&quot;Contains &#39;black&#39; (case-insensitive)? </span><span class="sc">{</span>has_black_insensitive<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize membership testing:</p>
 <iframe width="1000" height="550" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=product_description%20%3D%20%22High-Quality%20Wireless%20Mouse%20with%20Ergonomic%20Design%20%28Black%29%22%0A%0A%23%20Check%20for%20keywords%0Ahas_wireless%20%3D%20%22Wireless%22%20in%20product_description%20%20%23%20True%0Ahas_mouse%20%3D%20%22Mouse%22%20in%20product_description%20%20%20%20%20%20%23%20True%0Ahas_keyboard%20%3D%20%22Keyboard%22%20in%20product_description%20%20%23%20False%20%28Keyboard%20is%20not%20in%20the%20string%29%0A%0Aprint%28f%22Description%3A%20&#39;%7Bproduct_description%7D&#39;%22%29%0Aprint%28f%22Contains%20&#39;Wireless&#39;%3F%20%7Bhas_wireless%7D%22%29%0Aprint%28f%22Contains%20&#39;Mouse&#39;%3F%20%7Bhas_mouse%7D%22%29%0Aprint%28f%22Contains%20&#39;Keyboard&#39;%3F%20%7Bhas_keyboard%7D%22%29%0A%0A%23%20Check%20for%20absence%0Ais_not_wired%20%3D%20%22Wired%22%20not%20in%20product_description%20%23%20True%20%28Wired%20is%20not%20present%29%0Aprint%28f%22Does%20NOT%20contain%20&#39;Wired&#39;%3F%20%7Bis_not_wired%7D%22%29%0A%0A%23%20Case%20sensitivity%20matters!%0Ahas_black_lowercase%20%3D%20%22black%22%20in%20product_description%20%23%20False%20%28original%20has%20&#39;Black&#39;%29%0Aprint%28f%22Contains%20&#39;black&#39;%20%28lowercase%29%3F%20%7Bhas_black_lowercase%7D%22%29%0A%23%20If%20you%20need%20case-insensitive%20checking,%20convert%20the%20main%20string%20first%3A%0Ahas_black_insensitive%20%3D%20%22black%22%20in%20product_description.lower%28%29%20%23%20True%0Aprint%28f%22Contains%20&#39;black&#39;%20%28case-insensitive%29%3F%20%7Bhas_black_insensitive%7D%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+product_description = "High-Quality Wireless Mouse with Ergonomic Design (Black)"
+
+# Check for keywords
+has_wireless = "Wireless" in product_description  # True
+has_mouse = "Mouse" in product_description      # True
+has_keyboard = "Keyboard" in product_description  # False (Keyboard is not in the string)
+
+print(f"Description: '{product_description}'")
+print(f"Contains 'Wireless'? {has_wireless}")
+print(f"Contains 'Mouse'? {has_mouse}")
+print(f"Contains 'Keyboard'? {has_keyboard}")
+
+# Check for absence
+is_not_wired = "Wired" not in product_description # True (Wired is not present)
+print(f"Does NOT contain 'Wired'? {is_not_wired}")
+
+# Case sensitivity matters!
+has_black_lowercase = "black" in product_description # False (original has 'Black')
+print(f"Contains 'black' (lowercase)? {has_black_lowercase}")
+# If you need case-insensitive checking, convert the main string first:
+has_black_insensitive = "black" in product_description.lower() # True
+print(f"Contains 'black' (case-insensitive)? {has_black_insensitive}")
+-->
 </section>
 </section>
 <section id="getting-user-input-interacting-with-your-program" class="level1">
@@ -3719,6 +3884,44 @@ Quick Recap: Methods vs. Functions
 <span id="cb19-36"><a href="#cb19-36"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Error: Invalid input &#39;</span><span class="sc">{</span>price_str<span class="sc">}</span><span class="ss">&#39;. Please enter a number (e.g., 19.99).&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize input, conversion attempts, and calculations (Simulating input: “100”, “29.95”):</p>
 <iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Get%20quantity%20%28expecting%20a%20whole%20number%29%0Aquantity_str%20%3D%20input%28%22Enter%20the%20quantity%20sold%3A%20%22%29%0Atry%3A%0A%20%20%20%20%23%20Attempt%20to%20convert%20the%20input%20string%20to%20an%20integer%0A%20%20%20%20quantity%20%3D%20int%28quantity_str%29%0A%20%20%20%20print%28f%22Successfully%20converted%20quantity%3A%20%7Bquantity%7D%20%28Type%3A%20%7Btype%28quantity%29%7D%29%22%29%0A%0A%20%20%20%20%23%20Now%20we%20can%20use%20&#39;quantity&#39;%20in%20calculations%0A%20%20%20%20cost_per_unit%20%3D%205%0A%20%20%20%20total_cost%20%3D%20quantity%20*%20cost_per_unit%0A%20%20%20%20print%28f%22Total%20cost%3A%20%24%7Btotal_cost%7D%22%29%0A%0Aexcept%20ValueError%3A%0A%20%20%20%20%23%20This%20block%20runs%20if%20int%28%29%20fails%0A%20%20%20%20print%28f%22Error%3A%20Invalid%20input%20&#39;%7Bquantity_str%7D&#39;.%20Please%20enter%20a%20whole%20number.%22%29%0A%0Aprint%28%22-%22%20*%2020%29%20%23%20Separator%0A%0A%23%20Get%20price%20%28expecting%20a%20number%20with%20decimals%29%0Aprice_str%20%3D%20input%28%22Enter%20the%20unit%20price%3A%20%22%29%0Atry%3A%0A%20%20%20%20%23%20Attempt%20to%20convert%20the%20input%20string%20to%20a%20float%0A%20%20%20%20price%20%3D%20float%28price_str%29%0A%20%20%20%20print%28f%22Successfully%20converted%20price%3A%20%7Bprice%7D%20%28Type%3A%20%7Btype%28price%29%7D%29%22%29%0A%0A%20%20%20%20%23%20Assume%20&#39;quantity&#39;%20was%20valid%20from%20above,%20perform%20calculation%0A%20%20%20%20%23%20Note%3A%20A%20more%20robust%20program%20would%20handle%20quantity%20error%20better%0A%20%20%20%20try%3A%0A%20%20%20%20%20%20%20%20revenue%20%3D%20quantity%20*%20price%0A%20%20%20%20%20%20%20%20print%28f%22Potential%20Revenue%3A%20%24%7Brevenue%7D%22%29%0A%20%20%20%20except%20NameError%3A%20%23%20If%20&#39;quantity&#39;%20wasn&#39;t%20defined%20due%20to%20the%20earlier%20error%0A%20%20%20%20%20%20%20%20print%28%22Cannot%20calculate%20revenue%20-%20quantity%20was%20invalid.%22%29%0A%0Aexcept%20ValueError%3A%0A%20%20%20%20%23%20This%20block%20runs%20if%20float%28%29%20fails%0A%20%20%20%20print%28f%22Error%3A%20Invalid%20input%20&#39;%7Bprice_str%7D&#39;.%20Please%20enter%20a%20number%20%28e.g.,%2019.99%29.%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%22100%22,%20%2229.95%22%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Get quantity (expecting a whole number)
+quantity_str = input("Enter the quantity sold: ")
+try:
+    # Attempt to convert the input string to an integer
+    quantity = int(quantity_str)
+    print(f"Successfully converted quantity: {quantity} (Type: {type(quantity)})")
+
+    # Now we can use 'quantity' in calculations
+    cost_per_unit = 5
+    total_cost = quantity * cost_per_unit
+    print(f"Total cost: ${total_cost}")
+
+except ValueError:
+    # This block runs if int() fails
+    print(f"Error: Invalid input '{quantity_str}'. Please enter a whole number.")
+
+print("-" * 20) # Separator
+
+# Get price (expecting a number with decimals)
+price_str = input("Enter the unit price: ")
+try:
+    # Attempt to convert the input string to a float
+    price = float(price_str)
+    print(f"Successfully converted price: {price} (Type: {type(price)})")
+
+    # Assume 'quantity' was valid from above, perform calculation
+    # Note: A more robust program would handle quantity error better
+    try:
+        revenue = quantity * price
+        print(f"Potential Revenue: ${revenue}")
+    except NameError: # If 'quantity' wasn't defined due to the earlier error
+        print("Cannot calculate revenue - quantity was invalid.")
+
+except ValueError:
+    # This block runs if float() fails
+    print(f"Error: Invalid input '{price_str}'. Please enter a number (e.g., 19.99).")
+-->
 </section>
 </section>
 <section id="producing-formatted-output-presenting-information-clearly" class="level1">
@@ -3845,6 +4048,31 @@ B22      | Super Gadget    | 1,200 |  $ 199.99</code></pre>
 <span id="cb27-23"><a href="#cb27-23"></a><span class="bu">print</span>(<span class="st">&quot;-&quot;</span> <span class="op">*</span> <span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize this enhanced formatting:</p>
 <iframe width="1000" height="600" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=product%20%3D%20%22Premium%20Coffee%20Beans%22%0Aquantity%20%3D%203%0Aprice_per_unit%20%3D%2018.50%0A%0Asubtotal%20%3D%20quantity%20*%20price_per_unit%0Atax_rate%20%3D%200.07%20%23%207%25%20sales%20tax%0Atax_amount%20%3D%20subtotal%20*%20tax_rate%0Atotal%20%3D%20subtotal%20%2B%20tax_amount%0A%0Aprint%28%22-%22%20*%2045%29%20%23%20Slightly%20wider%20separator%0Aprint%28f%22%7B&#39;SALES%20RECEIPT&#39;%3A%5E45%7D%22%29%20%23%20Center%20title%20in%2045%20chars%0Aprint%28%22-%22%20*%2045%29%0Aprint%28f%22%20Product%3A%20%7Bproduct%7D%22%29%20%23%20Simple%20embedding%20is%20fine%20here%0Aprint%28f%22%20Quantity%3A%20%7Bquantity%7D%22%29%0Aprint%28f%22%20Unit%20Price%3A%20%24%7Bprice_per_unit%3A.2f%7D%22%29%20%23%20Ensure%20two%20decimal%20places%0Aprint%28%22-%22%20*%2045%29%0A%0A%23%20Use%20alignment%20and%20formatting%20for%20the%20summary%20section%0A%23%20Reserve%2030%20chars%20for%20label%20%28left-aligned%29,%2012%20for%20amount%20%28right-aligned%29%0Aprint%28f%22%7B&#39;Subtotal%3A&#39;%3A%3C30%7D%20%24%7Bsubtotal%3A%3E12%2C.2f%7D%22%29%0Aprint%28f%22%7Bf&#39;Tax%20%28%7Btax_rate%3A.0%25%7D%29%3A&#39;%3A%3C30%7D%20%24%7Btax_amount%3A%3E12%2C.2f%7D%22%29%20%23%20Embed%20%25%20format%20in%20label%0Aprint%28f%22%7B&#39;Total%3A&#39;%3A%3C30%7D%20%24%7Btotal%3A%3E12%2C.2f%7D%22%29%0Aprint%28%22-%22%20*%2045%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+product = "Premium Coffee Beans"
+quantity = 3
+price_per_unit = 18.50
+
+subtotal = quantity * price_per_unit
+tax_rate = 0.07 # 7% sales tax
+tax_amount = subtotal * tax_rate
+total = subtotal + tax_amount
+
+print("-" * 45) # Slightly wider separator
+print(f"{'SALES RECEIPT':^45}") # Center title in 45 chars
+print("-" * 45)
+print(f" Product: {product}") # Simple embedding is fine here
+print(f" Quantity: {quantity}")
+print(f" Unit Price: ${price_per_unit:.2f}") # Ensure two decimal places
+print("-" * 45)
+
+# Use alignment and formatting for the summary section
+# Reserve 30 chars for label (left-aligned), 12 for amount (right-aligned)
+print(f"{'Subtotal:':<30} ${subtotal:>12,.2f}")
+print(f"{f'Tax ({tax_rate:.0%}):':<30} ${tax_amount:>12,.2f}") # Embed % format in label
+print(f"{'Total:':<30} ${total:>12,.2f}")
+print("-" * 45)
+-->
 </section>
 </section>
 <section id="putting-it-all-together-business-example-interactive-order-calculator" class="level1">
@@ -3925,6 +4153,70 @@ B22      | Super Gadget    | 1,200 |  $ 199.99</code></pre>
 <span id="cb28-62"><a href="#cb28-62"></a>    <span class="bu">print</span>(<span class="st">&quot;**************************************************&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Visualize this complete flow (Simulating input: ” ada lovelace “,” Power Drill “,”12”, ” 99.50 “):</p>
 <iframe width="1000" height="700" frameborder="0" data-external="1" src="https://pythontutor.com/iframe-embed.html#code=%23%20Simple%20Order%20Calculator%20-%20Combining%20Input,%20Strings,%20Calculations,%20Output%0A%0Aprint%28%22---%20Custom%20Order%20Calculator%20---%22%29%0Aprint%28%22Welcome!%20Let&#39;s%20calculate%20your%20order%20total.%22%29%0A%0A%23%20---%20Step%202%20%26%203%3A%20Get%20and%20Clean%20Input%20---%0A%23%20Use%20strip%28%29%20immediately%20to%20handle%20potential%20extra%20spaces%0Acustomer_name_raw%20%3D%20input%28%22Enter%20customer%20name%3A%20%22%29%0Acustomer_name%20%3D%20customer_name_raw.strip%28%29.title%28%29%20%23%20Clean%20%26%20format%20name%0A%0Aitem_name%20%3D%20input%28%22Enter%20item%20name%3A%20%22%29.strip%28%29%20%23%20Clean%20item%20name%20too%0Aquantity_str%20%3D%20input%28f%22Enter%20quantity%20for%20%7Bitem_name%7D%3A%20%22%29.strip%28%29%0Aprice_str%20%3D%20input%28f%22Enter%20unit%20price%20for%20%7Bitem_name%7D%3A%20%24%22%29.strip%28%29%0A%0A%23%20---%20Step%204%3A%20Convert%20Input%20%28with%20Error%20Handling%29%20---%0Atry%3A%0A%20%20%20%20%23%20Attempt%20conversions%20inside%20the%20&#39;try&#39;%20block%0A%20%20%20%20quantity%20%3D%20int%28quantity_str%29%0A%20%20%20%20unit_price%20%3D%20float%28price_str%29%0A%0A%20%20%20%20%23%20---%20Step%205%3A%20Perform%20Calculations%20---%0A%20%20%20%20%23%20Check%20for%20non-sensical%20input%20%28optional%20but%20good%20practice%29%0A%20%20%20%20if%20quantity%20%3C%3D%200%20or%20unit_price%20%3C%200%3A%0A%20%20%20%20%20%20%20%20print%28%22%5CnError%3A%20Quantity%20must%20be%20positive%20and%20price%20cannot%20be%20negative.%22%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%23%20Calculate%20core%20values%0A%20%20%20%20%20%20%20%20subtotal%20%3D%20quantity%20*%20unit_price%0A%0A%20%20%20%20%20%20%20%20%23%20Apply%20discount%20based%20on%20a%20business%20rule%20%28e.g.,%2010%25%20for%2010%20or%20more%29%0A%20%20%20%20%20%20%20%20discount_rate%20%3D%200.0%0A%20%20%20%20%20%20%20%20if%20quantity%20%3E%3D%2010%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20discount_rate%20%3D%200.10%20%23%2010%25%20discount%0A%0A%20%20%20%20%20%20%20%20discount_amount%20%3D%20subtotal%20*%20discount_rate%0A%20%20%20%20%20%20%20%20final_total%20%3D%20subtotal%20-%20discount_amount%0A%0A%20%20%20%20%20%20%20%20%23%20---%20Step%206%3A%20Format%20and%20Print%20Output%20---%0A%20%20%20%20%20%20%20%20print%28%22%5Cn---%20Order%20Summary%20---%22%29%20%23%20%5Cn%20adds%20a%20newline%20for%20spacing%0A%20%20%20%20%20%20%20%20print%28f%22%20Customer%3A%20%7Bcustomer_name%7D%22%29%0A%20%20%20%20%20%20%20%20print%28%22-%22%20*%2040%29%20%23%20Separator%20line%0A%20%20%20%20%20%20%20%20print%28f%22%20Item%3A%20%7Bitem_name%7D%22%29%0A%20%20%20%20%20%20%20%20print%28f%22%20Quantity%3A%20%7Bquantity%3A%2C%7D%22%29%20%23%20Add%20comma%20separator%20for%20quantity%0A%20%20%20%20%20%20%20%20print%28f%22%20Unit%20Price%3A%20%24%7Bunit_price%3A%2C.2f%7D%22%29%20%23%20Format%20price%0A%20%20%20%20%20%20%20%20print%28%22-%22%20*%2040%29%0A%20%20%20%20%20%20%20%20%23%20Use%20alignment%20for%20summary%20section%0A%20%20%20%20%20%20%20%20print%28f%22%7B&#39;Subtotal%3A&#39;%3A%3C25%7D%20%24%7Bsubtotal%3A%3E12%2C.2f%7D%22%29%0A%20%20%20%20%20%20%20%20%23%20Only%20show%20discount%20line%20if%20applicable%0A%20%20%20%20%20%20%20%20if%20discount_amount%20%3E%200%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20discount_label%20%3D%20f%22Discount%20%28%7Bdiscount_rate%3A.0%25%7D%29%3A%22%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28f%22%7Bdiscount_label%3A%3C25%7D%20%24%7Bdiscount_amount%3A%3E12%2C.2f%7D%22%29%0A%20%20%20%20%20%20%20%20print%28f%22%7B&#39;Final%20Total%3A&#39;%3A%3C25%7D%20%24%7Bfinal_total%3A%3E12%2C.2f%7D%22%29%0A%20%20%20%20%20%20%20%20print%28%22-%22%20*%2040%29%0A%20%20%20%20%20%20%20%20print%28%22Thank%20you%20for%20your%20order!%22%29%0A%0A%23%20---%20Step%207%3A%20Handle%20Conversion%20Errors%20---%0Aexcept%20ValueError%3A%0A%20%20%20%20%23%20This%20block%20executes%20if%20int%28%29%20or%20float%28%29%20failed%0A%20%20%20%20print%28%22%5Cn%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%22%29%0A%20%20%20%20print%28%22%20ERROR%3A%20Invalid%20numeric%20input%20entered.%22%29%0A%20%20%20%20print%28f%22%20%20%20%20%20%20%20Could%20not%20convert%20quantity%20%28&#39;%7Bquantity_str%7D&#39;%29%20or%20price%20%28&#39;%7Bprice_str%7D&#39;%29%20to%20a%20number.%22%29%0A%20%20%20%20print%28%22%20%20%20%20%20%20%20Please%20restart%20and%20enter%20valid%20numbers%20%28e.g.,%2012,%2099.50%29.%22%29%0A%20%20%20%20print%28%22%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%22%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%22%20%20ada%20lovelace%20%20%22,%20%22%20Power%20Drill%20%22,%20%2212%22,%20%22%2099.50%20%22%5D&amp;textReferences=false)"></iframe>
+<!-- Python code for the above iframe:
+# Simple Order Calculator - Combining Input, Strings, Calculations, Output
+
+print("--- Custom Order Calculator ---")
+print("Welcome! Let's calculate your order total.")
+
+# --- Step 2 & 3: Get and Clean Input ---
+# Use strip() immediately to handle potential extra spaces
+customer_name_raw = input("Enter customer name: ")
+customer_name = customer_name_raw.strip().title() # Clean & format name
+
+item_name = input("Enter item name: ").strip() # Clean item name too
+quantity_str = input(f"Enter quantity for {item_name}: ").strip()
+price_str = input(f"Enter unit price for {item_name}: $").strip()
+
+# --- Step 4: Convert Input (with Error Handling) ---
+try:
+    # Attempt conversions inside the 'try' block
+    quantity = int(quantity_str)
+    unit_price = float(price_str)
+
+    # --- Step 5: Perform Calculations ---
+    # Check for non-sensical input (optional but good practice)
+    if quantity <= 0 or unit_price < 0:
+        print("\nError: Quantity must be positive and price cannot be negative.")
+    else:
+        # Calculate core values
+        subtotal = quantity * unit_price
+
+        # Apply discount based on a business rule (e.g., 10% for 10 or more)
+        discount_rate = 0.0
+        if quantity >= 10:
+            discount_rate = 0.10 # 10% discount
+
+        discount_amount = subtotal * discount_rate
+        final_total = subtotal - discount_amount
+
+        # --- Step 6: Format and Print Output ---
+        print("\n--- Order Summary ---") # \n adds a newline for spacing
+        print(f" Customer: {customer_name}")
+        print("-" * 40) # Separator line
+        print(f" Item: {item_name}")
+        print(f" Quantity: {quantity:,}") # Add comma separator for quantity
+        print(f" Unit Price: ${unit_price:,.2f}") # Format price
+        print("-" * 40)
+        # Use alignment for summary section
+        print(f"{'Subtotal:':<25} ${subtotal:>12,.2f}")
+        # Only show discount line if applicable
+        if discount_amount > 0:
+            discount_label = f"Discount ({discount_rate:.0%}):"
+            print(f"{discount_label:<25} ${discount_amount:>12,.2f}")
+        print(f"{'Final Total:':<25} ${final_total:>12,.2f}")
+        print("-" * 40)
+        print("Thank you for your order!")
+
+# --- Step 7: Handle Conversion Errors ---
+except ValueError:
+    # This block executes if int() or float() failed
+    print("\n******************************************")
+    print(" ERROR: Invalid numeric input entered.")
+    print(f"       Could not convert quantity ('{quantity_str}') or price ('{price_str}') to a number.")
+    print("       Please restart and enter valid numbers (e.g., 12, 99.50).")
+    print("******************************************")
+-->
 </section>
 <section id="best-practices-and-common-pitfalls-revisited" class="level1">
 <h1>5. Best Practices and Common Pitfalls Revisited</h1>
