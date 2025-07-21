@@ -1,0 +1,50 @@
+digraph Module2_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 2:\nVariables, Data Types\n& Arithmetic", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    variables [label="Variables\n& Naming", fillcolor=lightblue];
+    datatypes [label="Data\nTypes", fillcolor=lightblue];
+    arithmetic [label="Arithmetic\nOperations", fillcolor=lightblue];
+    conversion [label="Type\nConversion", fillcolor=lightblue];
+    mathlib [label="Math\nLibrary", fillcolor=lightblue];
+    
+    // Sub-branches for Variables
+    naming [label="• snake_case\n• Descriptive\n• Meaningful", shape=note, fillcolor=lightyellow];
+    assignment [label="Using =\nOperator", fillcolor=lightgreen];
+    
+    // Sub-branches for Data Types
+    numbers [label="Numbers", fillcolor=lightcoral];
+    text [label="Strings\n(str)", fillcolor=lightcoral];
+    boolean [label="Booleans\n(bool)", fillcolor=lightcoral];
+    
+    // Number types
+    integers [label="Integers (int)\n• Whole numbers\n• No decimals", shape=note, fillcolor=lightyellow];
+    floats [label="Floats\n• Decimals\n• Scientific notation", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Arithmetic
+    basic_ops [label="• + Addition\n• - Subtraction\n• * Multiplication\n• / Division", shape=note, fillcolor=lightyellow];
+    special_ops [label="• ** Power\n• // Floor Division\n• % Modulo", shape=note, fillcolor=lightyellow];
+    order [label="PEMDAS\nOrder", fillcolor=lightgreen];
+    
+    // Sub-branches for Type Conversion
+    functions [label="• int()\n• float()\n• str()\n• bool()", shape=note, fillcolor=lightyellow];
+    implicit [label="Automatic\nConversion", fillcolor=lightgreen];
+    
+    // Sub-branches for Math Library
+    import [label="import math", fillcolor=lightgreen];
+    funcs [label="• sqrt()\n• ceil()\n• floor()\n• pow()", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {variables datatypes arithmetic conversion mathlib};
+    variables -> {naming assignment};
+    datatypes -> {numbers text boolean};
+    numbers -> {integers floats};
+    arithmetic -> {basic_ops special_ops order};
+    conversion -> {functions implicit};
+    mathlib -> {import funcs};
+}

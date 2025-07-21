@@ -1,0 +1,41 @@
+digraph Module9_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 9:\nPandas Introduction\n& DataFrames", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    series [label="Pandas\nSeries", fillcolor=lightblue];
+    dataframes [label="DataFrames", fillcolor=lightblue];
+    selection [label="Data\nSelection", fillcolor=lightblue];
+    statistics [label="Descriptive\nStatistics", fillcolor=lightblue];
+    missing [label="Missing\nData", fillcolor=lightblue];
+    
+    // Sub-branches for Series
+    series_concepts [label="• Creating Series\n• Series Index\n• Accessing Elements", shape=note, fillcolor=lightyellow];
+    series_features [label="• Series Attributes\n• Series Operations", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for DataFrames
+    df_creation [label="• Creating DataFrames\n• Reading CSV Files", shape=note, fillcolor=lightyellow];
+    df_inspection [label="• Inspecting DataFrames\n• Rows & Columns", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Data Selection
+    selection_methods [label="• Column Selection\n• Row Selection (.loc)\n• Position Selection (.iloc)\n• Boolean Indexing", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Statistics
+    stats_methods [label="• .describe()\n• mean(), sum()\n• min(), max()\n• count(), std()", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Missing Data
+    missing_concepts [label="• NaN Values\n• .isnull()\n• Counting Missing Values", shape=note, fillcolor=lightyellow];
+    handle_preview [label="Handling\n(Preview)", fillcolor=lightgreen];
+    
+    // Connections
+    central -> {series dataframes selection statistics missing};
+    series -> {series_concepts series_features};
+    dataframes -> {df_creation df_inspection};
+    selection -> selection_methods;
+    statistics -> stats_methods;
+    missing -> {missing_concepts handle_preview};
+}

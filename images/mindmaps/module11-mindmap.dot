@@ -1,0 +1,46 @@
+digraph Module11_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 11:\nData Visualization\nwith Matplotlib", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    why [label="Why\nVisualize?", fillcolor=lightblue];
+    charts [label="Chart\nTypes", fillcolor=lightblue];
+    custom [label="Customization\n& Styling", fillcolor=lightblue];
+    pandas [label="Pandas\nIntegration", fillcolor=lightblue];
+    best [label="Best\nPractices", fillcolor=lightblue];
+    
+    // Sub-branches for Why Visualize
+    why_benefits [label="• Pattern Recognition\n• Communication\n• Memory Retention\n• Engagement", shape=note, fillcolor=lightyellow];
+    why_insights [label="• Trends\n• Outliers\n• Relationships\n• Distributions", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Chart Types
+    basic_charts [label="• Line Charts\n• Bar Charts\n• Scatter Plots", shape=note, fillcolor=lightyellow];
+    dist_charts [label="• Histograms\n• Pie Charts\n• Box Plots", shape=note, fillcolor=lightyellow];
+    multi_charts [label="• Subplots\n• Multiple Series\n• Dashboards", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Customization
+    labels_titles [label="• Titles\n• Axis Labels\n• Annotations", shape=note, fillcolor=lightyellow];
+    styling [label="• Colors\n• Line Styles\n• Markers\n• Fonts", shape=note, fillcolor=lightyellow];
+    elements [label="• Legends\n• Grids\n• Figure Size", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Pandas Integration
+    plot_method [label=".plot()\nMethod", fillcolor=lightgreen];
+    plot_types [label="• kind='line'\n• kind='bar'\n• kind='scatter'\n• kind='hist'", shape=note, fillcolor=lightyellow];
+    convenience [label="Direct from\nDataFrame", fillcolor=lightgreen];
+    
+    // Sub-branches for Best Practices
+    chart_selection [label="• Match Chart to Data\n• Consider Audience\n• Clear Purpose", shape=note, fillcolor=lightyellow];
+    design_principles [label="• Simplicity\n• Data Honesty\n• Accessibility\n• Color Choice", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {why charts custom pandas best};
+    why -> {why_benefits why_insights};
+    charts -> {basic_charts dist_charts multi_charts};
+    custom -> {labels_titles styling elements};
+    pandas -> {plot_method plot_types convenience};
+    best -> {chart_selection design_principles};
+}

@@ -1,0 +1,40 @@
+digraph Module7_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 7:\nLoops &\nIteration", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    for_loops [label="for\nLoops", fillcolor=lightblue];
+    while_loops [label="while\nLoops", fillcolor=lightblue];
+    loop_control [label="Loop\nControl", fillcolor=lightblue];
+    nested_loops [label="Nested\nLoops", fillcolor=lightblue];
+    applications [label="Business\nApplications", fillcolor=lightblue];
+    
+    // Sub-branches for for Loops
+    for_concepts [label="• Iterating Sequences\n• range() Function\n• Loop Counters\n• Accumulators", shape=note, fillcolor=lightyellow];
+    definite [label="Definite\nIteration", fillcolor=lightgreen];
+    
+    // Sub-branches for while Loops
+    while_concepts [label="• Condition-Based\n• Exit Conditions\n• Indefinite Iteration", shape=note, fillcolor=lightyellow];
+    infinite_risk [label="Infinite Loop\nRisk", fillcolor=lightcoral];
+    
+    // Sub-branches for Loop Control
+    control_statements [label="• break Statement\n• continue Statement\n• Early Loop Exit", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Nested Loops
+    nested_concepts [label="• Loops Within Loops\n• Matrix Operations\n• Generating Combinations", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Business Applications
+    app_examples [label="• Sales Analysis\n• Financial Modeling\n• Inventory Management\n• Data Processing", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {for_loops while_loops loop_control nested_loops applications};
+    for_loops -> {for_concepts definite};
+    while_loops -> {while_concepts infinite_risk};
+    loop_control -> control_statements;
+    nested_loops -> nested_concepts;
+    applications -> app_examples;
+}

@@ -1,0 +1,41 @@
+digraph Module8_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 8:\nFunctions &\nModular Programming", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    basics [label="Function\nBasics", fillcolor=lightblue];
+    params [label="Parameters &\nArguments", fillcolor=lightblue];
+    returns [label="Return\nValues", fillcolor=lightblue];
+    scope [label="Variable\nScope", fillcolor=lightblue];
+    modular [label="Modular\nDesign", fillcolor=lightblue];
+    
+    // Sub-branches for Function Basics
+    def_concepts [label="• def Statement\n• Function Calls\n• Descriptive Names", shape=note, fillcolor=lightyellow];
+    documentation [label="Docstrings", fillcolor=lightgreen];
+    dry [label="DRY Principle", fillcolor=lightgreen];
+    
+    // Sub-branches for Parameters & Arguments
+    param_types [label="• Positional Arguments\n• Keyword Arguments\n• Default Values\n• Parameter Mapping", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Return Values
+    return_concepts [label="• return Statement\n• return vs print\n• Multiple Return Values", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Variable Scope
+    scope_types [label="• Local Variables\n• Global Variables\n• global Keyword", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Modular Design
+    lambda_func [label="Lambda\nFunctions", fillcolor=lightcoral];
+    design_principles [label="• Single Responsibility\n• Reusability\n• Best Practices", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {basics params returns scope modular};
+    basics -> {def_concepts documentation dry};
+    params -> param_types;
+    returns -> return_concepts;
+    scope -> scope_types;
+    modular -> {lambda_func design_principles};
+}

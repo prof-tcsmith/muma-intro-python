@@ -1,0 +1,58 @@
+digraph Module4_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 4:\nLists & Tuples", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    lists [label="Lists\n(Mutable)", fillcolor=lightblue];
+    list_methods [label="List\nMethods", fillcolor=lightblue];
+    tuples [label="Tuples\n(Immutable)", fillcolor=lightblue];
+    operations [label="Common\nOperations", fillcolor=lightblue];
+    applications [label="Business\nApplications", fillcolor=lightblue];
+    
+    // Sub-branches for Lists
+    creating [label="Creating Lists", fillcolor=lightcoral];
+    indexing [label="Indexing & Slicing", fillcolor=lightcoral];
+    mutability [label="Modifying Lists", fillcolor=lightcoral];
+    
+    // Creating details
+    create_details [label="• Empty: []\n• With values: [1, 2, 3]\n• Mixed types allowed\n• list() function", shape=note, fillcolor=lightyellow];
+    
+    // Indexing details
+    index_details [label="• Zero-based: list[0]\n• Negative: list[-1]\n• Slicing: list[1:3]\n• Step: list[::2]", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for List Methods
+    add_methods [label="• .append()\n• .insert()\n• .extend()", shape=note, fillcolor=lightyellow];
+    remove_methods [label="• .remove()\n• .pop()\n• del statement", shape=note, fillcolor=lightyellow];
+    order_methods [label="• .sort()\n• .reverse()\n• sorted()", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Tuples
+    tuple_create [label="Creating Tuples", fillcolor=lightgreen];
+    tuple_use [label="When to Use", fillcolor=lightgreen];
+    
+    // Tuple details
+    tuple_details [label="• Parentheses: (1, 2, 3)\n• Without: 1, 2, 3\n• Single item: (1,)\n• tuple() function", shape=note, fillcolor=lightyellow];
+    tuple_when [label="• Fixed data\n• Dictionary keys\n• Return multiple values\n• Performance", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Operations
+    common_ops [label="• len()\n• in operator\n• + concatenation\n• * repetition", shape=note, fillcolor=lightyellow];
+    iteration [label="• for loops\n• enumerate()\n• zip()\n• unpacking", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Applications
+    use_cases [label="• Sales data tracking\n• Customer records\n• Inventory lists\n• Time series data", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {lists list_methods tuples operations applications};
+    lists -> {creating indexing mutability};
+    creating -> create_details;
+    indexing -> index_details;
+    list_methods -> {add_methods remove_methods order_methods};
+    tuples -> {tuple_create tuple_use};
+    tuple_create -> tuple_details;
+    tuple_use -> tuple_when;
+    operations -> {common_ops iteration};
+    applications -> use_cases;
+}

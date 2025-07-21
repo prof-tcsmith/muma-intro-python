@@ -1,0 +1,44 @@
+digraph Module10_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 10:\nData Manipulation\n& Cleaning", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    missing [label="Handling\nMissing Data", fillcolor=lightblue];
+    types [label="Data Type\nConversion", fillcolor=lightblue];
+    structure [label="DataFrame\nStructure", fillcolor=lightblue];
+    transform [label="Data\nTransformation", fillcolor=lightblue];
+    duplicates [label="Duplicates\n& Sorting", fillcolor=lightblue];
+    
+    // Sub-branches for Missing Data
+    missing_detect [label="• .isnull()\n• .notnull()\n• Count missing", shape=note, fillcolor=lightyellow];
+    missing_handle [label="• .dropna()\n• .fillna()\n• Forward/Backward fill", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Data Types
+    type_methods [label="• .astype()\n• pd.to_numeric()\n• pd.to_datetime()", shape=note, fillcolor=lightyellow];
+    type_options [label="• errors='coerce'\n• Type inference\n• Safe conversions", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Structure
+    columns_ops [label="• Add columns\n• Drop columns\n• Rename columns", shape=note, fillcolor=lightyellow];
+    index_ops [label="• Reset index\n• Set index\n• Multi-indexing", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Transformation
+    apply_methods [label="• .apply()\n• .map()\n• .applymap()", shape=note, fillcolor=lightyellow];
+    string_ops [label="• .str accessor\n• String methods\n• Text cleaning", shape=note, fillcolor=lightyellow];
+    lambda_use [label="Lambda\nFunctions", fillcolor=lightgreen];
+    
+    // Sub-branches for Duplicates & Sorting
+    dup_methods [label="• .duplicated()\n• .drop_duplicates()\n• Keep options", shape=note, fillcolor=lightyellow];
+    sort_methods [label="• .sort_values()\n• .sort_index()\n• Ascending/Descending", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {missing types structure transform duplicates};
+    missing -> {missing_detect missing_handle};
+    types -> {type_methods type_options};
+    structure -> {columns_ops index_ops};
+    transform -> {apply_methods string_ops lambda_use};
+    duplicates -> {dup_methods sort_methods};
+}

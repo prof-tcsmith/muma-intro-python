@@ -1,0 +1,43 @@
+digraph Module1_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    intro [label="Module 1:\nPython Introduction\n& Business Applications", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    why [label="Why Python\nfor Business?", fillcolor=lightblue];
+    setup [label="Environment\nSetup", fillcolor=lightblue];
+    basics [label="Python\nBasics", fillcolor=lightblue];
+    first [label="First\nProgram", fillcolor=lightblue];
+    debug [label="Debugging\nTechniques", fillcolor=lightblue];
+    
+    // Sub-branches for Why Python
+    benefits [label="• Automation\n• Data Analysis\n• Versatility\n• Integration", shape=note, fillcolor=lightyellow];
+    tools [label="vs. Excel\nvs. SQL\nvs. BI Tools", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Setup
+    thonny [label="Thonny IDE\nInstallation", fillcolor=lightgreen];
+    interface [label="• Editor\n• Shell\n• Variable Inspector", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Basics
+    concepts [label="• Variables\n• Data Types\n• Comments\n• Print Function", shape=note, fillcolor=lightyellow];
+    types [label="• int\n• float\n• str\n• bool", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for First Program
+    revenue [label="Revenue\nCalculation\nExample", fillcolor=lightcoral];
+    arithmetic [label="• Addition\n• Subtraction\n• Multiplication\n• Division", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Debugging
+    errors [label="• SyntaxError\n• NameError\n• TypeError", shape=note, fillcolor=lightyellow];
+    debugger [label="Step-by-Step\nExecution", fillcolor=lightgreen];
+    
+    // Connections
+    intro -> {why setup basics first debug};
+    why -> {benefits tools};
+    setup -> {thonny interface};
+    basics -> {concepts types};
+    first -> {revenue arithmetic};
+    debug -> {errors debugger};
+}

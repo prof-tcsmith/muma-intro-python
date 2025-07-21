@@ -1,0 +1,65 @@
+digraph Module3_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 3:\nStrings, Formatting\n& Input/Output", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    strings [label="String\nOperations", fillcolor=lightblue];
+    methods [label="String\nMethods", fillcolor=lightblue];
+    formatting [label="Output\nFormatting", fillcolor=lightblue];
+    userinput [label="User\nInput", fillcolor=lightblue];
+    business [label="Business\nApplications", fillcolor=lightblue];
+    
+    // Sub-branches for String Operations
+    basics [label="• Indexing [0]\n• Slicing [start:end]\n• len() function", shape=note, fillcolor=lightyellow];
+    operations [label="• Concatenation +\n• Repetition *\n• in operator", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for String Methods
+    case [label="Case Methods", fillcolor=lightcoral];
+    cleaning [label="Data Cleaning", fillcolor=lightcoral];
+    search [label="Search & Replace", fillcolor=lightcoral];
+    
+    // Case methods details
+    case_details [label="• .upper()\n• .lower()\n• .title()\n• .capitalize()", shape=note, fillcolor=lightyellow];
+    
+    // Cleaning methods details
+    clean_details [label="• .strip()\n• .split()\n• .join()\n• .replace()", shape=note, fillcolor=lightyellow];
+    
+    // Search methods details
+    search_details [label="• .find()\n• .count()\n• .startswith()\n• .endswith()", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Formatting
+    fstrings [label="f-strings\n(Recommended)", fillcolor=lightgreen];
+    format_spec [label="Format\nSpecifiers", fillcolor=lightgreen];
+    
+    // F-string details
+    fstring_ex [label="f\"{variable}\"\nf\"{value:.2f}\"\nf\"{text:>10}\"", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for User Input
+    input_func [label="input()\nFunction", fillcolor=lightgreen];
+    conversion [label="Type\nConversion", fillcolor=lightgreen];
+    
+    // Input details
+    input_details [label="• Always returns string\n• Prompt message\n• Waits for Enter", shape=note, fillcolor=lightyellow];
+    convert_details [label="• int(input())\n• float(input())\n• Validation needed", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Business Applications
+    reports [label="• Report Generation\n• Invoice Creation\n• Data Cleaning\n• User Interfaces", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {strings methods formatting userinput business};
+    strings -> {basics operations};
+    methods -> {case cleaning search};
+    case -> case_details;
+    cleaning -> clean_details;
+    search -> search_details;
+    formatting -> {fstrings format_spec};
+    fstrings -> fstring_ex;
+    userinput -> {input_func conversion};
+    input_func -> input_details;
+    conversion -> convert_details;
+    business -> reports;
+}

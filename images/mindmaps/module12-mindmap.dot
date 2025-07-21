@@ -1,0 +1,49 @@
+digraph Module12_MindMap {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
+    edge [color=darkgray, penwidth=1.5];
+    
+    // Central node
+    central [label="Module 12:\nBusiness Analytics\nFundamentals", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    
+    // Main branches
+    spectrum [label="Analytics\nSpectrum", fillcolor=lightblue];
+    stats [label="Statistical\nConcepts", fillcolor=lightblue];
+    correlation [label="Correlation\nAnalysis", fillcolor=lightblue];
+    regression [label="Linear\nRegression", fillcolor=lightblue];
+    process [label="Analytics\nProcess", fillcolor=lightblue];
+    
+    // Sub-branches for Analytics Spectrum
+    descriptive [label="Descriptive\nAnalytics", fillcolor=lightcoral];
+    diagnostic [label="Diagnostic\nAnalytics", fillcolor=lightcoral];
+    predictive [label="Predictive\nAnalytics", fillcolor=lightcoral];
+    prescriptive [label="Prescriptive\nAnalytics", fillcolor=lightcoral];
+    spectrum_details [label="• What happened?\n• Why did it happen?\n• What will happen?\n• What should we do?", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Statistical Concepts
+    central_tendency [label="• Mean\n• Median\n• Mode", shape=note, fillcolor=lightyellow];
+    dispersion [label="• Range\n• Variance\n• Standard Deviation", shape=note, fillcolor=lightyellow];
+    pandas_stats [label="• .describe()\n• .mean(), .median()\n• .std(), .var()", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Correlation
+    corr_types [label="• Positive\n• Negative\n• No Correlation", shape=note, fillcolor=lightyellow];
+    corr_methods [label="• .corr()\n• Correlation Matrix\n• Scatter Plots", shape=note, fillcolor=lightyellow];
+    corr_interpret [label="Correlation ≠\nCausation", fillcolor=lightgreen];
+    
+    // Sub-branches for Regression
+    reg_concept [label="Y = β₀ + β₁X + ε", fillcolor=lightgreen];
+    reg_components [label="• Slope (β₁)\n• Intercept (β₀)\n• Error (ε)", shape=note, fillcolor=lightyellow];
+    reg_use [label="• Predictions\n• Relationships\n• Trend Analysis", shape=note, fillcolor=lightyellow];
+    
+    // Sub-branches for Analytics Process
+    process_steps [label="• Define Question\n• Collect Data\n• Clean & Prepare\n• Analyze\n• Interpret", shape=note, fillcolor=lightyellow];
+    communication [label="• Visualizations\n• Clear Insights\n• Recommendations", shape=note, fillcolor=lightyellow];
+    
+    // Connections
+    central -> {spectrum stats correlation regression process};
+    spectrum -> {descriptive diagnostic predictive prescriptive spectrum_details};
+    stats -> {central_tendency dispersion pandas_stats};
+    correlation -> {corr_types corr_methods corr_interpret};
+    regression -> {reg_concept reg_components reg_use};
+    process -> {process_steps communication};
+}
