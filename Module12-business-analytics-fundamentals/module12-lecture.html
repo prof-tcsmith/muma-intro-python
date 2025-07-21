@@ -3147,6 +3147,26 @@ vertical-align: -.125em;
 
 <section id="introduction-from-python-skills-to-business-insights" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-from-python-skills-to-business-insights">Introduction: From Python Skills to Business Insights</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Important: Interactive Examples Not Available">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important: Interactive Examples Not Available
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Note:</strong> The interactive Python Tutor visualizations used in earlier modules are not available for the analytics operations in this module. Throughout this module, you’ll need to:</p>
+<ol type="1">
+<li><strong>Copy the code examples</strong> into Thonny</li>
+<li><strong>Run the code</strong> to see the analytical results</li>
+<li><strong>Use Thonny’s debugger</strong> to step through calculations</li>
+<li><strong>Focus on interpreting results</strong> rather than just executing code</li>
+</ol>
+<p>This module emphasizes understanding business analytics concepts and their practical application.</p>
+</div>
+</div>
 <p>Welcome to the final module of the course! Throughout this course, you’ve journeyed from foundational Python programming concepts to powerful data manipulation with Pandas and impactful visualization with Matplotlib. You’ve developed a valuable technical skillset. But how do these skills translate directly into answering critical business questions and driving decisions?</p>
 <p>This optional module serves as a capstone, bridging the gap between your Python proficiency and the broader field of <strong>Business Analytics</strong>. We’ll step back from intensive coding to explore the fundamental concepts that underpin data-driven decision-making in organizations. We’ll categorize different types of analytical questions, revisit key statistical measures you’ve already encountered (now framed within analytics principles), and briefly introduce the idea of predictive modeling.</p>
 <p>The goal here is not to become expert statisticians or machine learning engineers overnight, but rather to:</p>
@@ -3183,6 +3203,26 @@ Focus on Concepts
 <li><strong>Apply Analytics Concepts:</strong> Connect analytical questions, data, statistical methods, and Python tools to address business scenarios.</li>
 <li><strong>Communicate Findings:</strong> Recognize the key elements of effectively communicating analytical results to support decision-making.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Working with Code Examples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Working with Code Examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>How to use the code examples in this module:</strong></p>
+<ol type="1">
+<li><strong>Copy the code</strong>: Hover over any code block and click the copy icon that appears in the upper right corner</li>
+<li><strong>Paste into Thonny</strong>: Create a new .py file in Thonny and paste the code</li>
+<li><strong>Use the debugger</strong>: Click the bug icon in Thonny to step through the code line by line</li>
+<li><strong>Watch the Variables panel</strong>: Observe how variables change as each line executes</li>
+</ol>
+<p>This approach helps you understand business analytics concepts through hands-on exploration!</p>
+</div>
+</div>
 </section>
 <section id="the-spectrum-of-business-analytics" class="level1">
 <h1>1. The Spectrum of Business Analytics</h1>
@@ -3220,7 +3260,6 @@ Focus on Concepts
 <span id="cb1-23"><a href="#cb1-23"></a>total_sales_region.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>, title<span class="op">=</span><span class="st">&#39;Total Sales by Region&#39;</span>, ylabel<span class="op">=</span><span class="st">&#39;Total Sales ($)&#39;</span>, rot<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb1-24"><a href="#cb1-24"></a>plt.tight_layout()</span>
 <span id="cb1-25"><a href="#cb1-25"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m12_s1_1_descriptive.py</code></a></p>
 </section>
 <section id="diagnostic-analytics-why-did-it-happen" class="level2">
 <h2 class="anchored" data-anchor-id="diagnostic-analytics-why-did-it-happen">1.2 Diagnostic Analytics: Why Did It Happen?</h2>
@@ -3281,7 +3320,6 @@ Focus on Concepts
 <span id="cb2-7"><a href="#cb2-7"></a><span class="bu">print</span>(<span class="ss">f&quot;Mean Salary: $</span><span class="sc">{</span>s_salary<span class="sc">.</span>mean()<span class="sc">:,.2f}</span><span class="ss">&quot;</span>)</span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(<span class="ss">f&quot;Median Salary: $</span><span class="sc">{</span>s_salary<span class="sc">.</span>median()<span class="sc">:,.2f}</span><span class="ss">&quot;</span>) <span class="co"># Less affected by the $150k outlier</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="co"># print(f&quot;Mode Salary: {s_salary.mode()}&quot;) # Mode might not be unique or meaningful here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m12_s2_1_central_tendency.py</code></a></p>
 </section>
 <section id="measures-of-dispersion-variability" class="level2">
 <h2 class="anchored" data-anchor-id="measures-of-dispersion-variability">2.2 Measures of Dispersion (Variability)</h2>
@@ -3307,7 +3345,6 @@ Focus on Concepts
 <span id="cb3-11"><a href="#cb3-11"></a><span class="co"># Using .describe() gives many of these at once</span></span>
 <span id="cb3-12"><a href="#cb3-12"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Using .describe():&quot;</span>)</span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="bu">print</span>(s_delivery.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m12_s2_2_dispersion.py</code></a></p>
 </section>
 <section id="correlation-measuring-linear-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="correlation-measuring-linear-relationships">2.3 Correlation: Measuring Linear Relationships</h2>
@@ -3345,7 +3382,6 @@ Focus on Concepts
 <span id="cb4-23"><a href="#cb4-23"></a>df.plot(kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, x<span class="op">=</span><span class="st">&#39;StudyHours&#39;</span>, y<span class="op">=</span><span class="st">&#39;ExamScore&#39;</span>,</span>
 <span id="cb4-24"><a href="#cb4-24"></a>        title<span class="op">=</span><span class="st">&#39;Study Hours vs. Exam Score&#39;</span>, grid<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb4-25"><a href="#cb4-25"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m12_s2_3_correlation.py</code></a></p>
 </section>
 </section>
 <section id="introduction-to-predictive-modeling-regression" class="level1">
@@ -3402,7 +3438,6 @@ Focus on Concepts
 <span id="cb5-32"><a href="#cb5-32"></a>hours_to_predict <span class="op">=</span> <span class="fl">7.5</span></span>
 <span id="cb5-33"><a href="#cb5-33"></a>predicted_score <span class="op">=</span> intercept <span class="op">+</span> slope <span class="op">*</span> hours_to_predict</span>
 <span id="cb5-34"><a href="#cb5-34"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Predicted score for </span><span class="sc">{</span>hours_to_predict<span class="sc">}</span><span class="ss"> hours of study: </span><span class="sc">{</span>predicted_score<span class="sc">:.1f}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m12_s3_0_regression_concept.py</code></a></p>
 <p><strong>Note:</strong> This is a conceptual illustration. Proper regression analysis involves checking assumptions, assessing model fit (e.g., R-squared), and potentially using dedicated libraries like <code>statsmodels</code> or <code>scikit-learn</code> for more robust analysis and interpretation.</p>
 </section>
 <section id="applying-analytics-communicating-findings" class="level1">

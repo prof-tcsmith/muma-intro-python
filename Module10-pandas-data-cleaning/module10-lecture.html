@@ -3090,6 +3090,7 @@ vertical-align: -.125em;
   <li><a href="#handling-missing-data-the-details" id="toc-handling-missing-data-the-details" class="nav-link" data-scroll-target="#handling-missing-data-the-details">1. Handling Missing Data (The Details)</a>
   <ul class="collapse">
   <li><a href="#dropping-missing-values-.dropna" id="toc-dropping-missing-values-.dropna" class="nav-link" data-scroll-target="#dropping-missing-values-.dropna">1.1 Dropping Missing Values (<code>.dropna()</code>)</a></li>
+  <li><a href="#filling-missing-values-.fillna" id="toc-filling-missing-values-.fillna" class="nav-link" data-scroll-target="#filling-missing-values-.fillna">1.2 Filling Missing Values (<code>.fillna()</code>)</a></li>
   <li><a href="#checking-data-types-.dtypes-.info" id="toc-checking-data-types-.dtypes-.info" class="nav-link" data-scroll-target="#checking-data-types-.dtypes-.info">2.1 Checking Data Types (<code>.dtypes</code>, <code>.info()</code>)</a></li>
   <li><a href="#adding-new-columns" id="toc-adding-new-columns" class="nav-link" data-scroll-target="#adding-new-columns">3.1 Adding New Columns</a></li>
   <li><a href="#applying-functions-.apply" id="toc-applying-functions-.apply" class="nav-link" data-scroll-target="#applying-functions-.apply">4.1 Applying Functions (<code>.apply()</code>)</a></li>
@@ -3141,6 +3142,25 @@ vertical-align: -.125em;
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Important: Interactive Examples Not Available">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important: Interactive Examples Not Available
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Note:</strong> The interactive Python Tutor visualizations used in earlier modules are not available for pandas operations. Throughout this module, you’ll need to:</p>
+<ol type="1">
+<li><strong>Copy the code examples</strong> into Thonny</li>
+<li><strong>Use Thonny’s debugger</strong> (the bug icon) to step through code line by line</li>
+<li><strong>Watch the Variables panel</strong> to see how data cleaning operations transform your DataFrames</li>
+</ol>
+<p>This hands-on approach will help you understand exactly how each cleaning operation works.</p>
+</div>
+</div>
 <p>Welcome back to Module 9, we took our first major step into data analysis using the powerful Pandas library. We learned how to create and inspect Pandas Series and DataFrames, select specific pieces of data using various indexing techniques, and calculate basic descriptive statistics. You should now be comfortable loading simple datasets and getting a feel for their structure.</p>
 <p>However, as anyone who has worked with real-world business data knows, it rarely arrives in a perfectly clean and analysis-ready state. Data often suffers from:</p>
 <ul>
@@ -3163,7 +3183,7 @@ Code Examples
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As in Module 9, each code example below has a caption and a hypothetical link to download the code as a <code>.py</code> file. Remember to have the Pandas library installed and imported (<code>import pandas as pd</code>). We’ll also use NumPy (<code>import numpy as np</code>) for creating example missing data (<code>np.nan</code>).</p>
+<p>Remember to have the Pandas library installed and imported (<code>import pandas as pd</code>). We’ll also use NumPy (<code>import numpy as np</code>) for creating example missing data (<code>np.nan</code>).</p>
 </div>
 </div>
 </section>
@@ -3180,6 +3200,26 @@ Code Examples
 <li><strong>Sort Data:</strong> Reorder DataFrames based on column values (<code>.sort_values()</code>) or index labels (<code>.sort_index()</code>).</li>
 <li><strong>Manage Duplicates:</strong> Identify (<code>.duplicated()</code>) and remove (<code>.drop_duplicates()</code>) duplicate rows.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Working with Code Examples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Working with Code Examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>How to use the code examples in this module:</strong></p>
+<ol type="1">
+<li><strong>Copy the code</strong>: Hover over any code block and click the copy icon that appears in the upper right corner</li>
+<li><strong>Paste into Thonny</strong>: Create a new .py file in Thonny and paste the code</li>
+<li><strong>Use the debugger</strong>: Click the bug icon in Thonny to step through the code line by line</li>
+<li><strong>Watch the Variables panel</strong>: Observe how data cleaning operations transform your DataFrames</li>
+</ol>
+<p>This hands-on approach helps you understand exactly how each cleaning operation works!</p>
+</div>
+</div>
 </section>
 <section id="handling-missing-data-the-details" class="level1">
 <h1>1. Handling Missing Data (The Details)</h1>
@@ -3242,7 +3282,9 @@ Code Examples
 <span id="cb1-45"><a href="#cb1-45"></a><span class="co"># df_copy.dropna(subset=[&#39;Product&#39;], inplace=True)</span></span>
 <span id="cb1-46"><a href="#cb1-46"></a><span class="co"># print(&quot;\nDataFrame modified inplace (dropped rows with NaN in &#39;Product&#39;):&quot;)</span></span>
 <span id="cb1-47"><a href="#cb1-47"></a><span class="co"># print(df_copy)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s1_1_dropna.py</code></a> ## 1.2 Filling Missing Values (<code>.fillna()</code>)</p>
+</section>
+<section id="filling-missing-values-.fillna" class="level2">
+<h2 class="anchored" data-anchor-id="filling-missing-values-.fillna">1.2 Filling Missing Values (<code>.fillna()</code>)</h2>
 <p>Instead of removing data, we can replace <code>NaN</code> with a specified value. This preserves data points but introduces assumptions.</p>
 <p>Common Filling Strategies:</p>
 <ul>
@@ -3300,7 +3342,6 @@ Code Examples
 <span id="cb2-40"><a href="#cb2-40"></a>df_filled_bfill <span class="op">=</span> df.fillna(method<span class="op">=</span><span class="st">&#39;bfill&#39;</span>)</span>
 <span id="cb2-41"><a href="#cb2-41"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After backward filling NaN (propagates next valid value up):&quot;</span>)</span>
 <span id="cb2-42"><a href="#cb2-42"></a><span class="bu">print</span>(df_filled_bfill) <span class="co"># Note: Last NaN in Discount remains if no subsequent value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s1_2_fillna.py</code></a> # 2. Correcting Data Types</p>
 <p>Data often gets loaded with incorrect types (e.g., numbers as strings/‘objects’, dates as strings). This prevents calculations and proper analysis. Pandas provides tools to fix this.</p>
 </section>
 <section id="checking-data-types-.dtypes-.info" class="level2">
@@ -3326,7 +3367,6 @@ Code Examples
 <span id="cb3-18"><a href="#cb3-18"></a></span>
 <span id="cb3-19"><a href="#cb3-19"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame Info using .info():&quot;</span>)</span>
 <span id="cb3-20"><a href="#cb3-20"></a>df.info() <span class="co"># Note &#39;Sales&#39; and &#39;Date&#39; are likely &#39;object&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s2_1_check_dtypes.py</code></a> ## 2.2 Converting Data Types (<code>.astype()</code>)</p>
 <p>The <code>.astype()</code> method is the primary way to cast a Pandas object to a specified dtype.</p>
 <p>Common Conversions:</p>
 <ul>
@@ -3392,7 +3432,6 @@ Code Examples
 <span id="cb4-52"><a href="#cb4-52"></a><span class="bu">print</span>(df.dtypes)</span>
 <span id="cb4-53"><a href="#cb4-53"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Memory usage comparison (Object vs Category):&quot;</span>)</span>
 <span id="cb4-54"><a href="#cb4-54"></a><span class="bu">print</span>(df[[<span class="st">&#39;Product&#39;</span>, <span class="st">&#39;Product_Category&#39;</span>]].memory_usage(deep<span class="op">=</span><span class="va">True</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s2_2_astype.py</code></a> ## 2.3 Robust Conversions: <code>pd.to_numeric()</code> and <code>pd.to_datetime()</code></p>
 <p>For converting to numbers or dates, Pandas offers dedicated functions that provide more control, especially over errors.</p>
 <ul>
 <li><code>pd.to_numeric(series, errors=&#39;raise&#39;|&#39;coerce&#39;|&#39;ignore&#39;)</code>:
@@ -3442,7 +3481,6 @@ Code Examples
 <span id="cb5-33"><a href="#cb5-33"></a><span class="co"># Check for NaNs introduced by coercion</span></span>
 <span id="cb5-34"><a href="#cb5-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">NaNs after coercion:&quot;</span>)</span>
 <span id="cb5-35"><a href="#cb5-35"></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s2_3_robust_conversion.py</code></a> # 3. Modifying Columns</p>
 <p>Often, you’ll need to add new columns, remove irrelevant ones, or rename existing ones for clarity.</p>
 </section>
 <section id="adding-new-columns" class="level2">
@@ -3484,7 +3522,6 @@ Code Examples
 <span id="cb6-28"><a href="#cb6-28"></a>    <span class="bu">print</span>(df)</span>
 <span id="cb6-29"><a href="#cb6-29"></a><span class="cf">else</span>:</span>
 <span id="cb6-30"><a href="#cb6-30"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Error: List length doesn&#39;t match DataFrame length.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s3_1_add_columns.py</code></a> ## 3.2 Removing Columns (<code>.drop()</code>)</p>
 <p>The <code>.drop()</code> method can remove both rows (using <code>index</code> labels) and columns. For columns, specify the column name(s) and <code>axis=1</code>.</p>
 <p>Key Parameters:</p>
 <ul>
@@ -3530,7 +3567,6 @@ Code Examples
 <span id="cb7-34"><a href="#cb7-34"></a><span class="co"># df_copy.drop(columns=[&#39;InternalCode&#39;], inplace=True)</span></span>
 <span id="cb7-35"><a href="#cb7-35"></a><span class="co"># print(&quot;\nDataFrame modified inplace (dropped &#39;InternalCode&#39;):&quot;)</span></span>
 <span id="cb7-36"><a href="#cb7-36"></a><span class="co"># print(df_copy)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s3_2_drop_columns.py</code></a> ## 3.3 Renaming Columns (<code>.rename()</code>)</p>
 <p>Use <code>.rename()</code> to change the names of one or more columns (or index labels).</p>
 <p>Key Parameters:</p>
 <ul>
@@ -3566,7 +3602,6 @@ Code Examples
 <span id="cb8-24"><a href="#cb8-24"></a>df_renamed_single <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">&#39;prod_name&#39;</span>: <span class="st">&#39;Product Name&#39;</span>})</span>
 <span id="cb8-25"><a href="#cb8-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after renaming only &#39;prod_name&#39;:&quot;</span>)</span>
 <span id="cb8-26"><a href="#cb8-26"></a><span class="bu">print</span>(df_renamed_single)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s3_3_rename_columns.py</code></a> # 4. Applying Functions and String Methods</p>
 <p>Pandas allows you to apply custom or built-in functions to your data for more complex transformations.</p>
 </section>
 <section id="applying-functions-.apply" class="level2">
@@ -3621,7 +3656,6 @@ Code Examples
 <span id="cb9-42"><a href="#cb9-42"></a>df[<span class="st">&#39;Category&#39;</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="st">&#39;High&#39;</span> <span class="cf">if</span> row[<span class="st">&#39;RowSum&#39;</span>] <span class="op">&gt;</span> <span class="dv">250</span> <span class="cf">else</span> <span class="st">&#39;Low&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb9-43"><a href="#cb9-43"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after adding row-wise calculated category:&quot;</span>)</span>
 <span id="cb9-44"><a href="#cb9-44"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s4_1_apply.py</code></a> ## 4.2 Mapping Values (<code>.map()</code>)</p>
 <p><code>.map()</code> is a <strong>Series</strong> method used for element-wise transformations based on a function, dictionary, or another Series. It’s particularly useful for substituting values in a column.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">#| caption: &quot;Using .map() for element-wise substitution on a Series (Section 4.2)&quot;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -3658,7 +3692,6 @@ Code Examples
 <span id="cb10-33"><a href="#cb10-33"></a>df[<span class="st">&#39;PerformancePlusOne&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Performance&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb10-34"><a href="#cb10-34"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">After mapping Performance + 1 (lambda):&quot;</span>)</span>
 <span id="cb10-35"><a href="#cb10-35"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s4_2_map.py</code></a> ## 4.3 String Manipulation (<code>.str</code> Accessor)</p>
 <p>Pandas Series have a special <code>.str</code> accessor that provides vectorized string processing methods, mirroring Python’s built-in string methods. This is crucial for cleaning text data.</p>
 <p>Common <code>.str</code> methods:</p>
 <ul>
@@ -3705,7 +3738,6 @@ Code Examples
 <span id="cb11-32"><a href="#cb11-32"></a>df[<span class="st">&#39;CategoryCode&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Category&#39;</span>].<span class="bu">str</span>.replace(<span class="st">&#39;Widgets&#39;</span>, <span class="st">&#39;WGT&#39;</span>).<span class="bu">str</span>.replace(<span class="st">&#39;Gizmos&#39;</span>, <span class="st">&#39;GZM&#39;</span>)</span>
 <span id="cb11-33"><a href="#cb11-33"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Replacing Category names:&quot;</span>)</span>
 <span id="cb11-34"><a href="#cb11-34"></a><span class="bu">print</span>(df[[<span class="st">&#39;Category&#39;</span>, <span class="st">&#39;CategoryCode&#39;</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s4_3_string_methods.py</code></a> # 5. Sorting Data</p>
 <p>Organizing your data by sorting based on values or the index is often necessary before analysis or reporting.</p>
 </section>
 <section id="sorting-by-values-.sort_values" class="level2">
@@ -3746,7 +3778,6 @@ Code Examples
 <span id="cb12-25"><a href="#cb12-25"></a>df_sorted_multi <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">&#39;Product&#39;</span>, <span class="st">&#39;Sales&#39;</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
 <span id="cb12-26"><a href="#cb12-26"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by &#39;Product&#39; (asc) then &#39;Sales&#39; (desc):&quot;</span>)</span>
 <span id="cb12-27"><a href="#cb12-27"></a><span class="bu">print</span>(df_sorted_multi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s5_1_sort_values.py</code></a> ## 5.2 Sorting by Index (<code>.sort_index()</code>)</p>
 <p>Sorts the DataFrame based on its index labels.</p>
 <p>Key Parameters:</p>
 <ul>
@@ -3780,7 +3811,6 @@ Code Examples
 <span id="cb13-24"><a href="#cb13-24"></a>df_sorted_cols <span class="op">=</span> df.sort_index(axis<span class="op">=</span><span class="dv">1</span>, ascending<span class="op">=</span><span class="va">False</span>) <span class="co"># Sorts columns &#39;Sales&#39; -&gt; &#39;Sales&#39; (no change here)</span></span>
 <span id="cb13-25"><a href="#cb13-25"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Sorted by column names (descending, axis=1):&quot;</span>)</span>
 <span id="cb13-26"><a href="#cb13-26"></a><span class="bu">print</span>(df_sorted_cols) <span class="co"># No visible change if only one column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s5_2_sort_index.py</code></a> # 6. Dealing with Duplicates</p>
 <p>Duplicate rows can skew analysis results (e.g., double-counting sales). Pandas helps identify and remove them.</p>
 </section>
 <section id="identifying-duplicates-.duplicated" class="level2">
@@ -3846,7 +3876,6 @@ Code Examples
 <span id="cb14-49"><a href="#cb14-49"></a>df_deduped_subset <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;OrderID&#39;</span>], keep<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
 <span id="cb14-50"><a href="#cb14-50"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">DataFrame after removing duplicates based on &#39;OrderID&#39; (keeping first):&quot;</span>)</span>
 <span id="cb14-51"><a href="#cb14-51"></a><span class="bu">print</span>(df_deduped_subset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m10_s6_duplicates.py</code></a> # 7. Summary: Refining Your Data Toolkit</p>
 <p>Module 10 has equipped you with essential Pandas techniques for tackling the common challenges of messy real-world data. Data cleaning and manipulation are fundamental skills for any data analysis task in a business context.</p>
 <p>Key Takeaways:</p>
 <ul>

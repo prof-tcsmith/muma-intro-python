@@ -3138,6 +3138,26 @@ vertical-align: -.125em;
 
 <section id="introduction-seeing-the-story-in-your-data" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-seeing-the-story-in-your-data">Introduction: Seeing the Story in Your Data</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Important: Interactive Examples Not Available">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important: Interactive Examples Not Available
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Note:</strong> The interactive Python Tutor visualizations used in earlier modules are not available for matplotlib and pandas operations. Throughout this module, you’ll need to:</p>
+<ol type="1">
+<li><strong>Copy the code examples</strong> into Thonny</li>
+<li><strong>Run the code</strong> to generate the visualizations</li>
+<li><strong>Use Thonny’s debugger</strong> to step through the code and understand how plots are constructed</li>
+<li><strong>Observe the Variables panel</strong> to see how data is prepared for visualization</li>
+</ol>
+<p>This hands-on approach will give you practical experience creating and customizing visualizations.</p>
+</div>
+</div>
 <p>Welcome to Module 11! In Modules 9 and 10, we built a strong foundation in manipulating and cleaning data using Pandas. We learned how to load, inspect, reshape, and refine datasets – essential skills for preparing data for analysis. However, raw tables of numbers, even when clean, often don’t effectively communicate the underlying patterns, trends, and insights hidden within.</p>
 <p>This is where <strong>data visualization</strong> comes in. Visualizations transform abstract numbers into intuitive graphical representations, allowing us to:</p>
 <ul>
@@ -3183,6 +3203,26 @@ Code Examples &amp; Setup
 <li><strong>Select Appropriate Charts:</strong> Choose suitable chart types based on the data and the analytical question being addressed.</li>
 <li><strong>Integrate Cleaning and Visualization:</strong> Apply visualization techniques to data prepared using the Pandas skills learned in previous modules.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Working with Code Examples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Working with Code Examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>How to use the code examples in this module:</strong></p>
+<ol type="1">
+<li><strong>Copy the code</strong>: Hover over any code block and click the copy icon that appears in the upper right corner</li>
+<li><strong>Paste into Thonny</strong>: Create a new .py file in Thonny and paste the code</li>
+<li><strong>Use the debugger</strong>: Click the bug icon in Thonny to step through the code line by line</li>
+<li><strong>Watch the Variables panel</strong>: Observe how variables change as each line executes</li>
+</ol>
+<p>This approach helps you understand exactly how matplotlib operations work on your data!</p>
+</div>
+</div>
 </section>
 <section id="why-visualize-business-data" class="level1">
 <h1>1. Why Visualize Business Data?</h1>
@@ -3228,7 +3268,6 @@ Code Examples &amp; Setup
 <span id="cb2-19"><a href="#cb2-19"></a></span>
 <span id="cb2-20"><a href="#cb2-20"></a><span class="co"># 4. Show the plot</span></span>
 <span id="cb2-21"><a href="#cb2-21"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s2_0_simple_plot.py</code></a> This simple example demonstrates the core idea: pass your x and y data to a plotting function, then use other <code>plt</code> functions to annotate and display it.</p>
 </section>
 <section id="common-business-chart-types" class="level1">
 <h1>3. Common Business Chart Types</h1>
@@ -3276,7 +3315,6 @@ Code Examples &amp; Setup
 <span id="cb3-35"><a href="#cb3-35"></a>plt.legend() <span class="co"># Add legend to identify lines</span></span>
 <span id="cb3-36"><a href="#cb3-36"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb3-37"><a href="#cb3-37"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s3_1_line_chart.py</code></a> ## 3.2 Bar Chart (<code>plt.bar()</code>, <code>plt.barh()</code>)</p>
 <ul>
 <li><strong>Use Case:</strong> Comparing discrete categories or groups (e.g., sales by product, market share by company, counts by department).</li>
 <li>Uses rectangular bars; length/height is proportional to the value. <code>plt.bar()</code> for vertical, <code>plt.barh()</code> for horizontal bars.</li>
@@ -3310,7 +3348,6 @@ Code Examples &amp; Setup
 <span id="cb4-27"><a href="#cb4-27"></a>plt.ylabel(<span class="st">&quot;Category&quot;</span>)</span>
 <span id="cb4-28"><a href="#cb4-28"></a>plt.tight_layout()</span>
 <span id="cb4-29"><a href="#cb4-29"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s3_2_bar_chart.py</code></a> ## 3.3 Scatter Plot (<code>plt.scatter()</code>)</p>
 <ul>
 <li><strong>Use Case:</strong> Showing the relationship or correlation between two numerical variables (e.g., advertising spend vs. sales, customer age vs. purchase amount, temperature vs. ice cream sales).</li>
 <li>Each point represents an observation based on its x and y values.</li>
@@ -3337,7 +3374,6 @@ Code Examples &amp; Setup
 <span id="cb5-20"><a href="#cb5-20"></a>cbar <span class="op">=</span> plt.colorbar() <span class="co"># Add a color bar if using color mapping</span></span>
 <span id="cb5-21"><a href="#cb5-21"></a>cbar.set_label(<span class="st">&#39;Ad Spend Intensity&#39;</span>)</span>
 <span id="cb5-22"><a href="#cb5-22"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s3_3_scatter_plot.py</code></a> ## 3.4 Histogram (<code>plt.hist()</code>)</p>
 <ul>
 <li><strong>Use Case:</strong> Understanding the distribution of a single numerical variable (e.g., distribution of customer ages, product prices, order values).</li>
 <li>Groups data into bins (intervals) and plots the frequency (count) of observations in each bin as bars.</li>
@@ -3367,7 +3403,6 @@ Code Examples &amp; Setup
 <span id="cb6-23"><a href="#cb6-23"></a>counts, bin_edges, _ <span class="op">=</span> plt.hist(s_orders, bins<span class="op">=</span><span class="dv">15</span>)</span>
 <span id="cb6-24"><a href="#cb6-24"></a><span class="co"># print(&quot;Counts:&quot;, counts)</span></span>
 <span id="cb6-25"><a href="#cb6-25"></a><span class="co"># print(&quot;Bin Edges:&quot;, bin_edges)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s3_4_histogram.py</code></a> ## 3.5 Pie Chart (<code>plt.pie()</code>)</p>
 <ul>
 <li><strong>Use Case:</strong> Showing proportions or percentages of a whole (e.g., market share, budget allocation, survey response breakdown).</li>
 <li><strong>Caution:</strong> Best used for a small number of categories (&lt;= 5-7). Bar charts are often better for comparing sizes accurately.</li>
@@ -3390,7 +3425,6 @@ Code Examples &amp; Setup
 <span id="cb7-16"><a href="#cb7-16"></a>plt.title(<span class="st">&quot;Market Share Distribution&quot;</span>)</span>
 <span id="cb7-17"><a href="#cb7-17"></a><span class="co"># plt.ylabel(&#39;&#39;) # Optional: Remove the default y-label if not needed</span></span>
 <span id="cb7-18"><a href="#cb7-18"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s3_5_pie_chart.py</code></a> # 4. Customizing Your Plots</p>
 <p>A basic plot conveys information, but customization makes it clearer, more professional, and more impactful.</p>
 <p>Common Customizations (many seen in examples above):</p>
 <ul>
@@ -3449,7 +3483,6 @@ Code Examples &amp; Setup
 <span id="cb8-40"><a href="#cb8-40"></a>plt.tight_layout()</span>
 <span id="cb8-41"><a href="#cb8-41"></a><span class="co"># plt.savefig(&quot;monthly_sales_comparison.png&quot;, dpi=300) # Example saving plot</span></span>
 <span id="cb8-42"><a href="#cb8-42"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s4_0_customization.py</code></a> # 5. Pandas Integration: The <code>.plot()</code> Method</p>
 <p>Pandas DataFrames and Series have a convenient built-in <code>.plot()</code> method that acts as a wrapper around Matplotlib’s <code>pyplot</code> functions. It simplifies creating plots directly from your data structure.</p>
 <ul>
 <li><code>series.plot()</code> or <code>df.plot()</code>: Creates a plot.</li>
@@ -3495,7 +3528,6 @@ Code Examples &amp; Setup
 <span id="cb9-36"><a href="#cb9-36"></a>                    title<span class="op">=</span><span class="st">&#39;Distribution of Metric A&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
 <span id="cb9-37"><a href="#cb9-37"></a>plt.xlabel(<span class="st">&#39;Metric A Value&#39;</span>)</span>
 <span id="cb9-38"><a href="#cb9-38"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="#">Download: <code>m11_s5_0_pandas_plot.py</code></a> The <code>.plot()</code> method is excellent for quick explorations and standard plots. For highly customized or complex visualizations, using <code>plt</code> functions directly often provides more flexibility.</p>
 </section>
 </section>
 <section id="summary-communicating-insights-visually" class="level1">
