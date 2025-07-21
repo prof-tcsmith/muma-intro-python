@@ -1,0 +1,15 @@
+# GitHub Pages Configuration
+# This file helps control how GitHub Pages serves the site
+
+# Exclude files from being served
+exclude:
+  - course-admin/
+  - "*.qmd"
+  - "*.sh"
+  - VERSION
+  - RELEASE.md
+  - CLAUDE.md
+  - README.md
+
+# Force rebuild by changing this timestamp
+last_updated: 2025-07-21T20:55:00Z
