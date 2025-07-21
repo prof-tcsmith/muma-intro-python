@@ -1,0 +1,169 @@
+<div class="quarto-title-block default">
+  <div class="quarto-title">
+    <h1 class="title">$title$</h1>
+    $if(subtitle)$
+    <p class="subtitle lead">$subtitle$</p>
+    $endif$
+  </div>
+  
+  <div class="quarto-title-meta">
+    <div class="quarto-title-meta-contents">
+      <div class="course-header-info">
+        <div class="course-meta-row">
+          <span class="course-label">Course:</span>
+          <span class="course-value">ISM2411 Python for Business</span>
+        </div>
+        
+        <div class="author-meta-row">
+          <span class="author-label">Instructor:</span>
+          <span class="author-value">$author$</span>
+          <span class="version-divider">•</span>
+          <span class="version-label">Version:</span>
+          <span class="version-value">$version$</span>
+          $if(institute)$
+          <span class="institute-divider">•</span>
+          <span class="institute-value">$institute$</span>
+          $endif$
+        </div>
+        
+        $if(date)$
+        <div class="date-meta-row">
+          <span class="date-label">Last Updated:</span>
+          <span class="date-value">$date$</span>
+        </div>
+        $endif$
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.quarto-title-block {
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #31BAE9;
+  padding-bottom: 1.5rem;
+}
+
+.quarto-title {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  font-weight: 400;
+}
+
+.course-header-info {
+  background-color: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #31BAE9;
+}
+
+.course-meta-row,
+.author-meta-row,
+.date-meta-row {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.course-meta-row:last-child,
+.author-meta-row:last-child,
+.date-meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.course-label,
+.version-label,
+.author-label,
+.date-label {
+  font-weight: 600;
+  color: #34495e;
+  margin-right: 0.5rem;
+}
+
+.course-value,
+.version-value,
+.author-value,
+.institute-value,
+.date-value {
+  color: #2c3e50;
+}
+
+.version-divider,
+.institute-divider {
+  margin: 0 1rem;
+  color: #bdc3c7;
+  font-weight: 300;
+}
+
+.course-value {
+  font-weight: 500;
+  color: #31BAE9;
+}
+
+.version-value {
+  font-family: 'Courier New', monospace;
+  background-color: #e8f4f8;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .course-header-info {
+    padding: 0.8rem 1rem;
+  }
+  
+  .course-meta-row,
+  .author-meta-row,
+  .date-meta-row {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .version-divider,
+  .institute-divider {
+    display: none;
+  }
+  
+  .version-label,
+  .institute-value {
+    display: block;
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .quarto-title-block {
+    border-bottom-width: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .course-header-info {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+  }
+}
+</style>
