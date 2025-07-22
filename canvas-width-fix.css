@@ -3,131 +3,141 @@
 /* Hide the sidebar completely in Canvas - it takes up too much space */
 #quarto-sidebar-toc-left,
 .sidebar.toc-left,
-#TOC {
+#TOC,
+.toc-left {
     display: none !important;
 }
 
-/* Remove the left margin since sidebar is hidden */
-#quarto-content {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+/* Override the page-columns grid to be single column */
+#quarto-content.page-columns {
+    display: block !important;
     max-width: none !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Remove all width constraints from content containers */
-.page-layout-article {
-    max-width: none !important;
-    width: 100% !important;
-}
-
-.page-columns {
-    max-width: none !important;
-    width: 100% !important;
-    grid-template-columns: 1fr !important; /* Single column layout */
-}
-
-.page-rows-contents {
-    max-width: none !important;
-    width: 100% !important;
-}
-
-/* Ensure the main content area uses full width */
+/* Make the main content use full width */
+#quarto-content > main,
+#quarto-content main,
+main.content,
 main {
     max-width: none !important;
     width: 100% !important;
     margin: 0 auto !important;
     padding: 20px !important;
+    display: block !important;
 }
 
-/* Make the content body full width */
-.column-body {
+/* Override article layout constraints */
+.page-layout-article {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure the content body uses full width */
+.column-body,
+.content-column-body {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Remove all Quarto column constraints */
+[class*="column-"] {
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+/* Force sections to be full width */
+section {
     max-width: none !important;
     width: 100% !important;
     margin: 0 !important;
 }
 
-/* Remove any column margins */
-.column-body-outset,
-.column-page,
-.column-page-inset,
-.column-screen,
-.column-screen-inset {
+/* Make sure all divs inside content expand */
+#quarto-content > * {
     max-width: none !important;
     width: 100% !important;
-    margin: 0 !important;
 }
 
-/* Make code blocks and other content elements wider */
-.sourceCode {
-    max-width: none !important;
-}
-
-pre {
-    max-width: none !important;
-    overflow-x: auto !important;
-}
-
-/* Ensure tables use available width */
+/* Tables should be responsive */
 table {
     max-width: 100% !important;
     width: auto !important;
 }
 
-/* Override any container width limits */
-.container, 
-.container-fluid, 
-.container-xxl, 
-.container-xl, 
-.container-lg, 
-.container-md, 
-.container-sm {
+/* Code blocks should use available width */
+pre {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+
+.sourceCode {
+    max-width: none !important;
+}
+
+/* Images should scale properly */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Remove any floating or positioning that might cause issues */
+.sidebar,
+.toc-left,
+#quarto-sidebar-toc-left {
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+}
+
+/* Ensure the page doesn't have unnecessary margins */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override Bootstrap container constraints if present */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
     max-width: none !important;
     width: 100% !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
 
-/* Ensure content sections use full width */
-section {
-    max-width: none !important;
-    width: 100% !important;
+/* Make sure the content is not offset by hidden sidebar */
+#quarto-content.toc-left {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
-/* Fix any Quarto-specific width constraints */
-.quarto-container-width {
-    max-width: none !important;
-    width: 100% !important;
+/* Override any grid layouts */
+.page-columns {
+    grid-template-columns: 1fr !important;
 }
 
-/* Ensure body and html don't have width constraints */
-html, body {
-    max-width: none !important;
-    width: 100% !important;
+/* Ensure no element creates horizontal scrolling */
+* {
+    max-width: 100% !important;
+}
+
+/* But allow pre blocks to scroll if needed */
+pre {
+    max-width: 100% !important;
     overflow-x: auto !important;
 }
 
-/* Reset any grid layouts to single column */
-.page-layout-article > * {
-    grid-column: 1 !important;
-}
-
-/* Ensure all content divs expand */
-#quarto-content > * {
+/* Header adjustments */
+header {
     max-width: none !important;
     width: 100% !important;
-}
-
-/* Remove any padding that might cause gaps */
-.content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-/* Make sure images don't overflow */
-img {
-    max-width: 100% !important;
-    height: auto !important;
 }
