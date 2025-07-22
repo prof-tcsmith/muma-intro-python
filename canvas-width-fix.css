@@ -1,104 +1,88 @@
 /* Custom CSS to optimize Quarto content for Canvas LMS iframe display */
 
-/* Adjust the sidebar to be more compact in Canvas */
+/* Hide the TOC sidebar completely - Canvas iframe is too narrow for split view */
 #quarto-sidebar-toc-left,
-.sidebar.toc-left {
-    width: 200px !important; /* Reduced from default 250px */
-    font-size: 0.875rem !important; /* Smaller font for TOC */
-    padding: 10px !important;
-    background-color: #f8f9fa !important;
-    border-right: 1px solid #dee2e6 !important;
+.sidebar.toc-left,
+#TOC,
+.toc-left,
+nav[role="doc-toc"] {
+    display: none !important;
 }
 
-/* Make TOC title smaller */
-#toc-title {
-    font-size: 1rem !important;
-    margin-bottom: 0.5rem !important;
-}
-
-/* Reduce TOC item spacing */
-#TOC ul {
-    padding-left: 1rem !important;
-}
-
-#TOC li {
-    margin-bottom: 0.25rem !important;
-}
-
-#TOC a {
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.875rem !important;
-}
-
-/* Adjust the main content area to work with narrower sidebar */
-#quarto-content {
-    max-width: none !important;
-    width: 100% !important;
-}
-
-/* Override the grid to use more space for content */
+/* Reset the page layout to single column */
 #quarto-content.page-columns {
-    display: grid !important;
-    grid-template-columns: 200px 1fr !important; /* Fixed sidebar, flexible content */
-    gap: 20px !important;
-    max-width: none !important;
+    display: block !important;
+    grid-template-columns: none !important;
+    max-width: 100% !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Make the main content area use available space */
+/* Constrain main content to readable width without horizontal scroll */
 main,
 .content,
-main.content {
-    max-width: none !important;
-    width: 100% !important;
+main.content,
+#quarto-document-content {
+    max-width: 100% !important;
+    width: calc(100% - 40px) !important; /* Account for padding */
+    margin: 0 auto !important;
     padding: 20px !important;
-    margin: 0 !important;
+    box-sizing: border-box !important;
 }
 
-/* Ensure content body uses full width */
+/* Ensure all content respects the width constraint */
 .column-body,
 .content-column-body,
-[class*="column-body"] {
-    max-width: none !important;
+[class*="column-body"],
+.page-layout-article {
+    max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
+    box-sizing: border-box !important;
 }
 
-/* Remove article layout constraints */
-.page-layout-article {
-    max-width: none !important;
-    width: 100% !important;
-}
-
-/* Sections should use full width */
-section {
-    max-width: none !important;
-    width: 100% !important;
-}
-
-/* Tables should be responsive */
-table {
+/* Prevent any element from causing horizontal scroll */
+* {
     max-width: 100% !important;
-    width: auto !important;
+    box-sizing: border-box !important;
 }
 
-/* Code blocks should use available width */
+/* Sections should not exceed container width */
+section {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Tables should be scrollable if too wide */
+.table-responsive,
+table {
+    display: block !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Code blocks should scroll if too wide */
 pre {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    white-space: pre !important;
+}
+
+.sourceCode {
     max-width: 100% !important;
     overflow-x: auto !important;
 }
 
-.sourceCode {
-    max-width: none !important;
-}
-
-/* Images should scale properly */
+/* Images should scale down */
 img {
     max-width: 100% !important;
     height: auto !important;
 }
 
-/* Override Bootstrap containers */
+/* Fix Bootstrap containers */
 .container,
 .container-fluid,
 .container-lg,
@@ -106,52 +90,82 @@ img {
 .container-sm,
 .container-xl,
 .container-xxl {
-    max-width: none !important;
+    max-width: 100% !important;
     width: 100% !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
+    box-sizing: border-box !important;
 }
 
-/* For smaller screens or narrower iframes, hide the TOC */
-@media (max-width: 768px) {
-    #quarto-sidebar-toc-left,
-    .sidebar.toc-left {
-        display: none !important;
-    }
-    
-    #quarto-content.page-columns {
-        grid-template-columns: 1fr !important;
-    }
+/* Remove any left margins from hidden TOC */
+#quarto-content.toc-left,
+.page-columns.toc-left {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
-/* Ensure headers don't get cut off */
+/* Ensure body doesn't have margins */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* Hide horizontal scrollbar on html element */
+html {
+    overflow-x: hidden !important;
+}
+
+/* Make sure headers are visible */
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 1rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    word-wrap: break-word !important;
 }
 
-/* Make sure the content doesn't have unnecessary constraints */
+/* Ensure lists don't overflow */
+ul, ol {
+    padding-left: 1.5rem !important;
+    margin-left: 0 !important;
+}
+
+/* Fix any Quarto-specific margins */
 .page-rows-contents {
-    max-width: none !important;
+    max-width: 100% !important;
     width: 100% !important;
 }
 
-/* Remove any column margins that might create gaps */
+/* Prevent column layouts from breaking */
 [class*="column-"] {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: static !important;
 }
 
-/* Ensure the sticky TOC works properly */
-.sidebar.toc-left {
-    position: sticky !important;
-    top: 1rem !important;
-    height: calc(100vh - 2rem) !important;
-    overflow-y: auto !important;
+/* Ensure Python Tutor iframes are responsive */
+iframe {
+    max-width: 100% !important;
 }
 
-/* Improve TOC active state visibility */
-#TOC .active > a {
-    background-color: #0d6efd !important;
-    color: white !important;
-    border-radius: 0.25rem !important;
+/* Fix any absolute positioned elements */
+.sidebar,
+.toc-left,
+#quarto-sidebar-toc-left {
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+}
+
+/* Add a simple TOC at the top of the content */
+#quarto-content::before {
+    content: "📑 Tip: Use your browser's Find (Ctrl+F or Cmd+F) to search and navigate this content.";
+    display: block;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #495057;
 }
