@@ -1,38 +1,44 @@
 /* Custom CSS to optimize Quarto content for Canvas LMS iframe display */
 
-/* Force a two-column layout with fixed TOC width */
+/* Reset body margins */
 body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
 }
 
-/* Override Quarto's page layout to ensure proper two-column display */
-#quarto-content.page-columns {
-    display: grid !important;
-    grid-template-columns: 200px 1fr !important; /* Fixed TOC, flexible content */
-    gap: 20px !important;
-    max-width: 100% !important;
+/* Create a wrapper for the entire page content */
+#quarto-document-content,
+#quarto-content,
+.quarto-container-default {
+    display: flex !important;
+    flex-direction: row !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Style the TOC sidebar */
-#quarto-sidebar-toc-left,
-.sidebar.toc-left,
-nav[role="doc-toc"] {
-    display: block !important;
-    position: sticky !important;
-    top: 0 !important;
+/* Position the TOC on the left as a fixed-width column */
+#quarto-margin-sidebar,
+#quarto-sidebar,
+.sidebar,
+nav[role="doc-toc"],
+.toc-left,
+#TOC {
+    position: relative !important; /* Not floating */
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
     height: 100vh !important;
     overflow-y: auto !important;
-    width: 200px !important;
     padding: 20px 10px !important;
     background-color: #f8f9fa !important;
     border-right: 1px solid #dee2e6 !important;
     font-size: 0.875rem !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 /* Ensure TOC links are visible and styled */
@@ -54,16 +60,26 @@ nav[role="doc-toc"] a.active {
     padding-left: 10px !important;
 }
 
-/* Style the main content area */
+/* Style the main content area - it should be the flex-grow element */
 main,
 .content,
-main.content,
-#quarto-document-content {
-    max-width: 100% !important;
-    width: 100% !important;
+#quarto-content > main,
+main.content {
+    flex-grow: 1 !important;
+    width: calc(100% - 220px) !important; /* Full width minus TOC and gap */
+    max-width: calc(100% - 220px) !important;
     padding: 20px !important;
     box-sizing: border-box !important;
     margin: 0 !important;
+    overflow-x: auto !important;
+}
+
+/* Ensure the page-columns container uses flex layout */
+.page-columns {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    gap: 0 !important;
 }
 
 /* Ensure all content respects the width constraint */
@@ -192,15 +208,37 @@ iframe {
     width: auto !important;
 }
 
-/* Add a simple TOC at the top of the content */
+/* Remove the floating TOC tip since we have a proper sidebar */
 #quarto-content::before {
-    content: "📑 Tip: Use your browser's Find (Ctrl+F or Cmd+F) to search and navigate this content.";
-    display: block;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 0.25rem;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: #495057;
+    display: none !important;
+}
+
+/* Additional fixes for Quarto's specific layout structure */
+#quarto-sidebar-glass {
+    display: none !important; /* Remove any overlay glass effects */
+}
+
+/* Force proper layout hierarchy */
+body > div.page-columns {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+/* Ensure TOC doesn't float */
+.floating {
+    position: relative !important;
+    float: none !important;
+}
+
+/* Fix any z-index issues */
+nav[role="doc-toc"],
+.sidebar,
+#TOC {
+    z-index: 1 !important; /* Lower than content */
+}
+
+main,
+.content {
+    z-index: 2 !important; /* Higher than TOC */
+    position: relative !important;
 }
