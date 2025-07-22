@@ -1,0 +1,100 @@
+/* Custom CSS to override Quarto width constraints for Canvas LMS iframe display */
+
+/* Remove max-width constraints from main content containers */
+#quarto-content {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.page-layout-article {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.page-columns {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.page-rows-contents {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure the main content area uses full width */
+main {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 20px !important; /* Add some padding for readability */
+}
+
+/* Make the content body full width */
+.column-body {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Adjust the sidebar to not interfere with full width */
+#quarto-sidebar-toc-left {
+    position: fixed !important;
+    left: 0 !important;
+    width: 250px !important;
+    z-index: 100 !important;
+}
+
+/* Adjust main content to account for fixed sidebar */
+#quarto-content {
+    margin-left: 270px !important; /* Sidebar width + 20px margin */
+}
+
+/* Make code blocks and other content elements wider */
+.sourceCode {
+    max-width: none !important;
+}
+
+pre {
+    max-width: none !important;
+}
+
+/* Ensure tables use full width */
+table {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Override any container width limits */
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991px) {
+    #quarto-sidebar-toc-left {
+        display: none !important;
+    }
+    
+    #quarto-content {
+        margin-left: 0 !important;
+        padding: 0 15px !important;
+    }
+}
+
+/* Ensure content sections use full width */
+section {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Fix any Quarto-specific width constraints */
+.quarto-container-width {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure body and html don't have width constraints */
+html, body {
+    max-width: none !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+}
