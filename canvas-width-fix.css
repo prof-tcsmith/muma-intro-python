@@ -1,16 +1,25 @@
 /* CSS to optimize Quarto content for Canvas LMS iframes */
 
-/* Remove all width constraints from Quarto's default layout */
+/* Remove ALL width constraints from Quarto's default layout */
 body {
     max-width: none !important;
+    width: 100% !important;
 }
 
 .quarto-container {
     max-width: none !important;
+    width: 100% !important;
 }
 
 #quarto-content {
     max-width: none !important;
+    width: 100% !important;
+}
+
+/* Force the page-layout-article to use full width */
+.page-layout-article {
+    max-width: none !important;
+    width: 100% !important;
 }
 
 /* Ensure the page columns layout uses full width */
@@ -32,6 +41,31 @@ body {
 
 .body-inner {
     max-width: none !important;
+    width: 100% !important;
+}
+
+/* Target the main content area specifically */
+main.content {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Remove width constraints from content sections */
+section {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Override any inline styles */
+[style*="max-width"] {
+    max-width: none !important;
+}
+
+/* For toc-left layout, ensure content takes remaining space */
+.toc-left .content {
+    margin-left: 0 !important;
+    max-width: none !important;
+    width: calc(100% - 250px) !important;
 }
 
 /* Style the TOC sidebar */
