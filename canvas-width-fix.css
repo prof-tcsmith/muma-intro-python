@@ -7,12 +7,11 @@ body {
     overflow-x: hidden !important;
 }
 
-/* Create a wrapper for the entire page content */
-#quarto-document-content,
-#quarto-content,
-.quarto-container-default {
-    display: flex !important;
-    flex-direction: row !important;
+/* Fix the main container layout - use grid instead of flex to avoid column issues */
+#quarto-content {
+    display: grid !important;
+    grid-template-columns: 200px 1fr !important;
+    gap: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -20,13 +19,9 @@ body {
 }
 
 /* Position the TOC on the left as a fixed-width column */
-#quarto-margin-sidebar,
-#quarto-sidebar,
-.sidebar,
-nav[role="doc-toc"],
-.toc-left,
-#TOC {
-    position: relative !important; /* Not floating */
+#quarto-sidebar-toc-left,
+.sidebar.toc-left {
+    grid-column: 1 !important;
     width: 200px !important;
     min-width: 200px !important;
     max-width: 200px !important;
@@ -38,7 +33,16 @@ nav[role="doc-toc"],
     font-size: 0.875rem !important;
     box-sizing: border-box !important;
     margin: 0 !important;
-    flex-shrink: 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+}
+
+/* Style the TOC nav element */
+nav#TOC,
+nav[role="doc-toc"] {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* Ensure TOC links are visible and styled */
@@ -60,26 +64,28 @@ nav[role="doc-toc"] a.active {
     padding-left: 10px !important;
 }
 
-/* Style the main content area - it should be the flex-grow element */
-main,
-.content,
-#quarto-content > main,
-main.content {
-    flex-grow: 1 !important;
-    width: calc(100% - 220px) !important; /* Full width minus TOC and gap */
-    max-width: calc(100% - 220px) !important;
+/* Style the main content area - it should fill the second grid column */
+main.content,
+#quarto-document-content {
+    grid-column: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 20px !important;
     box-sizing: border-box !important;
     margin: 0 !important;
     overflow-x: auto !important;
+    /* Prevent CSS columns which might cause vertical layout */
+    column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
 }
 
-/* Ensure the page-columns container uses flex layout */
+/* Remove any column-based CSS that might cause vertical columns */
 .page-columns {
-    display: flex !important;
-    flex-direction: row !important;
+    column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
     width: 100% !important;
-    gap: 0 !important;
 }
 
 /* Ensure all content respects the width constraint */
@@ -192,6 +198,20 @@ ul, ol {
     width: 100% !important;
     margin: 0 !important;
     position: static !important;
+}
+
+/* Fix Quarto's div.columns which uses flexbox */
+div.columns {
+    display: block !important;
+    column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    -moz-column-count: 1 !important;
+}
+
+div.column {
+    display: block !important;
+    width: 100% !important;
+    flex: none !important;
 }
 
 /* Ensure Python Tutor iframes are responsive */
