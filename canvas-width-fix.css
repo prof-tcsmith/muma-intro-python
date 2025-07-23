@@ -38,19 +38,12 @@ img {
     height: auto !important;
 }
 
-/* TOC Sidebar Styling */
+/* TOC Sidebar Styling - Keep Quarto's default positioning */
 #quarto-sidebar-toc-left {
-    position: fixed !important;  /* Keep TOC fixed while scrolling */
-    top: 60px !important;       /* Position below header */
-    left: 20px !important;      /* Spacing from left edge */
-    width: 250px !important;    /* Fixed width for TOC */
-    max-height: calc(100vh - 100px) !important;  /* Prevent overflow */
-    overflow-y: auto !important; /* Allow scrolling within TOC if needed */
+    /* Remove fixed positioning to work better in Canvas */
     background-color: #ffffff !important;  /* Clean white background */
-    border: 1px solid #e5e7eb !important;  /* Subtle border */
-    border-radius: 8px !important;  /* Rounded corners */
+    border-right: 1px solid #e5e7eb !important;  /* Subtle right border */
     padding: 20px !important;   /* Internal padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;  /* Subtle shadow */
 }
 
 /* TOC Title Styling */
@@ -100,18 +93,25 @@ img {
     font-weight: 600 !important;
 }
 
-/* Adjust main content to account for fixed TOC */
-.content {
-    margin-left: 290px !important;  /* TOC width + spacing */
+/* Ensure the layout uses available width properly */
+.page-columns {
+    display: grid !important;
+    grid-template-columns: 250px 1fr !important;  /* TOC width and flexible content */
+    gap: 2rem !important;
+    max-width: 100% !important;
 }
 
-/* Hide TOC on smaller screens */
-@media (max-width: 1200px) {
-    #quarto-sidebar-toc-left {
-        display: none !important;
-    }
-    
-    .content {
-        margin-left: 0 !important;
-    }
+/* Make sure content column uses full width */
+.content {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Ensure TOC stays visible and properly positioned */
+#quarto-sidebar-toc-left {
+    position: sticky !important;  /* Sticky instead of fixed for better Canvas compatibility */
+    top: 20px !important;
+    height: fit-content !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
 }
