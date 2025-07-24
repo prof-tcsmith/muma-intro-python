@@ -1,48 +1,41 @@
-digraph Module6_MindMap {
+digraph Module8_MindMap {
     rankdir=TB;
     node [shape=box, style="rounded,filled", fillcolor=lightblue, fontname="Arial", fontsize=10];
     edge [color=darkgray, penwidth=1.5];
     
     // Central node
-    central [label="Module 6:\nConditional Logic\n& Branching", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
+    central [label="Module 8:\nFunctions &\nModular Programming", fillcolor=darkblue, fontcolor=white, fontsize=14, penwidth=2];
     
     // Main branches
-    if_statement [label="if\nStatement", fillcolor=lightblue];
-    if_else [label="if-else\nStatements", fillcolor=lightblue];
-    if_elif_else [label="if-elif-else\nChains", fillcolor=lightblue];
-    comparison [label="Comparison\nOperators", fillcolor=lightblue];
-    logical [label="Logical\nOperators", fillcolor=lightblue];
-    nested [label="Nested\nConditionals", fillcolor=lightblue];
+    basics [label="Function\nBasics", fillcolor=lightblue];
+    params [label="Parameters &\nArguments", fillcolor=lightblue];
+    returns [label="Return\nValues", fillcolor=lightblue];
+    scope [label="Variable\nScope", fillcolor=lightblue];
+    modular [label="Modular\nDesign", fillcolor=lightblue];
     
-    // Sub-branches for if Statement
-    basic_syntax [label="• Basic Syntax\n• Boolean Condition\n• Indented Block", shape=note, fillcolor=lightyellow];
-    if_example [label="Business Example:\nPrice Validation", fillcolor=lightgreen];
+    // Sub-branches for Function Basics
+    def_concepts [label="• def Statement\n• Function Calls\n• Descriptive Names", shape=note, fillcolor=lightyellow];
+    documentation [label="Docstrings", fillcolor=lightgreen];
+    dry [label="DRY Principle", fillcolor=lightgreen];
     
-    // Sub-branches for if-else
-    else_syntax [label="• else Clause\n• Alternative Path\n• Execution Flow", shape=note, fillcolor=lightyellow];
-    else_example [label="Inventory Alert\nSystem", fillcolor=lightgreen];
+    // Sub-branches for Parameters & Arguments
+    param_types [label="• Positional Arguments\n• Keyword Arguments\n• Default Values\n• Parameter Mapping", shape=note, fillcolor=lightyellow];
     
-    // Sub-branches for if-elif-else
-    elif_syntax [label="• Multiple Conditions\n• Order Matters\n• First Match Wins", shape=note, fillcolor=lightyellow];
-    elif_example [label="Customer\nSegmentation", fillcolor=lightgreen];
+    // Sub-branches for Return Values
+    return_concepts [label="• return Statement\n• return vs print\n• Multiple Return Values", shape=note, fillcolor=lightyellow];
     
-    // Sub-branches for Comparison Operators
-    comp_types [label="• == Equal to\n• != Not equal to\n• > Greater than\n• < Less than\n• >= Greater or equal\n• <= Less or equal", shape=note, fillcolor=lightyellow];
+    // Sub-branches for Variable Scope
+    scope_types [label="• Local Variables\n• Global Variables\n• global Keyword", shape=note, fillcolor=lightyellow];
     
-    // Sub-branches for Logical Operators
-    logical_types [label="• and (Both true)\n• or (At least one true)\n• not (Invert truth)", shape=note, fillcolor=lightyellow];
-    complex_cond [label="Complex\nConditions", fillcolor=lightgreen];
-    
-    // Sub-branches for Nested Conditionals
-    nested_use [label="• When to Use\n• Avoiding Deep Nesting\n• Readability", shape=note, fillcolor=lightyellow];
-    nested_example [label="Shipping\nCalculator", fillcolor=lightgreen];
+    // Sub-branches for Modular Design
+    lambda_func [label="Lambda\nFunctions", fillcolor=lightcoral];
+    design_principles [label="• Single Responsibility\n• Reusability\n• Best Practices", shape=note, fillcolor=lightyellow];
     
     // Connections
-    central -> {if_statement if_else if_elif_else comparison logical nested};
-    if_statement -> {basic_syntax if_example};
-    if_else -> {else_syntax else_example};
-    if_elif_else -> {elif_syntax elif_example};
-    comparison -> comp_types;
-    logical -> {logical_types complex_cond};
-    nested -> {nested_use nested_example};
+    central -> {basics params returns scope modular};
+    basics -> {def_concepts documentation dry};
+    params -> param_types;
+    returns -> return_concepts;
+    scope -> scope_types;
+    modular -> {lambda_func design_principles};
 }
